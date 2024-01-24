@@ -1,7 +1,11 @@
 import './App.css'
 
-function App() {
+import Home from './routes/home'
 
+function App() {
+  return (
+    <Home />
+  )
 }
 
 export default App
