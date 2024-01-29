@@ -10,7 +10,8 @@ import { IoClose } from 'react-icons/io5';
 
 const NavBarContainer = styled.div`
 display: flex;
-height: 70px;
+position: relative;
+height: 72px;
 padding: 10px 40px;
 align-items: center;
 justify-content: space-between;
@@ -23,7 +24,7 @@ border-bottom: 1px solid #A8A29E;
 
 const ImgContainer = styled.img`
 display: flex;
-height: 90px;
+
 width: 164px;
 cursor: pointer;
 
@@ -49,33 +50,25 @@ ${typography.head.xss}
 color: ${colors.blue[900]};
 margin: 0;
 font-weight: 500;
+padding: 16px 0;
 `
 
 const HamMenu = styled.div`
-  display: ${props => (props.menuVisible ? "block" : "none")}; 
+  display: ${props => (props.visible ? "flex" : "none")}; 
+  background-color: ${colors.stone[300]};
   border-bottom-left-radius: 16px;
   border-bottom-right-radius: 16px;
   padding-bottom: 16px;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
   
   @media (max-width: 600px) {
-    background-color: gray;
     width: 90%;
     position: absolute;
-    top: 10%;
-    display: flex;
-    flex-direction: column;
+    top: 100%;
   }
 `;
-
-
-const HamOption = styled.a`
-${typography.head.xss}
-color: ${colors.blue[900]};
-margin: 0;
-font-weight: 500;
-padding: 16px 0;
-`
 
 const rotate = keyframes`
   from {
@@ -104,9 +97,10 @@ const HamburgerIcon = styled.div`
 const CloseIcon = styled.div`
   display: none;
   cursor: pointer;
-  color: black;;
+  color: black;
   position: absolute;
-  right: 16px;
+  right: 6px;
+  top: 6px;
   align-self: center;
   transition: transform 0.5s ease; 
 
@@ -122,7 +116,7 @@ function Header() {
   const [menuVisible, setMenuVisible] = useState(false);
 
   const toggleMenu = () => {
-    setMenuVisible(prevMenuVisible => !prevMenuVisible);
+    setMenuVisible(showMenu => !showMenu);
   };
 
   return (
@@ -151,11 +145,11 @@ function Header() {
       </OptionsContainer>  
 
     
-      <HamMenu menuVisible={menuVisible}>
-        <HamOption >Sobre mí</HamOption>
-        <HamOption >Servicios</HamOption>
-        <HamOption >Blog</HamOption>
-        <HamOption >Contacto</HamOption>
+      <HamMenu visible={menuVisible}>
+        <Option >Sobre mí</Option>
+        <Option >Servicios</Option>
+        <Option >Blog</Option>
+        <Option >Contacto</Option>
       </HamMenu>
 
     </NavBarContainer>
