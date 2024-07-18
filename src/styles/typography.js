@@ -6,7 +6,7 @@ export const fonts = {
 export const typography = {
   text: {
     xs: `
-    font-size: 0.625rem;
+    font-size: 0.65rem;
     line-height: 0.55rem;
     `,
     sm: `
@@ -40,7 +40,7 @@ export const typography = {
     line-height: 1.75rem;
     `,
     xss: `
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     `,
     sm: `
     font-size: 1.5rem;

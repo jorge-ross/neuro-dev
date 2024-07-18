@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from "react";
-import { keyframes, css } from '@emotion/react';
+import { keyframes } from '@emotion/react';
 import logo from './../assets/images/logo.png'
 import logoSideBar from './../assets/images/logo-hde.png'
 import { typography } from '../styles/typography';
@@ -58,24 +58,6 @@ font-weight: 600;
 padding: 16px 0;
 `
 
-const fadeIn = keyframes`
-0% {
-  transform: translateX(100%);
-}
-100% {
-  transform: translateX(0);
-}
-`
-
-const fadeOut = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-`;
-
 const HamMenu = styled.div`
   display: ${props => (props.visible ? "flex" : "none")};
   flex-direction: column;
@@ -87,10 +69,9 @@ const HamMenu = styled.div`
   right: ${props => (props.visible ? "0" : "-250px")};
   transition: right 0.5s ease;
   z-index: 100;
-  text-align: center;
 
   @media (max-width: 900px) {
-    width: 80%;
+    width: 50%;
     right: ${props => (props.visible ? "0" : "-80%")};
   }
 `;
@@ -132,38 +113,40 @@ const CloseIcon = styled.div`
   align-self: flex-end;
 `;
 
-const HamLogo = styled.img`
+const Logo = styled.img`
 display: flex;
-width: 120px;
-padding: 24px 0;
+align-self: center;
+width: 50%;
+padding: 1rem 0 2rem;
 cursor: pointer;
-border-bottom: 1px solid #A8A29E;
 
-@media (max-width: 320px) {
-  width: 100px;
-}
 `
 
 const NavOptionsContainer = styled.div`
 display: flex;
-width: 70%;
 flex-direction: column;
 align-items: flex-end;
-padding-top: 8px;
+padding: 1rem 1.5rem 0 0;
+border-top: 1px solid #A8A29E;
 `
 
 const NavOption = styled.a`
-${typography.head.xss}
+${typography.text.lg}
 color: ${colors.blue[950]};
 font-weight: 600;
-padding: 16px 0;
+padding: 1rem 0;
 display: flex;
 flex-directon: row;
 align-items: center;
 gap: 20px;
+cursor: pointer;
 
-@media (max-width: 420px) {
-  ${typography.text.sm};
+@media (max-width: 500px) {
+  ${typography.text.md};
+}
+
+@media (max-width: 300px) {
+  ${typography.text.xs};
 }
 `
 
@@ -210,7 +193,7 @@ function Header() {
           <IoClose style={{height: "25px", width: "25px"}}/>
         </CloseIcon>
 
-        <HamLogo src={logoSideBar} alt='n-dev-sb' />
+        <Logo src={logoSideBar} alt='n-dev-sb' />
         <NavOptionsContainer>
           <NavOption>Sobre mí
             <ImUser />
