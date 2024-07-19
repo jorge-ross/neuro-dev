@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 import { keyframes } from '@emotion/react';
 import logo from './../assets/images/logo.png'
 import logoSideBar from './../assets/images/logo-hde.png'
@@ -61,7 +62,6 @@ padding: 16px 0;
 const HamMenu = styled.div`
   display: ${props => (props.visible ? "flex" : "none")};
   flex-direction: column;
-  background-color: ${colors.stone[200]};
   width: 250px;
   height: 100%;
   position: fixed;
@@ -69,9 +69,11 @@ const HamMenu = styled.div`
   right: ${props => (props.visible ? "0" : "-250px")};
   transition: right 0.5s ease;
   z-index: 100;
+  background-color: white;
+  border-left: 2px solid #1D2C60;
 
   @media (max-width: 900px) {
-    width: 50%;
+    width: 75%;
     right: ${props => (props.visible ? "0" : "-80%")};
   }
 `;
@@ -102,24 +104,30 @@ const HamburgerIcon = styled.div`
 const CloseIcon = styled.div`
   display: none;
   cursor: pointer;
-  color: black;
+  color: white;
   transition: transform 0.5s ease;
 
   @media (max-width: 900px) {
     display: ${props =>
       props.isOpen ? "block" : "none"};
   }
-  margin: 1rem 1rem 0 0;
+  margin: .75rem .75rem 0 0;
   align-self: flex-end;
 `;
 
 const Logo = styled.img`
 display: flex;
 align-self: center;
-width: 50%;
-padding: 1rem 0 2rem;
-cursor: pointer;
+width: 40%;
+padding: 0.5rem 0;
+`
 
+const ImgHeader = styled.div`
+display: flex;
+flex-direction: column;
+background-color: ${colors.blue[950]};
+border-bottom-left-radius: 35%;
+cursor: pointer;
 `
 
 const NavOptionsContainer = styled.div`
@@ -127,7 +135,7 @@ display: flex;
 flex-direction: column;
 align-items: flex-end;
 padding: 1rem 1.5rem 0 0;
-border-top: 1px solid #A8A29E;
+background-color: white;
 `
 
 const NavOption = styled.a`
@@ -149,6 +157,21 @@ cursor: pointer;
   ${typography.text.xs};
 }
 `
+
+const TitleHeader = styled.h1`
+${typography.head.sm};
+color: white;
+margin: 0;
+text-align: center;
+padding-bottom: 3rem;
+`
+
+const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+`;
 
 function Header() {
 
@@ -181,10 +204,9 @@ function Header() {
         <Option >Contacto</Option>
       </OptionsContainer>  
 
-
-
       <HamMenu visible={isOpen}>
 
+        <ImgHeader>
         <CloseIcon
           onClick={toggleMenu}
           isOpen={isOpen}
@@ -192,12 +214,22 @@ function Header() {
           >
           <IoClose style={{height: "25px", width: "25px"}}/>
         </CloseIcon>
+        <StyledLink to="/" onClick={() => window.scrollTo(0, 0)}>
+          <Logo src={logoSideBar} alt='n-dev-sb' />
+          <TitleHeader>
+            Neuro-dev
+          </TitleHeader>
+        </StyledLink>
+        </ImgHeader>
 
-        <Logo src={logoSideBar} alt='n-dev-sb' />
         <NavOptionsContainer>
+        <Link to="/about" style={{textDecoration: "none"}}
+          onClick={() => window.scrollTo(0, 0)}>
           <NavOption>Sobre mí
             <ImUser />
           </NavOption>
+        </Link>
+          
           <NavOption>Servicios
             <GiBrain />
           </NavOption>
