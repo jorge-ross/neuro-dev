@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
+import Footer from "../components/footer";
 
 
 const GeneralContainer = styled.div`
@@ -14,6 +15,7 @@ function Home() {
   return (
     <GeneralContainer>
       <Header />
+      <Footer />
     </GeneralContainer>
   )
 }
