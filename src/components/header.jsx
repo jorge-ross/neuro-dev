@@ -20,8 +20,8 @@ flex-direction: row;
 padding: 10px 40px;
 align-items: center;
 justify-content: space-between;
-border-bottom: 1px solid #A8A29E;
-width: 80%;
+border-bottom: 1px solid black;
+width: 90%;
 
 @media (max-width: 610px) {
   padding: 10px 20px;
@@ -138,25 +138,26 @@ padding: 1rem 1.5rem 0 0;
 background-color: white;
 `
 
-const NavOption = styled.a`
-${typography.text.lg}
-color: ${colors.blue[950]};
-font-weight: 600;
-padding: 1rem 0;
-display: flex;
-flex-directon: row;
-align-items: center;
-gap: 20px;
-cursor: pointer;
+const NavOption = styled(Link)`
+  ${typography.text.lg}
+  color: ${colors.blue[950]};
+  font-weight: 600;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  cursor: pointer;
 
-@media (max-width: 500px) {
-  ${typography.text.md};
-}
+  @media (max-width: 500px) {
+    ${typography.text.md};
+  }
 
-@media (max-width: 300px) {
-  ${typography.text.xs};
-}
-`
+  @media (max-width: 300px) {
+    ${typography.text.xs};
+  }
+`;
 
 const TitleHeader = styled.h1`
 ${typography.head.sm};
@@ -223,12 +224,10 @@ function Header() {
         </ImgHeader>
 
         <NavOptionsContainer>
-        <Link to="/about" style={{textDecoration: "none"}}
-          onClick={() => window.scrollTo(0, 0)}>
-          <NavOption>Sobre mí
+          <NavOption to="/about" onClick={() => window.scrollTo(0, 0)}>
+            Sobre mí
             <ImUser />
           </NavOption>
-        </Link>
           
           <NavOption>Servicios
             <GiBrain />

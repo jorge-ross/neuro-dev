@@ -1,14 +1,14 @@
 import styled from 'styled-components';
-import { colors } from '../styles/colors';
-// import colors from './path/to/colors'; // Assuming you have a colors file
 
 const FooterContainer = styled.footer`
   background: #FAFAF9;
-  padding: 2rem;
+  padding: 2rem 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 1rem;
+  border-top: 1px solid black;
+  width: 90%;
 `;
 
 const Section = styled.div`
