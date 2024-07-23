@@ -20,14 +20,11 @@ const SectionTitle = styled.h1`
 const SectionSubtitle = styled.h2`
   font-size: 1.5rem;
   color: ${colors.grey[800]};
-  margin-bottom: 2rem;
 `;
 
 const Image = styled.img`
   width: 100%;
   max-width: 600px;
-  border-radius: 10px;
-  margin-bottom: 2rem;
 `;
 
 const Description = styled.p`
@@ -84,9 +81,9 @@ const IntroSection = () => {
           </ServiceDescription>
         </ServiceCard>
         <ServiceCard>
-          <ServiceTitle>Consejería Familiar</ServiceTitle>
+          <ServiceTitle>De Pareja</ServiceTitle>
           <ServiceDescription>
-            Servicios de consejería de apoyo para familias, mejorando la comunicación, resolviendo conflictos y fortaleciendo relaciones.
+            Ayudamos a las parejas a mejorar su comunicación y resolver conflictos para fortalecer su relación.
           </ServiceDescription>
         </ServiceCard>
         <ServiceCard>
@@ -96,9 +93,15 @@ const IntroSection = () => {
           </ServiceDescription>
         </ServiceCard>
         <ServiceCard>
-          <ServiceTitle>Terapia de Grupo</ServiceTitle>
+          <ServiceTitle>Rehabilitación Neuropsicológica</ServiceTitle>
           <ServiceDescription>
             Sesiones de terapia colaborativa para fomentar el apoyo entre pares y compartir experiencias en un entorno grupal.
+          </ServiceDescription>
+        </ServiceCard>
+        <ServiceCard>
+          <ServiceTitle>Dificultades de Aprendizaje</ServiceTitle>
+          <ServiceDescription>
+            Las dificultades de aprendizaje pueden afectar la lectura, la escritura y el cálculo. Ofrecemos evaluaciones y programas de intervención para ayudar a niños y adolescentes a superar estos desafíos.
           </ServiceDescription>
         </ServiceCard>
       </ServicesContainer>

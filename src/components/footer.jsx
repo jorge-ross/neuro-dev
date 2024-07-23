@@ -1,14 +1,21 @@
 import styled from 'styled-components';
+import { colors } from '../styles/colors';
+
+const Gral = styled.div`
+background: ${colors.stone[200]};
+width: 100%;
+display: flex;
+justify-content: center;
+border-top: 1px solid black;
+`
 
 const FooterContainer = styled.footer`
-  background: #FAFAF9;
   padding: 2rem 0;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   gap: 1rem;
-  border-top: 1px solid black;
-  width: 90%;
+  width: 80%
 `;
 
 const Section = styled.div`
@@ -45,32 +52,34 @@ const ContactInfo = styled.p`
 
 const Footer = () => {
   return (
-    <FooterContainer>
-      <Section>
-        <SectionTitle>INFORMACIÓN PARA TÍ</SectionTitle>
-        <Link href="#privacy">Aviso de privacidad</Link>
-        <Link href="#terms">Términos y condiciones</Link>
-        <Link href="#cancellation">Políticas de cancelación</Link>
-      </Section>
-      <Section>
-        <SectionTitle>LA CONSULTA</SectionTitle>
-        <Link href="#faq">Preguntas Frecuentes</Link>
-        <Link href="#promotions">Promoción y descuentos</Link>
-        <Link href="#modalities">Modalidades y tarifas</Link>
-        <Link href="#advantages">Ventajas de Terapia Online</Link>
-        <Link href="#therapies">Terapia</Link>
-      </Section>
-      <Section>
-        <SectionTitle>TU PSICÓLOGO</SectionTitle>
-        <Link href="#about">¿Quién soy?</Link>
-      </Section>
-      <Section>
-        <SectionTitle>CONTACTO</SectionTitle>
-        <ContactInfo>Sólo Whatsapp</ContactInfo>
-        <ContactInfo>+52 55 5555 5555</ContactInfo>
-        <ContactInfo>mi_mail@gmail.com</ContactInfo>
-      </Section>
-    </FooterContainer>
+    <Gral>
+      <FooterContainer>
+        <Section>
+          <SectionTitle>INFORMACIÓN PARA TÍ</SectionTitle>
+          <Link href="#privacy">Aviso de privacidad</Link>
+          <Link href="#terms">Términos y condiciones</Link>
+          <Link href="#cancellation">Políticas de cancelación</Link>
+        </Section>
+        <Section>
+          <SectionTitle>LA CONSULTA</SectionTitle>
+          <Link href="#faq">Preguntas Frecuentes</Link>
+          <Link href="#promotions">Promoción y descuentos</Link>
+          <Link href="#modalities">Modalidades y tarifas</Link>
+          <Link href="#advantages">Ventajas de Terapia Online</Link>
+          <Link href="#therapies">Terapia</Link>
+        </Section>
+        <Section>
+          <SectionTitle>TU PSICÓLOGO</SectionTitle>
+          <Link href="#about">¿Quién soy?</Link>
+        </Section>
+        <Section>
+          <SectionTitle>CONTACTO</SectionTitle>
+          <ContactInfo>Sólo Whatsapp</ContactInfo>
+          <ContactInfo>+52 55 5555 5555</ContactInfo>
+          <ContactInfo>mi_mail@gmail.com</ContactInfo>
+        </Section>
+      </FooterContainer>
+      </Gral>
   );
 };
 

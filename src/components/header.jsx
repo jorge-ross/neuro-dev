@@ -14,14 +14,21 @@ import { FaPencil } from "react-icons/fa6";
 import { GrContact } from "react-icons/gr";
 import Modal from "./modal"
 
+const Gral = styled.div`
+background: white;
+width: 100%;
+display: flex;
+justify-content: center;
+border-bottom: 1px solid black;
+`
+
 const NavBarContainer = styled.div`
 display: flex;
 flex-direction: row;
 padding: 10px 40px;
 align-items: center;
 justify-content: space-between;
-border-bottom: 1px solid black;
-width: 90%;
+width: 80%;
 
 @media (max-width: 610px) {
   padding: 10px 20px;
@@ -187,7 +194,7 @@ function Header() {
   }
 
   return (
-    <>
+    <Gral>
     <NavBarContainer isOpen={isOpen}>
       <ImgContainer src={logo} alt='Neuro-dev' />
 
@@ -244,7 +251,7 @@ function Header() {
     </NavBarContainer>
 
     <Modal visible={isOpen} onClose={closeMenu} />
-    </>
+    </Gral>
   )
 }
 
