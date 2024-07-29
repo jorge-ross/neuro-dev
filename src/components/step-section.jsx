@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import step1Icon from '../assets/images/register.png'; // Reemplaza con la ruta de tu icono
-import step2Icon from '../assets/images/mailme.png'; // Reemplaza con la ruta de tu icono
-import step3Icon from '../assets/images/chat.png'; // Reemplaza con la ruta de tu icono
+import step1Icon from '../assets/images/register.png'; 
+import step2Icon from '../assets/images/mailme.png';
+import step3Icon from '../assets/images/chat.png'; 
 
 const SectionContainer = styled.section`
   display: flex;
@@ -14,13 +14,13 @@ const SectionContainer = styled.section`
 
 const SectionTitle = styled.h1`
   font-size: 2rem;
-  color: #123456; // Reemplaza con el color que desees
+  color: #123456; 
   margin-bottom: 1rem;
 `;
 
 const SectionSubtitle = styled.h2`
   font-size: 1.2rem;
-  color: #654321; // Reemplaza con el color que desees
+  color: #654321;
   margin-bottom: 2rem;
 `;
 
@@ -29,6 +29,11 @@ const StepsContainer = styled.div`
   justify-content: space-around;
   width: 100%;
   max-width: 1000px;
+
+   @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const StepCard = styled.div`
@@ -37,6 +42,10 @@ const StepCard = styled.div`
   align-items: center;
   padding: 1rem;
   max-width: 250px;
+
+  @media (max-width: 1000px) {
+    max-width: none;
+  }
 `;
 
 const StepIcon = styled.img`
@@ -47,20 +56,24 @@ const StepIcon = styled.img`
 
 const StepTitle = styled.h3`
   font-size: 1.2rem;
-  color: #123456; // Reemplaza con el color que desees
+  color: #123456;
   margin-bottom: 0.5rem;
 `;
 
 const StepDescription = styled.p`
   font-size: 1rem;
-  color: #654321; // Reemplaza con el color que desees
+  color: #654321;
 `;
 
 const DashedLine = styled.div`
   width: 100%;
   height: 2px;
-  border-top: 2px dashed #123456; // Reemplaza con el color que desees
+  border-top: 2px dashed #123456; 
   margin: 2rem 0;
+
+    @media (max-width: 1000px) {
+    width: 80%;
+  }
 `;
 
 const StepSection = () => {
