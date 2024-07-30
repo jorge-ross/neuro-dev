@@ -5,6 +5,7 @@ import IntroSection from "../components/intro-section";
 import StepSection from "../components/step-section";
 import MentalHealthSection from "../components/mental-health-section";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
+import FareTestSection from "../components/fare-test";
 
 
 const GeneralContainer = styled.div`
@@ -23,6 +24,7 @@ function Home() {
       <MentalHealthSection />
       <OnlineTherapyBenefits />
       <StepSection />
+      <FareTestSection />
       <Footer />
     </GeneralContainer>
   )
