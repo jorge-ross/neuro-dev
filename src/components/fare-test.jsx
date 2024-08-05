@@ -89,10 +89,10 @@ const FareTestSection = () => {
       <CardsContainer>
         <Card>
           <CardImage src={fareImg} alt="Tarifas y Descuentos" />
-          <CardLabel>TARIFAS Y DESCUENTOS</CardLabel>
-          <CardTitle>Descuento 50%</CardTitle>
+          <CardLabel>HONORARIOS</CardLabel>
+          <CardTitle>Tarifas y Acuerdos</CardTitle>
           <CardDescription>
-            Empezar una terapia es un paso importante, por eso te concedo un 50% de descuento en tu primera sesión.
+            Empezar una terapia es un paso importante.
           </CardDescription>
           <CardLink href="#">
             Leer más <Arrow>➔</Arrow>

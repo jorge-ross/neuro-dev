@@ -196,8 +196,9 @@ function Header() {
   return (
     <Gral>
     <NavBarContainer isOpen={isOpen}>
-      <ImgContainer src={logo} alt='Neuro-dev' />
-
+      <Link to="/" onClick={() => window.scrollTo(0, 0)}>
+        <ImgContainer src={logo} alt='Neuro-dev' />
+      </Link>
       <HamburgerIcon 
         onClick={toggleMenu}
         isOpen={isOpen}
@@ -206,7 +207,9 @@ function Header() {
       </HamburgerIcon>
 
       <OptionsContainer>
-        <Option >Sobre mí</Option>
+        <NavOption to="/about" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Sobre mí</Option>
+        </NavOption>
         <Option >Servicios</Option>
         <Option >Blog</Option>
         <Option >Contacto</Option>
