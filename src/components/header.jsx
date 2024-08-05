@@ -210,9 +210,13 @@ function Header() {
         <NavOption to="/about" onClick={() => window.scrollTo(0, 0)}>
             <Option>Sobre mí</Option>
         </NavOption>
-        <Option >Servicios</Option>
+        <NavOption to="/services" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Servicios</Option>
+        </NavOption>
         <Option >Blog</Option>
-        <Option >Contacto</Option>
+        <NavOption to="/contact" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Contacto</Option>
+        </NavOption>
       </OptionsContainer>  
 
       <HamMenu visible={isOpen}>
