@@ -242,14 +242,18 @@ function Header() {
             Sobre mí
             <ImUser />
           </NavOption>
-          
-          <NavOption>Servicios
+
+          <NavOption to="/services" onClick={() => window.scrollTo(0, 0)}>
+            Servicios
             <GiBrain />
           </NavOption>
+
           <NavOption>Blog
             <FaPencil />
           </NavOption>
-          <NavOption>Contacto
+
+          <NavOption to="/contact" onClick={() => window.scrollTo(0, 0)}>
+            Contacto
             <GrContact />
           </NavOption>
         </NavOptionsContainer>
