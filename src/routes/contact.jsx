@@ -5,8 +5,7 @@ import Header from '../components/header';
 const GeneralContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0;
+
 `
 
 const ContactSection = styled.section`
@@ -38,6 +37,9 @@ const ContactForm = styled.form`
 
 const FormField = styled.div`
   margin-bottom: 1.5rem;
+  display:flex;
+  flex-direction: column;
+  width: 100%;
 `;
 
 const Label = styled.label`
@@ -48,7 +50,6 @@ const Label = styled.label`
 `;
 
 const Input = styled.input`
-  width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -56,7 +57,6 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
