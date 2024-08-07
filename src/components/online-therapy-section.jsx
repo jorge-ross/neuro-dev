@@ -85,11 +85,23 @@ const PrevArrow = (props) => {
 };
 
 NextArrow.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
+};
+
+NextArrow.defaultProps = {
+  onClick: () => {},
 };
 
 PrevArrow.propTypes = {
   onClick: PropTypes.func.isRequired,
+};
+
+PrevArrow.propTypes = {
+  onClick: PropTypes.func,
+};
+
+PrevArrow.defaultProps = {
+  onClick: () => {},
 };
 
 const OnlineTherapyBenefits = () => {

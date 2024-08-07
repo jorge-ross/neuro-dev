@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-// import { typography } from '../styles/typography';
 import { useState } from 'react';
 import { colors } from '../styles/colors';
 import GralModal from './modals/gral-modal';
+import { Link } from 'react-router-dom';
 
 const Gral = styled.div`
 background: ${colors.stone[200]};
@@ -41,7 +41,7 @@ const ContactInfo = styled.p`
   color: blue;
 `;
 
-const Option = styled.a`
+const Option = styled.p`
 color: ${colors.blue[950]};
 display: block;
 text-decoration: none;
@@ -53,6 +53,13 @@ cursor: pointer;
     text-decoration: underline;
   }
 `
+
+const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+`;
 
 const Footer = () => {
   const [showModal, setShowModal] = useState(false);
@@ -77,15 +84,17 @@ const Footer = () => {
         </Section>
         <Section>
           <SectionTitle>LA CONSULTA</SectionTitle>
-          <Option href="#faq">Preguntas Frecuentes</Option>
-          <Option href="#promotions">Promoción y descuentos</Option>
-          <Option href="#modalities">Modalidades y tarifas</Option>
-          <Option href="#advantages">Ventajas de Terapia Online</Option>
-          <Option href="#therapies">Terapia</Option>
+          <Option>Preguntas Frecuentes</Option>
+          <Option>Promoción y descuentos</Option>
+          <Option>Modalidades y tarifas</Option>
+          <Option>Ventajas de Terapia Online</Option>
+          <Option>Terapia</Option>
         </Section>
         <Section>
           <SectionTitle>TU PSICÓLOGO</SectionTitle>
-          <Option href="#about">¿Quién soy?</Option>
+          <StyledLink to="/about" onClick={() => window.scrollTo(0, 0)}>
+            <Option>¿Quién soy?</Option>
+          </StyledLink>
         </Section>
         <Section>
           <SectionTitle>CONTACTO</SectionTitle>

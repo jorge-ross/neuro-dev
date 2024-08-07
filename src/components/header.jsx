@@ -58,7 +58,7 @@ const OptionsContainer = styled.li`
   }
 `
 
-const Option = styled.a`
+const Option = styled.p`
 ${typography.head.xss}
 color: ${colors.blue[950]};
 margin: 0;
