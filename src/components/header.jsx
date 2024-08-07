@@ -12,7 +12,7 @@ import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
 import { FaPencil } from "react-icons/fa6";
 import { GrContact } from "react-icons/gr";
-import Modal from "./modal"
+import Modal from "./modals/modal"
 
 const Gral = styled.div`
 background: white;

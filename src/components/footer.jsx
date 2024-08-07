@@ -1,5 +1,8 @@
 import styled from 'styled-components';
+// import { typography } from '../styles/typography';
+import { useState } from 'react';
 import { colors } from '../styles/colors';
+import GralModal from './modals/gral-modal';
 
 const Gral = styled.div`
 background: ${colors.stone[200]};
@@ -32,45 +35,57 @@ const SectionTitle = styled.h3`
   text-align: center;
 `;
 
-const Link = styled.a`
-  display: block;
-  color: blue;
-  text-decoration: none;
-  margin: 0.5rem 0;
-  text-align: center;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
-
 const ContactInfo = styled.p`
   margin: 0.5rem 0;
   text-align: center;
   color: blue;
 `;
 
+const Option = styled.a`
+color: ${colors.blue[950]};
+display: block;
+text-decoration: none;
+margin: 0.5rem 0;
+text-align: center;
+cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`
+
 const Footer = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
+  const [showCancellationModal, setShowCancellationModal] = useState(false);
+
+  const handleOpenModal = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
   return (
     <Gral>
       <FooterContainer>
         <Section>
           <SectionTitle>INFORMACIÓN PARA TÍ</SectionTitle>
-          <Link href="#privacy">Aviso de privacidad</Link>
-          <Link href="#terms">Términos y condiciones</Link>
-          <Link href="#cancellation">Políticas de cancelación</Link>
+          <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
+          <Option onClick={() => setShowTermsModal(true)}>Términos y condiciones</Option>
+          <Option onClick={() => setShowCancellationModal(true)}>Políticas de cancelación</Option>
         </Section>
         <Section>
           <SectionTitle>LA CONSULTA</SectionTitle>
-          <Link href="#faq">Preguntas Frecuentes</Link>
-          <Link href="#promotions">Promoción y descuentos</Link>
-          <Link href="#modalities">Modalidades y tarifas</Link>
-          <Link href="#advantages">Ventajas de Terapia Online</Link>
-          <Link href="#therapies">Terapia</Link>
+          <Option href="#faq">Preguntas Frecuentes</Option>
+          <Option href="#promotions">Promoción y descuentos</Option>
+          <Option href="#modalities">Modalidades y tarifas</Option>
+          <Option href="#advantages">Ventajas de Terapia Online</Option>
+          <Option href="#therapies">Terapia</Option>
         </Section>
         <Section>
           <SectionTitle>TU PSICÓLOGO</SectionTitle>
-          <Link href="#about">¿Quién soy?</Link>
+          <Option href="#about">¿Quién soy?</Option>
         </Section>
         <Section>
           <SectionTitle>CONTACTO</SectionTitle>
@@ -79,6 +94,32 @@ const Footer = () => {
           <ContactInfo>mi_mail@gmail.com</ContactInfo>
         </Section>
       </FooterContainer>
+
+      <GralModal show={showModal} onClose={handleCloseModal}>
+        <p>
+          Aquí va el texto completo de tu aviso de privacidad. Este texto debe
+          incluir todos los detalles sobre cómo manejas los datos personales,
+          cómo se almacenan, quién tiene acceso, etc. Asegúrate de que este
+          texto cumpla con las regulaciones de privacidad aplicables a tu
+          región.
+        </p>
+        <p>
+          También puedes incluir enlaces a secciones específicas de tu política
+          de privacidad para mayor claridad y cualquier información de contacto
+          en caso de que los usuarios tengan preguntas o inquietudes.
+        </p>
+      </GralModal>
+
+      <GralModal show={showTermsModal} onClose={() => setShowTermsModal(false)}>
+        <h2>Términos y Condiciones</h2>
+        <p>... Your terms and conditions content ...</p>
+      </GralModal>
+
+      <GralModal show={showCancellationModal} onClose={() => setShowCancellationModal(false)}>
+        <h2>Políticas de Cancelación</h2>
+        <p>... Your cancellation policy content ...</p>
+      </GralModal>
+
       </Gral>
   );
 };
