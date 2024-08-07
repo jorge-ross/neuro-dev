@@ -84,7 +84,9 @@ const Footer = () => {
         </Section>
         <Section>
           <SectionTitle>LA CONSULTA</SectionTitle>
-          <Option>Preguntas Frecuentes</Option>
+          <StyledLink to="/frecuent-questions" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Preguntas Frecuentes</Option>
+          </StyledLink>
           <Option>Promoción y descuentos</Option>
           <Option>Modalidades y tarifas</Option>
           <Option>Ventajas de Terapia Online</Option>

@@ -5,6 +5,7 @@ import Home from './routes/home'
 import About from './routes/about'
 import Services from './routes/services'
 import Contact from './routes/contact'
+import FreqQuestions from './routes/FAQ'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="frecuent-questions" element={<FreqQuestions />} />
         <Route path="*" element={<Navigate to="/" replace={true} />} />
       </Routes>
     </Router>
