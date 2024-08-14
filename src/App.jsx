@@ -6,6 +6,7 @@ import About from './routes/about'
 import Services from './routes/services'
 import Contact from './routes/contact'
 import FreqQuestions from './routes/FAQ'
+import Promotions from './routes/promos'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="services" element={<Services />} />
         <Route path="contact" element={<Contact />} />
         <Route path="frecuent-questions" element={<FreqQuestions />} />
+        <Route path="promotions" element={<Promotions />} />
         <Route path="*" element={<Navigate to="/" replace={true} />} />
       </Routes>
     </Router>
