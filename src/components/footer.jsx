@@ -91,8 +91,12 @@ const Footer = () => {
           <StyledLink to="/promotions" onClick={() => window.scrollTo(0, 0)}>
             <Option>Promoción y descuentos</Option>
           </StyledLink>
+
+          <StyledLink to="/" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Ventajas de Terapia Online</Option>
+          </StyledLink>
           
-          <Option>Ventajas de Terapia Online</Option>
+          
           <Option>Terapia</Option>
         </Section>
         <Section>
