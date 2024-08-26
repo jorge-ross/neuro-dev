@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import fareImg from '../assets/images/fee.png';
 import testimoniosImage from '../assets/images/client-rate.jpg';
+import { Link } from 'react-router-dom';
 
 const SectionContainer = styled.section`
   display: flex;
@@ -52,13 +53,17 @@ const CardLabel = styled.div`
 `;
 
 const CardTitle = styled.h2`
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   color: #123456;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem 0;
+  min-height: 50px;
 `;
 
 const CardDescription = styled.p`
-   font-size: 1rem;
+  font-size: 1rem;
+  margin: 1rem 0;
   color: #654321;
   overflow: hidden;
   display: -webkit-box;
@@ -69,17 +74,16 @@ const CardDescription = styled.p`
   text-overflow: ellipsis;
 `;
 
-const CardLink = styled.a`
-  font-size: 1rem;
-  color: #4caf50;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-`;
-
 const Arrow = styled.span`
   margin-left: 0.5rem;
   font-size: 1rem;
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
 `;
 
 const FareTestSection = () => {
@@ -87,17 +91,17 @@ const FareTestSection = () => {
     <SectionContainer>
       <SectionTitle>Descubre Más</SectionTitle>
       <CardsContainer>
+        <StyledLink to="/promotions"  onClick={() => window.scrollTo(0, 0)}>
         <Card>
           <CardImage src={fareImg} alt="Tarifas y Descuentos" />
           <CardLabel>HONORARIOS</CardLabel>
-          <CardTitle>Tarifas y Acuerdos</CardTitle>
+          <CardTitle>Tarifas, acuerdos y descuentos</CardTitle>
           <CardDescription>
             Empezar una terapia es un paso importante.
           </CardDescription>
-          <CardLink href="#">
-            Leer más <Arrow>➔</Arrow>
-          </CardLink>
         </Card>
+        </StyledLink>
+        <StyledLink href="#">
         <Card>
           <CardImage src={testimoniosImage} alt="Testimonios" />
           <CardLabel>TESTIMONIOS</CardLabel>
@@ -105,10 +109,8 @@ const FareTestSection = () => {
           <CardDescription>
             Este será tu espacio donde el tiempo y foco seas únicamente tú.
           </CardDescription>
-          <CardLink href="#">
-            Leer más <Arrow>➔</Arrow>
-          </CardLink>
         </Card>
+        </StyledLink>
       </CardsContainer>
     </SectionContainer>
   );

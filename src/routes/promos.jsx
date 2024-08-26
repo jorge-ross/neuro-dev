@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import savingsImage from '../assets/images/savings.png'
 import psicImage from '../assets/images/psic.png'
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -93,6 +94,7 @@ const Promotions = () => {
         </PromotionCard>
       </PromotionWrapper>
     </PromotionsContainer>
+    <Footer />
     </GeneralContainer>
   );
 };

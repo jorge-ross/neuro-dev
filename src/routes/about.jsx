@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
+import Footer from "../components/footer";
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -57,6 +58,7 @@ const About = () => {
           y personalizado.
         </Description>
       </AboutSection>
+      <Footer />
     </GeneralContainer>
   );
 };

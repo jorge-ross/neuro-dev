@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -97,6 +98,7 @@ const Services = () => {
           </ServiceCategory>
         </ServicesContainer>
       </ServicesSection>
+      <Footer />
       </GeneralContainer>
   );
 };

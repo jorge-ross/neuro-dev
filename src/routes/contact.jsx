@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -157,6 +158,7 @@ const Contact = () => {
         <SubmitButton type="submit">Enviar</SubmitButton>
       </ContactForm>
     </ContactSection>
+    <Footer />
     </GeneralContainer>
   );
 };
