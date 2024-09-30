@@ -19,7 +19,9 @@ const SectionTitle = styled.h1`
 
 const SectionSubtitle = styled.h2`
   font-size: 1.5rem;
-  color: ${colors.grey[800]};
+  color: ${colors.blue[900]};
+  padding-top: 2rem;
+  margin-bottom: 0;
 `;
 
 const Image = styled.img`
@@ -68,22 +70,16 @@ const IntroSection = () => {
   return (
       <SectionContainer>
       <SectionTitle>Psicología y Neuropsicología</SectionTitle>
-      <SectionSubtitle>Tu camino hacia el bienestar mental comienza aquí</SectionSubtitle>
       <Image src={psychologyImage} alt="Psicología y Neuropsicología" />
       <Description>
         Bienvenido a nuestros servicios de psicología y neuropsicología. Estamos dedicados a brindar atención compasiva y basada en evidencia para ayudarte a alcanzar el bienestar mental y mejorar tu calidad de vida. Nuestros servicios están diseñados para satisfacer tus necesidades individuales y están pensados para apoyarte en cada paso de tu camino.
       </Description>
+      <SectionSubtitle>Algunos servicios</SectionSubtitle>
       <ServicesContainer>
         <ServiceCard>
           <ServiceTitle>Terapia Individual</ServiceTitle>
           <ServiceDescription>
             Sesiones de terapia personalizadas para ayudarte a enfrentar los desafíos de la vida y trabajar hacia tus metas personales.
-          </ServiceDescription>
-        </ServiceCard>
-        <ServiceCard>
-          <ServiceTitle>De Pareja</ServiceTitle>
-          <ServiceDescription>
-            Ayudamos a las parejas a mejorar su comunicación y resolver conflictos para fortalecer su relación.
           </ServiceDescription>
         </ServiceCard>
         <ServiceCard>
@@ -96,12 +92,6 @@ const IntroSection = () => {
           <ServiceTitle>Rehabilitación Neuropsicológica</ServiceTitle>
           <ServiceDescription>
             Sesiones de terapia colaborativa para fomentar el apoyo entre pares y compartir experiencias en un entorno grupal.
-          </ServiceDescription>
-        </ServiceCard>
-        <ServiceCard>
-          <ServiceTitle>Dificultades de Aprendizaje</ServiceTitle>
-          <ServiceDescription>
-            Las dificultades de aprendizaje pueden afectar la lectura, la escritura y el cálculo. Ofrecemos evaluaciones y programas de intervención para ayudar a niños y adolescentes a superar estos desafíos.
           </ServiceDescription>
         </ServiceCard>
       </ServicesContainer>

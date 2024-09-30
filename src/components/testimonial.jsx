@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import fareImg from '../assets/images/fee.png';
-import testimoniosImage from '../assets/images/client-rate.jpg';
 import { Link } from 'react-router-dom';
+import { colors } from '../styles/colors';
+import testimonials from '../data/testimonials';
 
 const SectionContainer = styled.section`
   display: flex;
@@ -33,7 +33,7 @@ const Card = styled.div`
   padding: 1rem;
   max-width: 300px;
   margin: 1rem;
-
+  border: 1px solid black;
 `;
 
 const CardImage = styled.img`
@@ -43,13 +43,12 @@ const CardImage = styled.img`
 `;
 
 const CardLabel = styled.div`
-  background-color: #4caf50;
-  color: white;
+  color: ${colors.blue[900]};
   padding: 0.5rem 1rem;
-  margin-top: -1.5rem;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 2.5rem;
   font-weight: bold;
+
 `;
 
 const CardTitle = styled.h2`
@@ -74,11 +73,6 @@ const CardDescription = styled.p`
   text-overflow: ellipsis;
 `;
 
-const Arrow = styled.span`
-  margin-left: 0.5rem;
-  font-size: 1rem;
-`;
-
 const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
@@ -86,34 +80,20 @@ const StyledLink = styled(Link)`
   text-decoration: none;
 `;
 
-const FareTestSection = () => {
+const TestimonialSection = () => {
   return (
     <SectionContainer>
-      <SectionTitle>Descubre Más</SectionTitle>
-      <CardsContainer>
-        <StyledLink to="/promotions"  onClick={() => window.scrollTo(0, 0)}>
-        <Card>
-          <CardImage src={fareImg} alt="Tarifas y Descuentos" />
-          <CardLabel>HONORARIOS</CardLabel>
-          <CardTitle>Tarifas, acuerdos y descuentos</CardTitle>
-          <CardDescription>
-            Empezar una terapia es un paso importante.
-          </CardDescription>
-        </Card>
-        </StyledLink>
-        <StyledLink href="#">
-        <Card>
-          <CardImage src={testimoniosImage} alt="Testimonios" />
-          <CardLabel>TESTIMONIOS</CardLabel>
-          <CardTitle>Una luz para ti</CardTitle>
-          <CardDescription>
-            Este será tu espacio donde el tiempo y foco seas únicamente tú.
-          </CardDescription>
-        </Card>
-        </StyledLink>
-      </CardsContainer>
+        <CardLabel>Lo que los pacientes opinan</CardLabel>
+        <CardsContainer>
+          {testimonials.map((testimonial) => (
+          <Card key={testimonial.id}>
+            <p>{testimonial.text}</p>
+            <p><strong>- {testimonial.author}</strong></p>
+          </Card>
+        ))}
+        </CardsContainer>
     </SectionContainer>
   );
 };
 
-export default FareTestSection;
+export default TestimonialSection;
