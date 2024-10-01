@@ -14,7 +14,7 @@ const AboutSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  background-color: white;
   text-align: center;
 `;
 

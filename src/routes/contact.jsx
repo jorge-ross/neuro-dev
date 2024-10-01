@@ -11,7 +11,7 @@ const GeneralContainer = styled.div`
 
 const ContactSection = styled.section`
   padding: 4rem 2rem;
-  background-color: #f4f4f9;
+  background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;

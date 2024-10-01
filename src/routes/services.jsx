@@ -11,7 +11,7 @@ const GeneralContainer = styled.div`
 
 const ServicesSection = styled.section`
   padding: 4rem 2rem;
-  background-color: #f9f9f9;
+  background-color: white;
 `;
 
 const SectionTitle = styled.h1`

@@ -7,8 +7,9 @@ const SectionContainer = styled.section`
   align-items: center;
   justify-content: center;
   padding: 4rem 2rem;
-  background-color: #f5f5f5;
+  background-color: white;
   text-align: center;
+  width: 70%;
 
   @media (max-width: 768px) {
     flex-direction: column;

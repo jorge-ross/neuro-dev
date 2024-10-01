@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import { colors } from '../styles/colors';
-import psychologyImage from '../assets/images/int-section-img.png'; // Add a relevant image
+import psychologyImage from '../assets/images/nda.png'; // Add a relevant image
 
 const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 3rem 2rem;
-  background-color: ${colors.stone[200]};
+  background-color: white;
   text-align: center;
 `;
 

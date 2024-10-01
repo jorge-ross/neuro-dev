@@ -13,9 +13,11 @@ const SectionContainer = styled.section`
 `;
 
 const SectionTitle = styled.h1`
-  font-size: 2rem;
-  color: #123456; 
-  margin-bottom: 1rem;
+  color: ${colors.blue[900]};
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  align-self: flex-start;
 `;
 
 const CardsContainer = styled.div`
@@ -34,56 +36,23 @@ const Card = styled.div`
   max-width: 300px;
   margin: 1rem;
   border: 1px solid black;
+  border-radius: 2rem;
 `;
 
-const CardImage = styled.img`
-  width: 100%;
-  max-height: 320px;
-  border-radius: 10px;
-`;
-
-const CardLabel = styled.div`
-  color: ${colors.blue[900]};
-  padding: 0.5rem 1rem;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-  font-weight: bold;
-
-`;
-
-const CardTitle = styled.h2`
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  color: #123456;
-  margin: 0.5rem 0;
-  min-height: 50px;
-`;
-
-const CardDescription = styled.p`
-  font-size: 1rem;
-  margin: 1rem 0;
-  color: #654321;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  line-clamp: 2;
-  box-orient: vertical;
-  text-overflow: ellipsis;
-`;
 
 const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
   align-items: center;
   text-decoration: none;
+  align-self: flex-end;
+  padding: 1rem;
 `;
 
 const TestimonialSection = () => {
   return (
     <SectionContainer>
-        <CardLabel>Lo que los pacientes opinan</CardLabel>
+        <SectionTitle>Lo que los pacientes opinan</SectionTitle>
         <CardsContainer>
           {testimonials.map((testimonial) => (
           <Card key={testimonial.id}>
@@ -92,6 +61,7 @@ const TestimonialSection = () => {
           </Card>
         ))}
         </CardsContainer>
+        <StyledLink>Ver todas las opiniones →</StyledLink>
     </SectionContainer>
   );
 };
