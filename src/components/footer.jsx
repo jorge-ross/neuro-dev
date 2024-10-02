@@ -49,7 +49,7 @@ const Icon = styled.span`
 const Footer = () => {
 
   return (
-    <Gral>
+    <Gral id="contact">
       <FooterContainer>
         <Section>
           <SectionTitle>TE ESCUCHO...</SectionTitle>

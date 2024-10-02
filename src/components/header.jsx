@@ -193,6 +193,13 @@ function Header() {
     setIsOpen(false)
   }
 
+  const handleScrollToFooter = () => {
+    const footerElement = document.getElementById('contact');
+    if (footerElement) {
+      footerElement.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsOpen(false);
+  }
   return (
     <Gral>
     <NavBarContainer isOpen={isOpen}>
@@ -214,7 +221,7 @@ function Header() {
             <Option>Servicios</Option>
         </NavOption>
         <Option >Blog</Option>
-        <NavOption to="/contact" onClick={() => window.scrollTo(0, 0)}>
+        <NavOption onClick={handleScrollToFooter}>
             <Option>Contacto</Option>
         </NavOption>
       </OptionsContainer>  
@@ -252,7 +259,7 @@ function Header() {
             <FaPencil />
           </NavOption>
 
-          <NavOption to="/contact" onClick={() => window.scrollTo(0, 0)}>
+          <NavOption onClick={handleScrollToFooter}>
             Contacto
             <GrContact />
           </NavOption>
