@@ -4,8 +4,11 @@ import styled from 'styled-components';
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 400px;
-  margin: 20px auto;
+  width: 80%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const Input = styled.input`
@@ -29,6 +32,8 @@ const Button = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  max-width: 150px;
+  margin-top: 10px;
 
   &:hover {
     background-color: grey;
