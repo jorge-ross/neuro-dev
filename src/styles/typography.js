@@ -9,6 +9,10 @@ export const typography = {
     font-size: 0.65rem;
     line-height: 0.55rem;
     `,
+    xss: `
+    font-size: 0.75rem;
+    line-height: 0.55rem;
+    `,
     sm: `
     font-size: 0.875rem;
     line-height: 1.25rem;
