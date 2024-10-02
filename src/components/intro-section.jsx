@@ -7,7 +7,7 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3rem 2rem;
+  padding: 7rem 2rem 0;
   background-color: white;
   text-align: center;
 `;

@@ -2,10 +2,8 @@ import styled from '@emotion/styled';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { keyframes } from '@emotion/react';
-import logo from './../assets/images/logo.png'
 import logoSideBar from './../assets/images/logo-hde.png'
 import { typography } from '../styles/typography';
-import { colors } from '../styles/colors';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5';
 import { ImUser } from "react-icons/im";
@@ -20,47 +18,51 @@ width: 100%;
 display: flex;
 justify-content: center;
 border-bottom: 1px solid black;
+height: 80px;
+position: fixed;
+top: 0;
+z-index: 10;
 `
 
 const NavBarContainer = styled.div`
 display: flex;
-flex-direction: row;
-padding: 10px 40px;
+padding: 1rem 2.5rem;
 align-items: center;
 justify-content: space-between;
-width: 80%;
+width: 90%;
 
-@media (max-width: 610px) {
-  padding: 10px 20px;
-}
-`
 
-const ImgContainer = styled.img`
-display: flex;
-
-width: 164px;
-cursor: pointer;
-
-@media (max-width: 300px) {
-  height: 80px;
-  width: 144px;
-}
+  @media (max-width: 650px) {
+    padding: 1rem 1.5rem;
+  }
 `
 
 const OptionsContainer = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 26px;
+  gap: 1.5rem;
 
-  @media (max-width: 610px) {
+  @media (max-width: 650px) {
     display: none;
   }
 `
 
+const BrandTitle = styled.h3`
+  ${typography.head.md}
+  margin: 0;
+  color: black;
+  font-weight: 600;
+`;
+
+const BrandHomeLink = styled(Link)`
+  align-items: center;
+  text-decoration: none;
+`;
+
 const Option = styled.p`
 ${typography.head.xss}
-color: ${colors.blue[950]};
+color: black;
 margin: 0;
 font-weight: 600;
 padding: 16px 0;
@@ -97,13 +99,13 @@ const rotate = keyframes`
 const HamburgerIcon = styled.div`
   display: none;
   cursor: pointer;
-  color: ${colors.blue[950]};
+  color: black;
   position: absolute;
-  right: 20px;
+  right: 1.5rem;
   padding-top: 4px;
   border: 1px solid #1D2C60;
 
-  @media (max-width: 610px) {
+  @media (max-width: 650px) {
     display: ${props => (props.isOpen ? "none" : "block")};
   }
 `;
@@ -132,7 +134,7 @@ padding: 0.5rem 0;
 const ImgHeader = styled.div`
 display: flex;
 flex-direction: column;
-background-color: ${colors.blue[950]};
+background-color: black;
 border-bottom-left-radius: 35%;
 cursor: pointer;
 `
@@ -141,19 +143,38 @@ const NavOptionsContainer = styled.div`
 display: flex;
 flex-direction: column;
 align-items: flex-end;
-padding: 1rem 1.5rem 0 0;
+padding: 1.5rem 1.5rem 0 0;
 background-color: white;
+gap: 1.5rem;
 `
 
 const NavOption = styled(Link)`
   ${typography.text.lg}
-  color: ${colors.blue[950]};
+  color: black;
   font-weight: 600;
-  padding: 1rem 0;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  text-decoration: none;
+  cursor: pointer;
+
+  @media (max-width: 500px) {
+    ${typography.text.md};
+  }
+
+  @media (max-width: 300px) {
+    ${typography.text.xs};
+  }
+`;
+
+const HamOption = styled(Link)`
+  ${typography.text.lg}
+  color: black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
   text-decoration: none;
   cursor: pointer;
 
@@ -203,9 +224,9 @@ function Header() {
   return (
     <Gral>
     <NavBarContainer isOpen={isOpen}>
-      <Link to="/" onClick={() => window.scrollTo(0, 0)}>
-        <ImgContainer src={logo} alt='Neuro-dev' />
-      </Link>
+      <BrandHomeLink to="/" onClick={() => window.scrollTo(0, 0)}>
+        <BrandTitle>Neuro-dev</BrandTitle>
+      </BrandHomeLink>
       <HamburgerIcon 
         onClick={toggleMenu}
         isOpen={isOpen}
@@ -245,24 +266,24 @@ function Header() {
         </ImgHeader>
 
         <NavOptionsContainer>
-          <NavOption to="/about" onClick={() => window.scrollTo(0, 0)}>
+          <HamOption to="/about" onClick={() => window.scrollTo(0, 0)}>
             Sobre mí
             <ImUser />
-          </NavOption>
+          </HamOption>
 
-          <NavOption to="/services" onClick={() => window.scrollTo(0, 0)}>
+          <HamOption to="/services" onClick={() => window.scrollTo(0, 0)}>
             Servicios
             <GiBrain />
-          </NavOption>
+          </HamOption>
 
-          <NavOption>Blog
+          <HamOption>Blog
             <FaPencil />
-          </NavOption>
+          </HamOption>
 
-          <NavOption onClick={handleScrollToFooter}>
+          <HamOption onClick={handleScrollToFooter}>
             Contacto
             <GrContact />
-          </NavOption>
+          </HamOption>
         </NavOptionsContainer>
       </HamMenu>
 
