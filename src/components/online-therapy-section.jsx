@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import convenienceIcon from '../assets/images/comodidad.png'; // Reemplaza con la ruta de tu icono
-import accessibilityIcon from '../assets/images/accesibilidad.png'; // Reemplaza con la ruta de tu icono
+import convenienceIcon from '../assets/images/comodidad.png'; 
+import accessibilityIcon from '../assets/images/accesibilidad.png';
 import privacyIcon from '../assets/images/privacy.png';
 import parkingIcon from '../assets/images/parking.png';
 
@@ -79,8 +79,7 @@ const NextArrow = (props) => {
   return <Arrow onClick={onClick} style={{ right: '-35px' }}>›</Arrow>;
 };
 
-const PrevArrow = (props) => {
-  const { onClick } = props;
+const PrevArrow = ({ onClick = () => {} }) => {
   return <Arrow onClick={onClick} style={{ left: '-35px' }}>‹</Arrow>;
 };
 
@@ -88,21 +87,10 @@ NextArrow.propTypes = {
   onClick: PropTypes.func,
 };
 
-NextArrow.defaultProps = {
-  onClick: () => {},
-};
-
-PrevArrow.propTypes = {
-  onClick: PropTypes.func.isRequired,
-};
-
 PrevArrow.propTypes = {
   onClick: PropTypes.func,
 };
 
-PrevArrow.defaultProps = {
-  onClick: () => {},
-};
 
 const OnlineTherapyBenefits = () => {
   const settings = {
