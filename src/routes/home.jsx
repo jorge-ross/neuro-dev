@@ -6,6 +6,7 @@ import StepSection from "../components/step-section";
 import MentalHealthSection from "../components/mental-health-section";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
 import TestimonialSection from "../components/testimonial";
+import Terms from "../components/terms";
 
 
 const GeneralContainer = styled.div`
@@ -26,6 +27,7 @@ function Home() {
       <StepSection />
       <TestimonialSection />
       <Footer />
+      <Terms />
     </GeneralContainer>
   )
 }

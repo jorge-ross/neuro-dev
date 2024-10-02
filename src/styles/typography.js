@@ -56,13 +56,12 @@ export const typography = {
     `,
     lgx: `
     font-size: 3rem;
-    line-height: 2.2rem;
+    line-height: 2rem;
     `,
     xl: `
     font-size: 4rem;
     line-height: 5rem;
     font-style: normal;
-    letter-spacing: -0.5px;
     line-height: 88px;
     `,
     xxl: `
@@ -103,8 +102,10 @@ export const typography2 = {
     lg: `
     font-size: 1.125rem;
     line-height: 1.41rem;
-    font-style: normal;
-    text-align: center;
+    `,
+    lgx: `
+    font-size: 3rem;
+    line-height: 2.2rem;
     `,
     xl: `
     font-size: 1.3rem;
@@ -136,6 +137,10 @@ export const typography2 = {
     lg: `
     font-size: 2.25rem;
     line-height: 2.5rem;
+    `,
+    lgx: `
+    font-size: 3rem;
+    line-height: 2.2rem;
     `,
     xl: `
     font-size: 4rem;

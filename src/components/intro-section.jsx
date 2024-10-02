@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from '../styles/colors';
-import psychologyImage from '../assets/images/nda.png'; // Add a relevant image
+import psychologyImage from '../assets/images/nda.png';
+import { typography } from '../styles/typography';
 
 const SectionContainer = styled.section`
   display: flex;
@@ -12,9 +13,12 @@ const SectionContainer = styled.section`
 `;
 
 const SectionTitle = styled.h1`
-  font-size: 2.5rem;
-  color: ${colors.blue[900]};
+  ${typography.head.lgx}
+  font-size: 3rem;
+  color: ${colors.black[900]};
   margin-bottom: 1rem;
+  font-weight: 600;
+   letter-spacing: 1px;
 `;
 
 const SectionSubtitle = styled.h2`
@@ -69,7 +73,7 @@ const IntroSection = () => {
 
   return (
       <SectionContainer>
-      <SectionTitle>Psicología y Neuropsicología</SectionTitle>
+      <SectionTitle>Tu camino hacia la salud mental.</SectionTitle>
       <Image src={psychologyImage} alt="Psicología y Neuropsicología" />
       <Description>
         Bienvenido a nuestros servicios de psicología y neuropsicología. Estamos dedicados a brindar atención compasiva y basada en evidencia para ayudarte a alcanzar el bienestar mental y mejorar tu calidad de vida. Nuestros servicios están diseñados para satisfacer tus necesidades individuales y están pensados para apoyarte en cada paso de tu camino.
