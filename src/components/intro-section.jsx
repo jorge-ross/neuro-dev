@@ -12,33 +12,65 @@ const SectionContainer = styled.section`
 `;
 
 const SectionTitle = styled.h1`
-  ${typography.head.lgx}
-  font-size: 3rem;
+  ${typography.head.xl}
   color: black;
-  margin-bottom: 1rem;
+  margin: 2.5rem 0 1.5rem 0;
   font-weight: 600;
-   letter-spacing: 1px;
+  line-height: 1.1;
+
+  @media (max-width: 500px) {
+    ${typography.head.lga}
+    line-height: 1.1;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 
 const Description = styled.p`
-  font-size: 1.2rem;
+  ${typography.text.xl};
   color: ${colors.grey[700]};
   line-height: 1.6;
   max-width: 600px;
   width: 90%;
+  margin: 0 0 1.5rem 0;
+
+  @media (max-width: 500px) {
+    ${typography.text.md}
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
 `;
+
+const BookButton = styled.button`
+  ${typography.text.sm}
+  max-width: 250px;
+  padding: 0.7rem 2rem;
+  background-color: black;
+  color: white;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+`
 
 
 
 const IntroSection = () => {
 
+  const handleScrollToFooter = () => {
+    const footerElement = document.getElementById('contact');
+    if (footerElement) {
+      footerElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
   return (
       <SectionContainer>
       <SectionTitle>Tu camino hacia la salud mental.</SectionTitle>
       <Description>
-        Bienvenido a nuestros servicios de psicología y neuropsicología. Estamos dedicados a brindar atención compasiva y basada en evidencia para ayudarte a alcanzar el bienestar mental y mejorar tu calidad de vida. Nuestros servicios están diseñados para satisfacer tus necesidades individuales y están pensados para apoyarte en cada paso de tu camino.
+        Comienza hoy tu viaje hacia una mente más saludable con Neuro-dev. Un servicio profesional adaptado a tus necesidades.
       </Description>
+      <BookButton onClick={handleScrollToFooter}>Agenda tu consulta</BookButton>
     </SectionContainer>
   );
 };
