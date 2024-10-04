@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 import { keyframes } from '@emotion/react';
-import logoSideBar from './../assets/images/logo-hde.png'
+import logond from '../assets/images/logond.png';
+import logoSideBar from './../assets/images/logow.png'
 import { typography } from '../styles/typography';
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { IoClose } from 'react-icons/io5';
@@ -53,11 +54,18 @@ const BrandTitle = styled.h3`
   margin: 0;
   color: black;
   font-weight: 600;
+
+  @media (max-width: 330px) {
+    ${typography.head.xs};
+  }
 `;
 
 const BrandHomeLink = styled(Link)`
   align-items: center;
   text-decoration: none;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
 `;
 
 const Option = styled.p`
@@ -127,7 +135,7 @@ const CloseIcon = styled.div`
 const Logo = styled.img`
 display: flex;
 align-self: center;
-width: 40%;
+width: 35%;
 padding: 0.5rem 0;
 `
 
@@ -177,6 +185,8 @@ const HamOption = styled(Link)`
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid black;
 
   @media (max-width: 500px) {
     ${typography.text.md};
@@ -188,11 +198,19 @@ const HamOption = styled(Link)`
 `;
 
 const TitleHeader = styled.h1`
-${typography.head.sm};
-color: white;
-margin: 0;
-text-align: center;
-padding-bottom: 3rem;
+  ${typography.head.md};
+  color: white;
+  margin: 0;
+  text-align: center;
+  padding-bottom: 3rem;
+
+  @media (max-width: 400px) {
+    ${typography.head.sm};
+  }
+
+  @media (max-width: 300px) {
+    ${typography.head.xss};
+  }
 `
 
 const StyledLink = styled(Link)`
@@ -201,6 +219,17 @@ const StyledLink = styled(Link)`
   align-items: center;
   text-decoration: none;
 `;
+
+const BrandContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+`
+
+const LogoImgCont = styled.img`
+  max-width: 2rem;
+`
 
 function Header() {
 
@@ -224,9 +253,13 @@ function Header() {
   return (
     <Gral>
     <NavBarContainer isOpen={isOpen}>
-      <BrandHomeLink to="/" onClick={() => window.scrollTo(0, 0)}>
-        <BrandTitle>Neuro-dev</BrandTitle>
-      </BrandHomeLink>
+      <BrandContainer>
+        <BrandHomeLink to="/" onClick={() => window.scrollTo(0, 0)}>
+          <LogoImgCont src={logond} alt="logo" />
+          <BrandTitle>Neuro-dev</BrandTitle>
+        </BrandHomeLink>
+      </BrandContainer>
+
       <HamburgerIcon 
         onClick={toggleMenu}
         isOpen={isOpen}
@@ -248,6 +281,8 @@ function Header() {
       </OptionsContainer>  
 
       <HamMenu visible={isOpen}>
+
+    {/* Hamburger Menu Options */}
 
         <ImgHeader>
         <CloseIcon
