@@ -7,6 +7,7 @@ import MentalHealthSection from "../components/mental-health-section";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
 import TestimonialSection from "../components/testimonial";
 import Terms from "../components/terms";
+import Services from "../components/services";
 
 
 const GeneralContainer = styled.div`
@@ -22,6 +23,7 @@ function Home() {
     <GeneralContainer>
       <Header />
       <IntroSection />
+      <Services />
       <MentalHealthSection />
       <OnlineTherapyBenefits />
       <StepSection />

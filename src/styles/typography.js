@@ -1,6 +1,6 @@
 export const fonts = {
-  primary: `'Ubuntu', sans-serif`,
-  secondary: `'Cherry Bomb One', cursive`,
+  primary: `sans-serif`,
+  secondary: `'Roboto', sans-serif`,
 };
 
 export const typography = {

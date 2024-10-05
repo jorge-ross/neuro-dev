@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { typography } from '../styles/typography';
+import { typography, typography2 } from '../styles/typography';
 
 const ServicesContainer = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const ServicesContainer = styled.div`
 `;
 
 const ServiceCard = styled.div`
-  background-color: white;
+  background-color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 2rem;
@@ -19,22 +19,27 @@ const ServiceCard = styled.div`
   text-align: left;
 `;
 
-const ServiceTitle = styled.h3`
-  font-size: 1.4rem;
-  color: ${colors.blue[900]};
-  margin-bottom: 1rem;
+const ServiceTitle = styled.h1`
+  ${typography2.head.sm}
+  color: white;
+  margin: 1rem 0;
 `;
 
 const ServiceDescription = styled.p`
   font-size: 1rem;
-  color: ${colors.grey[700]};
+  color: white;
 `;
 
-const SectionSubtitle = styled.h2`
-  font-size: 1.5rem;
-  color: ${colors.blue[900]};
-  padding-top: 2rem;
-  margin-bottom: 0;
+const SectionSubtitle = styled.h1`
+  ${typography.head.lgx}
+  color: black;
+  padding-top: 4rem;
+  text-align: center;
+
+   @media (max-width: 500px) {
+    ${typography.head.lg};
+    margin-bottom: 0;
+  }
 `;
 
 
@@ -42,7 +47,7 @@ const Services = () => {
 
   return(
     <>
-      <SectionSubtitle>Algunos servicios</SectionSubtitle>
+      <SectionSubtitle>Mis servicios</SectionSubtitle>
         <ServicesContainer>
           <ServiceCard>
             <ServiceTitle>Terapia Individual</ServiceTitle>

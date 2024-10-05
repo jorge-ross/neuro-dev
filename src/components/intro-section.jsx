@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors } from '../styles/colors';
-import { typography } from '../styles/typography';
+import { typography, typography2 } from '../styles/typography';
 
 const SectionContainer = styled.section`
   display: flex;
