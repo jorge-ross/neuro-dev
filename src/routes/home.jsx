@@ -3,7 +3,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import IntroSection from "../components/intro-section";
 import StepSection from "../components/step-section";
-import MentalHealthSection from "../components/mental-health-section";
+import Mision from "../components/mision";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
 import TestimonialSection from "../components/testimonial";
 import Terms from "../components/terms";
@@ -24,7 +24,7 @@ function Home() {
       <Header />
       <IntroSection />
       <Services />
-      <MentalHealthSection />
+      <Mision />
       <OnlineTherapyBenefits />
       <StepSection />
       <TestimonialSection />

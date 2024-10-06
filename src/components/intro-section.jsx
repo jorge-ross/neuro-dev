@@ -28,7 +28,7 @@ const SectionTitle = styled.h1`
 
 
 const Description = styled.p`
-  ${typography.text.xl};
+  ${typography2.text.xl};
   color: ${colors.grey[700]};
   line-height: 1.6;
   max-width: 600px;

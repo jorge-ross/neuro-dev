@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { typography, typography2 } from '../styles/typography';
+import { Link } from 'react-router-dom';
+import { colors } from '../styles/colors';
 
 const ServicesContainer = styled.div`
   display: flex;
@@ -16,16 +18,22 @@ const ServiceCard = styled.div`
   margin: 1rem;
   flex: 1 1 300px;
   max-width: 300px;
+  min-height: 150px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 `;
 
 const ServiceTitle = styled.h1`
   ${typography2.head.sm}
   color: white;
-  margin: 1rem 0;
+  margin: 0 0 1rem 0;
 `;
 
 const ServiceDescription = styled.p`
+${typography.text.xss}
+  margin: 0;
   font-size: 1rem;
   color: white;
 `;
@@ -42,6 +50,17 @@ const SectionSubtitle = styled.h1`
   }
 `;
 
+const AllServices = styled(Link)`
+  ${typography2.text.sm}
+  padding-top: 2rem;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    color: ${colors.stone[500]};
+  }
+`
+
 
 const Services = () => {
 
@@ -56,7 +75,7 @@ const Services = () => {
             </ServiceDescription>
           </ServiceCard>
           <ServiceCard>
-            <ServiceTitle>Evaluaciones Neuropsicológicas</ServiceTitle>
+            <ServiceTitle>Evaluaciones</ServiceTitle>
             <ServiceDescription>
               Evaluaciones exhaustivas para comprender el funcionamiento cognitivo y proporcionar información para la planificación del tratamiento.
             </ServiceDescription>
@@ -68,6 +87,7 @@ const Services = () => {
             </ServiceDescription>
           </ServiceCard>
       </ServicesContainer>
+      <AllServices>Ver todos los servicios →</AllServices>
     </>
   )
 }
