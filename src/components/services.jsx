@@ -12,7 +12,6 @@ const ServicesContainer = styled.div`
 
 const ServiceCard = styled.div`
   background-color: black;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   padding: 2rem;
   margin: 1rem;
@@ -25,29 +24,42 @@ const ServiceCard = styled.div`
   justify-content: space-around;
 `;
 
-const ServiceTitle = styled.h1`
-  ${typography2.head.sm}
-  color: white;
-  margin: 0 0 1rem 0;
-`;
-
-const ServiceDescription = styled.p`
-${typography.text.xss}
-  margin: 0;
-  font-size: 1rem;
-  color: white;
-`;
-
 const SectionSubtitle = styled.h1`
   ${typography.head.lgx}
   color: black;
   padding-top: 4.5rem;
   text-align: center;
 
-   @media (max-width: 500px) {
+   @media (max-width: 600px) {
     ${typography.head.lg};
     margin-bottom: 0;
+    padding-top: 3.5rem;
   }
+`;
+
+const ServiceTitle = styled.h1`
+  ${typography2.head.sm}
+  color: white;
+  margin: 0 0 1rem 0;
+
+  @media (max-width: 320px) {
+    ${typography.head.xs};
+    margin-bottom: 0;
+  }
+`;
+
+const ServiceDescription = styled.p`
+  ${typography.text.sm}
+  margin: 0;
+  color: white;
+  font-weight: 100;
+  line-height: 1.45;
+
+  @media (max-width: 320px) {
+    ${typography.text.xss};
+    margin-bottom: 0;
+  }
+
 `;
 
 const AllServices = styled(Link)`
@@ -81,7 +93,7 @@ const Services = () => {
             </ServiceDescription>
           </ServiceCard>
           <ServiceCard>
-            <ServiceTitle>Rehabilitación Neuropsicológica</ServiceTitle>
+            <ServiceTitle>Neuropsicología</ServiceTitle>
             <ServiceDescription>
               Sesiones de terapia colaborativa para fomentar el apoyo entre pares y compartir experiencias en un entorno grupal.
             </ServiceDescription>

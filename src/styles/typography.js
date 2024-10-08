@@ -13,7 +13,6 @@ export const typography = {
     `,
     sm: `
     font-size: 0.875rem;
-    line-height: 1.25rem;
     `,
     md: `
     font-size: 1rem;

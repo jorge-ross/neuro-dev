@@ -18,7 +18,7 @@ const SectionTitle = styled.h1`
   font-weight: 600;
   line-height: 1.1;
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     ${typography.head.lga}
     line-height: 1.1;
     margin-top: 1.5rem;
@@ -35,7 +35,7 @@ const Description = styled.p`
   width: 90%;
   margin: 0 0 1.5rem 0;
 
-  @media (max-width: 500px) {
+  @media (max-width: 600px) {
     ${typography.text.md}
     line-height: 1.6;
     margin-bottom: 2rem;

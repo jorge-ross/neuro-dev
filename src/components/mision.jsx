@@ -20,6 +20,7 @@ const Title = styled.h1`
   font-weight: bold;
   color: #000;
   margin-bottom: 0;
+  text-align: center;
 `;
 
 const Description = styled.p`
@@ -39,16 +40,12 @@ const ImagePlaceholder = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  // width: 85%;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
 `;
 
 const MV = styled(Link)`
   ${typography2.text.sm}
   color: black;
+  margin: 2rem 0;
 
   &:hover {
     color: ${colors.stone[500]};
@@ -56,8 +53,12 @@ const MV = styled(Link)`
 `
 
 const MVImg = styled.img`
-  width: 100%;
-  border-radius: 2rem;
+  width: 35%;
+  border-radius: 50%;
+
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 `
 
 const Mision = () => {
@@ -66,15 +67,13 @@ const Mision = () => {
       <Title>La mision de Neurodev</Title>
       <Description>
         En Neuro-dev, nos dedicamos a brindar un apoyo a la salud mental serio, comprensivo y basado en evidencia. El objetivo es simple pero poderoso: ayudarte a alcanzar el bienestar mental que necesitas para llevar una vida plena.
-        <br></br>
-        <br></br>
-        <MV>
-          Da click aquí para conocer más sobre la misión y valores de Neurodev
-        </MV>
       </Description>
       <ImagePlaceholder>
         <MVImg src={mv} alt="m" />
       </ImagePlaceholder>
+      <MV>
+        Da click aquí para conocer más sobre la misión y valores de Neurodev
+      </MV>
     </Container>
   );
 };
