@@ -16,11 +16,15 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
-  ${typography.head.lg}
+  ${typography.head.lgx}
   font-weight: bold;
   color: #000;
   margin-bottom: 0;
   text-align: center;
+
+  @media (max-width: 600px) {
+    ${typography.head.lg};
+  }
 `;
 
 const Description = styled.p`

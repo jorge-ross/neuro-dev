@@ -8,28 +8,37 @@ import convenienceIcon from '../assets/images/comodidad.png';
 import accessibilityIcon from '../assets/images/accesibilidad.png';
 import privacyIcon from '../assets/images/privacy.png';
 import parkingIcon from '../assets/images/parking.png';
+import { typography } from '../styles/typography';
 
 
 const SectionContainer = styled.section`
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
   background-color: white;
   text-align: center;
   width: 50%;
+
+  @media (max-width: 600px) {
+    width: 70%;
+  }
 `;
 
 const SectionTitle = styled.h1`
-  font-size: 2rem;
-  color: #0d47a1;
+  ${typography.head.lgx};
+  color: black;
   margin-bottom: 2rem;
+
+  @media (max-width: 600px) {
+    ${typography.head.lg};
+  }
 `;
 
 const SliderContainer = styled.div`
   .slick-slide > div {
     display: flex;
-    margin: 0 1rem; /* Add gap between slides */
+    margin: 0 1rem;
   }
   .slick-list {
-    margin: 0 -1.5rem; /* Adjust container margin to compensate for slide margins */
+    margin: 0 -1.5rem;
   }
 `;
 

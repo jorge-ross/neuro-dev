@@ -59,7 +59,6 @@ export const typography = {
     `,
     lgx: `
     font-size: 3rem;
-    line-height: 2rem;
     `,
     xl: `
     font-size: 4rem;
