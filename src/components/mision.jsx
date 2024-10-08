@@ -29,7 +29,6 @@ const Title = styled.h1`
 
 const Description = styled.p`
   ${typography2.text.md}
-  font-size: 1rem;
   color: ${colors.grey[700]};
   margin: 2rem 0;
   width: 85%;

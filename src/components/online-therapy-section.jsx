@@ -8,7 +8,8 @@ import convenienceIcon from '../assets/images/comodidad.png';
 import accessibilityIcon from '../assets/images/accesibilidad.png';
 import privacyIcon from '../assets/images/privacy.png';
 import parkingIcon from '../assets/images/parking.png';
-import { typography } from '../styles/typography';
+import { typography, typography2 } from '../styles/typography';
+import { colors } from '../styles/colors';
 
 
 const SectionContainer = styled.section`
@@ -57,39 +58,41 @@ const BenefitImage = styled.img`
   margin-bottom: 1rem;
 `;
 
-const BenefitText = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+const BenefitText = styled.p`
+  ${typography2.head.xss}
+  margin: 2rem;
+  color: black;
+`;
+
+const BenefitDescription = styled.p`
+  ${typography2.text.md}
   font-size: 1rem;
-  color: #1565c0;
-  text-align: center;
-  width: 90%;
+  color: ${colors.grey[700]};
+  margin: 0;
+  width: 85%;
+
+  
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const Arrow = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  background-color: #0d47a1;
-  border-radius: 50%;
-  color: white;
+  color: black;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 20%;
   transform: translateY(-50%);
   z-index: 1;
 `;
 
 const NextArrow = (props) => {
   const { onClick } = props;
-  return <Arrow onClick={onClick} style={{ right: '-35px' }}>›</Arrow>;
+  return <Arrow onClick={onClick} style={{ right: '-35px', fontSize: '6rem' }}>›</Arrow>;
 };
 
 const PrevArrow = ({ onClick = () => {} }) => {
-  return <Arrow onClick={onClick} style={{ left: '-35px' }}>‹</Arrow>;
+  return <Arrow onClick={onClick} style={{ left: '-35px', fontSize: '6rem'}}>‹</Arrow>;
 };
 
 NextArrow.propTypes = {
@@ -118,34 +121,31 @@ const OnlineTherapyBenefits = () => {
       <SectionTitle>Beneficios de Tomar Terapia en Línea</SectionTitle>
       <SliderContainer>
         <Slider {...settings}>
+
           <BenefitCard>
             <BenefitImage src={convenienceIcon} alt="Conveniencia" />
-            <BenefitText>
-              <h3>Conveniencia</h3>
-              <p>Accede a sesiones de terapia desde la comodidad de tu hogar, sin necesidad de desplazarte.</p>
-            </BenefitText>
+            <BenefitText>Conveniencia</BenefitText>
+            <BenefitDescription>Accede a sesiones de terapia desde la comodidad de tu hogar, sin necesidad de desplazarte.</BenefitDescription>
           </BenefitCard>
+
           <BenefitCard>
             <BenefitImage src={accessibilityIcon} alt="Accesibilidad" />
-            <BenefitText>
-              <h3>Accesibilidad</h3>
-              <p>La terapia en línea facilita el acceso a servicios terapéuticos, especialmente para personas con movilidad reducida o en áreas remotas.</p>
-            </BenefitText>
+            <BenefitText>Accesibilidad</BenefitText>
+            <BenefitDescription>La terapia en línea facilita el acceso a servicios terapéuticos, especialmente para personas con movilidad reducida o en áreas remotas.</BenefitDescription>
           </BenefitCard>
+
           <BenefitCard>
             <BenefitImage src={privacyIcon} alt="Privacidad" />
-            <BenefitText>
-              <h3>Privacidad</h3>
-              <p>Mantén la privacidad y confidencialidad de tus sesiones en un entorno seguro y protegido.</p>
-            </BenefitText>
+            <BenefitText>Privacidad</BenefitText>
+            <BenefitDescription>Mantén la BenefitDescriptionrivacidad y confidencialidad de tus sesiones en un entorno seguro y protegido.</BenefitDescription>    
           </BenefitCard>
+
           <BenefitCard>
             <BenefitImage src={parkingIcon} alt="Parking" />
-            <BenefitText>
-              <h3>Olvídate de los estacionamientos</h3>
-              <p>Con la terapia en línea, no tienes que pagar por estacionamientos ni preocuparte por la seguridad de tu coche. Disfruta de tus sesiones desde la comodidad de tu hogar.</p>
-            </BenefitText>
+            <BenefitText>Olvídate de los estacionamientos</BenefitText>
+            <BenefitDescription>Con la terapia en línea, no tienes que pagar por estacionamientos ni preocuparte por la seguridad de tu coche. Disfruta de tus sesiones desde la comodidad de tu hogar.</BenefitDescription>
           </BenefitCard>
+
         </Slider>
       </SliderContainer>
     </SectionContainer>
