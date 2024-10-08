@@ -1,44 +1,79 @@
 import styled from 'styled-components';
+import { typography, typography2 } from '../styles/typography';
+import { colors } from '../styles/colors';
+import { Link } from 'react-router-dom';
+import mv from "../assets/images/mvtarget.png"
 
 const Container = styled.div`
-  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem;
+
+  @media (max-width: 600px) {
+    padding: 2rem;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 2rem;
+  ${typography.head.lg}
   font-weight: bold;
   color: #000;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 `;
 
 const Description = styled.p`
+  ${typography2.text.md}
   font-size: 1rem;
-  color: #6c757d;
-  margin-bottom: 2rem;
+  color: ${colors.grey[700]};
+  margin: 2rem 0;
+  width: 85%;
+
+  
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const ImagePlaceholder = styled.div`
-  width: 100%;
-  max-width: 600px;
-  height: 300px;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
-  color: #adb5bd;
+  // width: 85%;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
+
+const MV = styled(Link)`
+  ${typography2.text.sm}
+  color: black;
+
+  &:hover {
+    color: ${colors.stone[500]};
+  }
+`
+
+const MVImg = styled.img`
+  width: 100%;
+  border-radius: 2rem;
+`
 
 const Mision = () => {
   return (
     <Container>
-      <Title>Acerca de Neurodev</Title>
+      <Title>La mision de Neurodev</Title>
       <Description>
-        At MindWell Consultancy, we're dedicated to providing compassionate, evidence-based mental health support. 
-        Our team of experienced professionals is committed to helping you achieve mental wellness and lead a fulfilling life.
+        En Neuro-dev, nos dedicamos a brindar un apoyo a la salud mental serio, comprensivo y basado en evidencia. El objetivo es simple pero poderoso: ayudarte a alcanzar el bienestar mental que necesitas para llevar una vida plena.
+        <br></br>
+        <br></br>
+        <MV>
+          Da click aquí para conocer más sobre la misión y valores de Neurodev
+        </MV>
       </Description>
       <ImagePlaceholder>
-        <span>Image Placeholder</span>
+        <MVImg src={mv} alt="m" />
       </ImagePlaceholder>
     </Container>
   );

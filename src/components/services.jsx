@@ -41,7 +41,7 @@ ${typography.text.xss}
 const SectionSubtitle = styled.h1`
   ${typography.head.lgx}
   color: black;
-  padding-top: 4rem;
+  padding-top: 4.5rem;
   text-align: center;
 
    @media (max-width: 500px) {
@@ -66,7 +66,7 @@ const Services = () => {
 
   return(
     <>
-      <SectionSubtitle>Mis servicios</SectionSubtitle>
+      <SectionSubtitle>Servicios</SectionSubtitle>
         <ServicesContainer>
           <ServiceCard>
             <ServiceTitle>Terapia Individual</ServiceTitle>
