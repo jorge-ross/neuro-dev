@@ -57,12 +57,12 @@ const BenefitCard = styled.div`
 `;
 
 const BenefitImage = styled.img`
-  max-width: 200px;
+  max-width: 220px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-bottom: 1rem;
 
-  @media(max-width: 300px){
+  @media(max-width: 320px){
     max-width: 120px;
   }
 `;
@@ -76,31 +76,32 @@ const BenefitText = styled.p`
 const BenefitDescription = styled.p`
   ${typography2.text.md}
   color: ${colors.grey[700]};
-  margin: 0;
+  margin: 0 0 1rem 0;
   width: 85%;
-
-  
-  @media (max-width: 600px) {
-    // width: 100%;
-  }
 `;
 
 const Arrow = styled.div`
   color: black;
   cursor: pointer;
   position: absolute;
-  top: 30%;
+  top: 40%;
   transform: translateY(-50%);
   z-index: 1;
+  font-size: 6rem;
+
+  @media (max-width: 600px) {
+    top: 30%;
+    font-size: 4rem;
+  }
 `;
 
 const NextArrow = (props) => {
   const { onClick } = props;
-  return <Arrow onClick={onClick} style={{ right: '-35px', fontSize: '6rem' }}>›</Arrow>;
+  return <Arrow onClick={onClick} style={{ right: '-20px'}}>›</Arrow>;
 };
 
 const PrevArrow = ({ onClick = () => {} }) => {
-  return <Arrow onClick={onClick} style={{ left: '-35px', fontSize: '6rem'}}>‹</Arrow>;
+  return <Arrow onClick={onClick} style={{ left: '-20px'}}>‹</Arrow>;
 };
 
 NextArrow.propTypes = {
