@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import IntroSection from "../components/intro-section";
-import StepSection from "../components/step-section";
 import Mision from "../components/mision";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
 import TestimonialSection from "../components/testimonial";
@@ -26,7 +25,6 @@ function Home() {
       <Services />
       <Mision />
       <OnlineTherapyBenefits />
-      <StepSection />
       <TestimonialSection />
       <Footer />
       <Terms />

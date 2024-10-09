@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { colors } from '../styles/colors';
 import testimonials from '../data/testimonials';
+import { typography } from '../styles/typography';
 
 const SectionContainer = styled.section`
   display: flex;
@@ -13,11 +13,9 @@ const SectionContainer = styled.section`
 `;
 
 const SectionTitle = styled.h1`
-  color: ${colors.blue[900]};
-  padding: 0.5rem 1rem;
-  margin-bottom: 1.5rem;
-  font-size: 2.5rem;
-  align-self: flex-start;
+  ${typography.head.lgx}
+  color: black;
+  margin: 2rem 0 3rem;
 `;
 
 const CardsContainer = styled.div`
@@ -52,7 +50,7 @@ const StyledLink = styled(Link)`
 const TestimonialSection = () => {
   return (
     <SectionContainer>
-        <SectionTitle>Lo que los pacientes opinan</SectionTitle>
+        <SectionTitle>Los pacientes opinan</SectionTitle>
         <CardsContainer>
           {testimonials.map((testimonial) => (
           <Card key={testimonial.id}>
