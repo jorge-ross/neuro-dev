@@ -13,7 +13,7 @@ import { colors } from '../styles/colors';
 
 
 const SectionContainer = styled.section`
-  padding: 1rem 2rem;
+  margin: 1rem 2rem;
   background-color: white;
   text-align: center;
   width: 50%;
@@ -31,12 +31,17 @@ const SectionTitle = styled.h1`
   @media (max-width: 600px) {
     ${typography.head.lg};
   }
+
+  @media (max-width: 400px) {
+    ${typography.head.md};
+  }
 `;
 
 const SliderContainer = styled.div`
   .slick-slide > div {
     display: flex;
     margin: 0 1rem;
+    justify-content: center;
   }
   .slick-list {
     margin: 0 -1.5rem;
@@ -48,7 +53,7 @@ const BenefitCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding-top: 1rem;
 `;
 
 const BenefitImage = styled.img`
@@ -56,24 +61,27 @@ const BenefitImage = styled.img`
   height: auto;
   border-radius: 10px;
   margin-bottom: 1rem;
+
+  @media(max-width: 300px){
+    max-width: 120px;
+  }
 `;
 
 const BenefitText = styled.p`
   ${typography2.head.xss}
-  margin: 2rem;
+  margin: 2rem 1rem 1rem;
   color: black;
 `;
 
 const BenefitDescription = styled.p`
   ${typography2.text.md}
-  font-size: 1rem;
   color: ${colors.grey[700]};
   margin: 0;
   width: 85%;
 
   
   @media (max-width: 600px) {
-    width: 100%;
+    // width: 100%;
   }
 `;
 
@@ -81,7 +89,7 @@ const Arrow = styled.div`
   color: black;
   cursor: pointer;
   position: absolute;
-  top: 20%;
+  top: 30%;
   transform: translateY(-50%);
   z-index: 1;
 `;
@@ -114,6 +122,7 @@ const OnlineTherapyBenefits = () => {
     arrows: true,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />
+
   };
 
   return (
@@ -131,19 +140,19 @@ const OnlineTherapyBenefits = () => {
           <BenefitCard>
             <BenefitImage src={accessibilityIcon} alt="Accesibilidad" />
             <BenefitText>Accesibilidad</BenefitText>
-            <BenefitDescription>La terapia en línea facilita el acceso a servicios terapéuticos, especialmente para personas con movilidad reducida o en áreas remotas.</BenefitDescription>
+            <BenefitDescription>La terapia en línea facilita el acceso a servicios terapéuticos a personas con movilidad reducida o en áreas remotas.</BenefitDescription>
           </BenefitCard>
 
           <BenefitCard>
             <BenefitImage src={privacyIcon} alt="Privacidad" />
             <BenefitText>Privacidad</BenefitText>
-            <BenefitDescription>Mantén la BenefitDescriptionrivacidad y confidencialidad de tus sesiones en un entorno seguro y protegido.</BenefitDescription>    
+            <BenefitDescription>Mantén la privacidad y confidencialidad de tus sesiones en un entorno seguro y protegido.</BenefitDescription>    
           </BenefitCard>
 
           <BenefitCard>
             <BenefitImage src={parkingIcon} alt="Parking" />
             <BenefitText>Olvídate de los estacionamientos</BenefitText>
-            <BenefitDescription>Con la terapia en línea, no tienes que pagar por estacionamientos ni preocuparte por la seguridad de tu coche. Disfruta de tus sesiones desde la comodidad de tu hogar.</BenefitDescription>
+            <BenefitDescription>Con la terapia en línea, no tienes que pagar por estacionamientos ni preocuparte por la seguridad de tu coche.</BenefitDescription>
           </BenefitCard>
 
         </Slider>

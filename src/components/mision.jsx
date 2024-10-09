@@ -32,9 +32,11 @@ const Description = styled.p`
   color: ${colors.grey[700]};
   margin: 2rem 0;
   width: 85%;
+  text-align: center;
 
   
   @media (max-width: 600px) {
+    text-align: justify;
     width: 100%;
   }
 `;
