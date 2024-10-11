@@ -85,11 +85,12 @@ export const typography2 = {
   text: {
     xs: `
     font-size: 0.625rem;
-    line-height: 0.55rem;
+    `,
+    xss: `
+    font-size: 0.825rem;
     `,
     sm: `
     font-size: 0.875rem;
-    line-height: 1.25rem;
     `,
     md: `
     font-size: 1rem;

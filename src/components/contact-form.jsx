@@ -1,44 +1,55 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { typography, typography2 } from '../styles/typography';
 
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 600px) {
-    width: 100%;
-  }
+  gap: 1rem;
 `;
 
 const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
+  gap: 1rem;
 `
 
 const Input = styled.input`
+  ${typography2.text.xss};
   padding: 10px;
-  margin: 10px 0;
+  margin: 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
+
+  @media (max-width: 350px){
+    ${typography2.text.xs}
+  }
 `;
 
 const TextArea = styled.textarea`
-  max-width: 400px;
+  ${typography2.text.xss};
+  max-width: auto;
   padding: 10px;
-  margin: 10px 0;
+  margin: 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+
+   @media (max-width: 350px){
+    ${typography2.text.xs}
+  }
 `;
 
 const Button = styled.button`
-  padding: 10px;
+  ${typography2.text.sm}
+  padding: 0.7rem 2rem;
   background-color: black;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 1rem;
   cursor: pointer;
-  max-width: 150px;
-  margin-top: 10px;
+  width: 100%;
+  height: 40px;
 
   &:hover {
     background-color: grey;
@@ -61,7 +72,6 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Lógica para enviar el formulario (puede ser con una API)
     console.log('Enviando mensaje:', formData);
   };
 
@@ -71,7 +81,7 @@ const ContactForm = () => {
         <Input
           type="text"
           name="name"
-          placeholder="Your Name"
+          placeholder="Tu nombre"
           value={formData.name}
           onChange={handleChange}
           required
@@ -79,7 +89,7 @@ const ContactForm = () => {
         <Input
           type="email"
           name="email"
-          placeholder="Your Email"
+          placeholder="Email"
           value={formData.email}
           onChange={handleChange}
           required
@@ -87,13 +97,13 @@ const ContactForm = () => {
       </InputContainer>
       <TextArea
         name="message"
-        placeholder="Your Message"
+        placeholder="Escribe aquí tu mensaje"
         rows="5"
         value={formData.message}
         onChange={handleChange}
         required
       />
-      <Button type="submit">Send Message</Button>
+      <Button type="submit">Enviar mensaje</Button>
     </Form>
   );
 };

@@ -18,6 +18,7 @@ const Gral = styled.div`
     flex-direction: column;
     gap: 0.2rem;
     padding: 1rem 0;
+    align-items: center;
   }
   
 `
@@ -74,6 +75,11 @@ const BrandContainer = styled.div`
   align-items: center;
   gap: 0.8rem;
   margin-left: 2rem;
+
+  @media (max-width: 850px) {
+    gap: 0.5rem;
+    margin: 0;
+  }
 `
 
 const StyledLink = styled(Link)`

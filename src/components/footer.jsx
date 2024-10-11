@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { typography } from '../styles/typography';
-import { FaEnvelope } from 'react-icons/fa';
+import { typography, typography2 } from '../styles/typography';
 
 import ContactForm from './contact-form';
 import WhatsAppButton from './whats-app-button';
@@ -14,7 +13,7 @@ justify-content: center;
 `
 
 const FooterContainer = styled.footer`
-  padding: 2rem 0;
+  padding: 2rem 0 3rem;
   margin: 0 3rem;
   display: flex;
   flex-direction: column;
@@ -27,6 +26,11 @@ const Section = styled.div`
   display:flex;
   flex-direction: row;
   justify-content: space-around;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
 `;
 
 const SectionTitle = styled.h1`
@@ -37,17 +41,31 @@ const SectionTitle = styled.h1`
   text-align: center;
 `;
 
+const Inst = styled.p`
+  ${typography2.text.sm}
+  margin: 0;
+  padding-bottom: 1.5rem;
+  text-align: center;
+`
 
+const WhatsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 const Footer = () => {
 
   return (
     <Gral id="contact">
       <FooterContainer>
-        <SectionTitle>TE ESCUCHO...</SectionTitle>
+        <SectionTitle>TE ESCUCHO</SectionTitle>
         <Section>
-          <WhatsAppButton phoneNumber='7221010162'/>
           <ContactForm />
+          <WhatsContainer>
+            <Inst>También puedes enviar un mensaje vía Whatsapp</Inst>
+            <WhatsAppButton phoneNumber='7221010162'/>
+          </WhatsContainer>
         </Section>
       </FooterContainer>
     </Gral>
