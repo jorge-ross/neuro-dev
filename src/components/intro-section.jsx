@@ -12,11 +12,11 @@ const SectionContainer = styled.section`
 `;
 
 const SectionTitle = styled.h1`
-  ${typography.head.xl}
+  ${typography.head.xxl}
   color: black;
   margin: 2.5rem 0 1.5rem 0;
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.2;
 
   @media (max-width: 600px) {
     ${typography.head.lga}

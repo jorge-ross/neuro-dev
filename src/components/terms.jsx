@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { typography } from '../styles/typography';
 import { Link } from 'react-router-dom';
 import GralModal from './modals/gral-modal';
+import logow from '../assets/images/logow.png';
 
 const Gral = styled.div`
   background: black;
@@ -46,7 +47,6 @@ const Section = styled.div`
 
 const SectionTitle = styled.h1`
   ${typography.text.xl}
-  margin: 1rem 0 1rem 2rem;
   color: white;
   align-self: center;
 
@@ -68,10 +68,22 @@ cursor: pointer;
   }
 `
 
+const BrandContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.8rem;
+  margin-left: 2rem;
+`
+
 const StyledLink = styled(Link)`
   align-items: center;
   text-decoration: none;
 `;
+
+const LogoImgCont = styled.img`
+max-width: 2rem;
+`
 
 
 const Terms = () => {
@@ -87,9 +99,13 @@ const Terms = () => {
     setShowModal(false);
   };
 
+
   return (
     <Gral>
-      <SectionTitle>Código Mente</SectionTitle>
+      <BrandContainer>
+        <LogoImgCont src={logow} alt="logo" />
+        <SectionTitle>Neuro-dev 2025</SectionTitle>
+      </BrandContainer>
         <Section>
           <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
           <Option onClick={() => setShowTermsModal(true)}>Términos y condiciones</Option>

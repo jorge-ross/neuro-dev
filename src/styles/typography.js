@@ -21,7 +21,6 @@ export const typography = {
     `,
     lg: `
     font-size: 1.125rem;
-    line-height: 1.4rem;
     `,
     xl: `
     font-size: 1.3rem;
@@ -62,9 +61,9 @@ export const typography = {
     `,
     xl: `
     font-size: 4rem;
-    line-height: 5rem;
-    font-style: normal;
-    line-height: 88px;
+    `,
+    xxl: `
+    font-size: 5rem;
     `,
   },
 };

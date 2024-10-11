@@ -77,7 +77,7 @@ const Mision = () => {
         <MVImg src={mv} alt="m" />
       </ImagePlaceholder>
       <MV>
-        Da click aquí para conocer más sobre la misión y valores de Neurodev
+        Descubra más sobre la misión y los valores de Neurodev
       </MV>
     </Container>
   );
