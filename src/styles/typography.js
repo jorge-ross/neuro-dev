@@ -116,13 +116,15 @@ export const typography2 = {
     `,
   },
   head: {
+    xxs: `
+    font-size: 0.875rem;
+    `,
     xs: `
     font-size: 1.25rem;
-    line-height: 1.75rem;
+  
     `,
     xss: `
     font-size: 1.4rem;
-    line-height: 1.75rem;
     `,
     sm: `
     font-size: 1.5rem;

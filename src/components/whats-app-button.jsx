@@ -35,9 +35,9 @@ const Icon = styled.span`
   }
 `;
 
-const WhatsAppButton = ({ phoneNumber, message }) => {
+const WhatsAppButton = ({ phoneNumber }) => {
    
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}}`;
 
     const handleClick = () => {
         window.open(whatsappUrl, '_blank');
@@ -53,7 +53,6 @@ const WhatsAppButton = ({ phoneNumber, message }) => {
 
 WhatsAppButton.propTypes = {
   phoneNumber: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
 };
 
 export default WhatsAppButton;
