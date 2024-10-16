@@ -99,7 +99,6 @@ export const typography2 = {
     `,
     lg: `
     font-size: 1.125rem;
-    line-height: 1.41rem;
     `,
     lgx: `
     font-size: 3rem;

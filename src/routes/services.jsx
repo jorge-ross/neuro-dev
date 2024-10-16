@@ -1,42 +1,97 @@
 import styled from 'styled-components';
+import { useEffect, useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import Terms from '../components/terms';
+import { typography, typography2 } from '../styles/typography';
 
 const GeneralContainer = styled.div`
   display: flex;
+  min-height: auto;
   flex-direction: column;
   align-items: center;
   margin: 0;
 `
 
 const ServicesSection = styled.section`
-  padding: 4rem 2rem;
+  padding: 7rem 2rem;
   background-color: white;
+  
 `;
 
 const SectionTitle = styled.h1`
-  font-size: 2rem;
-  color: #123456;
+ ${typography.head.lgx}
+  color: black;
   text-align: center;
-  margin-bottom: 2rem;
+
+   @media (max-width: 600px) {
+    ${typography.head.lg};
+    margin-bottom: 0;
+    padding-top: 3.5rem;
+  }
 `;
+
+const Subtitle = styled.h1`
+  ${typography2.text.lg}
+  color: black;
+  padding-bottom: 2rem;
+  font-weight: 500;
+  text-align: center;
+
+  @media (max-width: 650px) {
+    ${typography2.head.xxs}
+    font-weight: 400;
+  }
+`;
+
+const FrontServiceCont = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: center;
+`
 
 const ServicesContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
 `;
 
-const ServiceCategory = styled.div`
-  max-width: 800px;
+const ServiceCard = styled.div`
+  background-color: black;
+  border-radius: 10px;
+  width: 250px;
+  height: 120px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+   @media (max-width: 650px) {
+    width: 200px;
+    height: 100px;
+  }
+
+  @media (max-width: 500px) {
+    width: 160px;
+    height: 90px;
+  }
+
+  @media (max-width: 400px) {
+    width: 130px;
+    height: 70px;
+  }
 `;
 
-const ServiceTitle = styled.h2`
-  font-size: 1.8rem;
-  color: #654321;
-  margin-bottom: 1rem;
+const ServiceTitle = styled.h1`
+  ${typography2.head.xs}
+  color: white;
+  margin: 2rem;
+
+  @media (max-width: 650px) {
+    ${typography2.head.xxs}
+    font-weight: 400;
+  }
 `;
 
 const ServiceDescription = styled.p`
@@ -56,50 +111,53 @@ const ServiceItem = styled.li`
   margin-bottom: 0.5rem;
 `;
 
+const ServicesImg = styled.img`
+  display: flex;
+  align-items:center;
+  justify-content: center;
+`
+
 const Services = () => {
+
+  const [services, setServices] = useState([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/services');
+        if (!response.ok) {
+          throw new Error('Error al obtener los servicios');
+        }
+        const data = await response.json();
+        setServices(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
   return (
     <GeneralContainer>
       <Header />
-    
       <ServicesSection>
         <SectionTitle>Servicios</SectionTitle>
-        <ServicesContainer>
-          <ServiceCategory>
-            <ServiceTitle>Psicología</ServiceTitle>
-            <ServiceDescription>
-              Ofrecemos una gama de servicios de psicología para ayudarte a enfrentar y superar tus desafíos emocionales y mentales.
-            </ServiceDescription>
-            <ServiceList>
-              <ServiceItem>Terapia individual para adultos</ServiceItem>
-              <ServiceItem>Terapia de pareja</ServiceItem>
-              <ServiceItem>Terapia familiar</ServiceItem>
-              <ServiceItem>Manejo del estrés y la ansiedad</ServiceItem>
-              <ServiceItem>Tratamiento de la depresión</ServiceItem>
-              <ServiceItem>Orientación en el manejo de emociones</ServiceItem>
-              <ServiceItem>Desarrollo personal y bienestar</ServiceItem>
-            </ServiceList>
-          </ServiceCategory>
-
-          <ServiceCategory>
-            <ServiceTitle>Neuropsicología</ServiceTitle>
-            <ServiceDescription>
-              Nos especializamos en la evaluación y tratamiento de trastornos neurológicos, utilizando un enfoque basado en evidencia para ofrecerte un cuidado integral.
-            </ServiceDescription>
-            <ServiceList>
-              <ServiceItem>Evaluación neuropsicológica completa</ServiceItem>
-              <ServiceItem>Diagnóstico de trastornos neurocognitivos</ServiceItem>
-              <ServiceItem>Evaluación de deterioro cognitivo</ServiceItem>
-              <ServiceItem>Rehabilitación neuropsicológica</ServiceItem>
-              <ServiceItem>Tratamiento para lesiones cerebrales traumáticas</ServiceItem>
-              <ServiceItem>Apoyo en casos de enfermedades neurodegenerativas (e.g., Alzheimer, Parkinson)</ServiceItem>
-              <ServiceItem>Manejo de trastornos del aprendizaje</ServiceItem>
-              <ServiceItem>Intervención en trastornos de atención e hiperactividad (TDAH)</ServiceItem>
-            </ServiceList>
-          </ServiceCategory>
-        </ServicesContainer>
+        <Subtitle>Da click en cualquiera de mis servicios para conocer más.</Subtitle>
+        <FrontServiceCont>
+          <ServicesImg></ServicesImg>
+          <ServicesContainer>
+            {services.map(service => (
+              <ServiceCard key={service.id}>
+                <ServiceTitle>{service.title}</ServiceTitle>
+              </ServiceCard>
+            ))}
+          </ServicesContainer>
+        </FrontServiceCont>
       </ServicesSection>
-      <Footer />
-      </GeneralContainer>
+      <Footer /> 
+      <Terms />
+    </GeneralContainer>
   );
 };
 
