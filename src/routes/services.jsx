@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Terms from '../components/terms';
+import servicesBrain from '../assets/images/brain-services.png'
 import { typography, typography2 } from '../styles/typography';
+import { colors } from '../styles/colors';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -16,13 +18,17 @@ const GeneralContainer = styled.div`
 const ServicesSection = styled.section`
   padding: 7rem 2rem;
   background-color: white;
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const SectionTitle = styled.h1`
  ${typography.head.lgx}
   color: black;
   text-align: center;
+  margin: 1.5rem 0 0 0;
+  padding-bottom: 2rem;
 
    @media (max-width: 600px) {
     ${typography.head.lg};
@@ -34,9 +40,10 @@ const SectionTitle = styled.h1`
 const Subtitle = styled.h1`
   ${typography2.text.lg}
   color: black;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   font-weight: 500;
   text-align: center;
+  margin: 0;
 
   @media (max-width: 650px) {
     ${typography2.head.xxs}
@@ -47,25 +54,29 @@ const Subtitle = styled.h1`
 const FrontServiceCont = styled.div`
   display: flex;
   flex-direction: row;
-  align-items:center;
-  justify-content: center;
+  gap: 3rem;
 `
 
 const ServicesContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 `;
 
 const ServiceCard = styled.div`
   background-color: black;
-  border-radius: 10px;
-  width: 250px;
-  height: 120px;
+  border-radius: 1rem;
+  width: 220px;
+  height: 110px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${colors.stone[900]};
+  }
 
    @media (max-width: 650px) {
     width: 200px;
@@ -113,8 +124,11 @@ const ServiceItem = styled.li`
 
 const ServicesImg = styled.img`
   display: flex;
-  align-items:center;
-  justify-content: center;
+  align-self: flex-start;
+  max-width: 300px;
+  border-radius: 1rem;
+  border-bottom-right-radius: 40%;
+  filter: brightness(0.9) grayscale(100%);
 `
 
 const Services = () => {
@@ -143,9 +157,9 @@ const Services = () => {
       <Header />
       <ServicesSection>
         <SectionTitle>Servicios</SectionTitle>
-        <Subtitle>Da click en cualquiera de mis servicios para conocer más.</Subtitle>
+        <Subtitle>Da click en cualquiera de los servicios para conocer más.</Subtitle>
         <FrontServiceCont>
-          <ServicesImg></ServicesImg>
+          <ServicesImg src={servicesBrain}/>
           <ServicesContainer>
             {services.map(service => (
               <ServiceCard key={service.id}>

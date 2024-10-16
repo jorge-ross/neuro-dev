@@ -121,7 +121,7 @@ const Services = () => {
         </ServiceCard>
       ))}
       </ServicesContainer>
-      <AllServices>Ver todos los servicios →</AllServices>
+      <AllServices to="/services" onClick={() => window.scrollTo(0, 0)}>Ver todos los servicios →</AllServices>
     </>
   )
 }
