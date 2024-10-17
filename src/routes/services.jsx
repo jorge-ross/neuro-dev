@@ -16,7 +16,7 @@ const GeneralContainer = styled.div`
 `
 
 const ServicesSection = styled.section`
-  padding: 7rem 2rem;
+  margin: 7rem 2rem 5rem 2rem;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -32,8 +32,6 @@ const SectionTitle = styled.h1`
 
    @media (max-width: 600px) {
     ${typography.head.lg};
-    margin-bottom: 0;
-    padding-top: 3.5rem;
   }
 `;
 
@@ -55,12 +53,28 @@ const FrontServiceCont = styled.div`
   display: flex;
   flex-direction: row;
   gap: 3rem;
+
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 
 const ServicesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+
+  @media (max-width: 1130px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 650px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const ServiceCard = styled.div`
@@ -78,9 +92,9 @@ const ServiceCard = styled.div`
     background-color: ${colors.stone[900]};
   }
 
-   @media (max-width: 650px) {
-    width: 200px;
-    height: 100px;
+   @media (max-width: 900px) {
+    width: 180px;
+    height: 90px;
   }
 
   @media (max-width: 500px) {
@@ -92,6 +106,11 @@ const ServiceCard = styled.div`
     width: 130px;
     height: 70px;
   }
+
+  @media (max-width: 400px) {
+    width: 110px;
+    height: 65px;
+  }
 `;
 
 const ServiceTitle = styled.h1`
@@ -99,8 +118,13 @@ const ServiceTitle = styled.h1`
   color: white;
   margin: 2rem;
 
-  @media (max-width: 650px) {
+  @media (max-width: 900px) {
     ${typography2.head.xxs}
+    font-weight: 400;
+  }
+
+  @media (max-width: 320px) {
+    ${typography2.text.xss}
     font-weight: 400;
   }
 `;
@@ -129,6 +153,18 @@ const ServicesImg = styled.img`
   border-radius: 1rem;
   border-bottom-right-radius: 40%;
   filter: brightness(0.9) grayscale(100%);
+  
+  @media (max-width: 900px) {
+    align-self: center;
+  }
+
+  @media (max-width: 650px) {
+    max-width: 270px;
+  }
+
+   @media (max-width: 400px) {
+    max-width: 220px;
+  }
 `
 
 const Services = () => {

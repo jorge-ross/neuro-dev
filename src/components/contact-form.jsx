@@ -51,6 +51,10 @@ const Button = styled.button`
   width: 100%;
   height: 40px;
 
+  @media (max-width: 350px) {
+    height: auto;
+  }
+
   &:hover {
     background-color: grey;
   }
