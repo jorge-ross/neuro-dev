@@ -18,18 +18,22 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 60%;
+
+  @media (max-width: 400px) {
+    margin: 0 2rem;
+  }
 `;
 
 const Section = styled.div`
   margin: 0;
   display:flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 6.5rem;
 
   @media (max-width: 900px) {
-    flex-direction: column;
     gap: 2rem;
+    flex-direction: column;
   }
 `;
 

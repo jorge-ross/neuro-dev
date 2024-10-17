@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { typography, typography2 } from '../styles/typography';
+import { typography2 } from '../styles/typography';
 
 const Form = styled.form`
   display: flex;
@@ -102,7 +102,7 @@ const ContactForm = () => {
       <TextArea
         name="message"
         placeholder="Escribe aquí tu mensaje"
-        rows="5"
+        rows="3"
         value={formData.message}
         onChange={handleChange}
         required
