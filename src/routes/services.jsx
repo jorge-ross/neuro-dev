@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useEffect, useState } from 'react';
 import Header from '../components/header';
-import Footer from '../components/footer';
 import Terms from '../components/terms';
 import servicesBrain from '../assets/images/brain-services.png'
 import { typography, typography2 } from '../styles/typography';
@@ -129,22 +128,22 @@ const ServiceTitle = styled.h1`
   }
 `;
 
-const ServiceDescription = styled.p`
-  font-size: 1rem;
-  color: #333;
-  margin-bottom: 1rem;
-`;
+// const ServiceDescription = styled.p`
+//   font-size: 1rem;
+//   color: #333;
+//   margin-bottom: 1rem;
+// `;
 
-const ServiceList = styled.ul`
-  list-style-type: disc;
-  text-align: left;
-  padding-left: 1.5rem;
-  color: #333;
-`;
+// const ServiceList = styled.ul`
+//   list-style-type: disc;
+//   text-align: left;
+//   padding-left: 1.5rem;
+//   color: #333;
+// `;
 
-const ServiceItem = styled.li`
-  margin-bottom: 0.5rem;
-`;
+// const ServiceItem = styled.li`
+//   margin-bottom: 0.5rem;
+// `;
 
 const ServicesImg = styled.img`
   display: flex;
@@ -205,7 +204,6 @@ const Services = () => {
           </ServicesContainer>
         </FrontServiceCont>
       </ServicesSection>
-      <Footer /> 
       <Terms />
     </GeneralContainer>
   );
