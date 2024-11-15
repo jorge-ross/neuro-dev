@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import Header from '../components/header';
 import Terms from '../components/terms';
 import servicesBrain from '../assets/images/brain-services.png'
 import { typography, typography2 } from '../styles/typography';
 import { colors } from '../styles/colors';
+import { psychServices } from '../data/services';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -128,23 +130,6 @@ const ServiceTitle = styled.h1`
   }
 `;
 
-// const ServiceDescription = styled.p`
-//   font-size: 1rem;
-//   color: #333;
-//   margin-bottom: 1rem;
-// `;
-
-// const ServiceList = styled.ul`
-//   list-style-type: disc;
-//   text-align: left;
-//   padding-left: 1.5rem;
-//   color: #333;
-// `;
-
-// const ServiceItem = styled.li`
-//   margin-bottom: 0.5rem;
-// `;
-
 const ServicesImg = styled.img`
   display: flex;
   align-self: flex-start;
@@ -166,26 +151,52 @@ const ServicesImg = styled.img`
   }
 `
 
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; 
+`;
+
+const ModalContent = styled.div`
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  border: 2px solid red;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+`;
+
+const Modal = ({ service, onClose }) => {
+  return (
+    <ModalOverlay onClick={onClose}>
+      <ModalContent onClick={(e) => e.stopPropagation()}>
+        <h2>{service.title}</h2>
+        <p>{service.description}</p>
+        <button onClick={onClose}>Close</button>
+      </ModalContent>
+    </ModalOverlay>
+  );
+}
+
+Modal.propTypes = {
+  service: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
 const Services = () => {
-
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const response = await fetch('http://localhost:8000/services');
-        if (!response.ok) {
-          throw new Error('Error al obtener los servicios');
-        }
-        const data = await response.json();
-        setServices(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchServices();
-  }, []);
+  const [selectedService, setSelectedService] = useState(null);
 
   return (
     <GeneralContainer>
@@ -196,14 +207,20 @@ const Services = () => {
         <FrontServiceCont>
           <ServicesImg src={servicesBrain}/>
           <ServicesContainer>
-            {services.map(service => (
-              <ServiceCard key={service.id}>
+            {psychServices.map(service => (
+              <ServiceCard key={service.id} onClick={() => setSelectedService(service)}>
                 <ServiceTitle>{service.title}</ServiceTitle>
               </ServiceCard>
             ))}
           </ServicesContainer>
         </FrontServiceCont>
       </ServicesSection>
+      {selectedService && (
+        <Modal 
+        service={selectedService} 
+        onClose={() => setSelectedService(null)} 
+        />
+      )}
       <Terms />
     </GeneralContainer>
   );

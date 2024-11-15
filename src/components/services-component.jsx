@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { typography, typography2 } from '../styles/typography';
 import { Link } from 'react-router-dom';
 import { colors } from '../styles/colors';
+import { psychServices } from '../data/services';
 
 const ServicesContainer = styled.div`
   display: grid;
@@ -90,32 +91,13 @@ const AllServices = styled(Link)`
 `
 
 
-const Services = () => {
-
-  const [services, setServices] = useState([]);
-
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        const response = await fetch('http://localhost:8000/services');
-        if (!response.ok) {
-          throw new Error('Error al obtener los servicios');
-        }
-        const data = await response.json();
-        setServices(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchServices();
-  }, []);
+const ServicesComponent = () => {
 
   return(
     <>
       <SectionSubtitle>Servicios</SectionSubtitle>
       <ServicesContainer>
-      {services.slice(0, 6).map(service => (
+      {psychServices.slice(0, 6).map(service => (
         <ServiceCard key={service.id}>
           <ServiceTitle>{service.title}</ServiceTitle>
         </ServiceCard>
@@ -126,4 +108,4 @@ const Services = () => {
   )
 }
 
-export default Services;
+export default ServicesComponent;

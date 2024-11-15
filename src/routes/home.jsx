@@ -6,7 +6,7 @@ import Mision from "../components/mision";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
 import TestimonialSection from "../components/testimonial";
 import Terms from "../components/terms";
-import Services from "../components/services";
+import ServicesComponent from "../components/services-component";
 
 
 const GeneralContainer = styled.div`
@@ -22,7 +22,7 @@ function Home() {
     <GeneralContainer>
       <Header />
       <IntroSection />
-      <Services />
+      <ServicesComponent />
       <Mision />
       <OnlineTherapyBenefits />
       <TestimonialSection />
