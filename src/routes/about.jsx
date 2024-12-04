@@ -19,6 +19,16 @@ const AboutSection = styled.section`
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   padding-bottom: 4rem;
+
+  @media (max-width: 1000px){
+    width: 95%;
+  }
+
+  @media (max-width: 750px){
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1.5rem;
+  }
 `;
 
 const ProfileImage = styled.img`
@@ -36,6 +46,10 @@ const Title = styled.h1`
   grid-column: 2 / 4;
   grid-row: 1;
 
+  @media (max-width: 750px){
+    margin: 1.5rem 0 0 0;
+    align-self: flex-start;
+  }
 `;
 
 const Name = styled.h2`
@@ -58,6 +72,13 @@ const ProfesionalDetails = styled.div`
   text-align: center;
   grid-row: 3;
   grid-column: 1;
+
+  @media (max-width: 750px){
+    text-align: left;
+    align-self: flex-start;
+    border-top: 1px solid black;
+    padding-top: 1.5rem;
+  }
 `
 
 const Card = styled.div`
@@ -66,6 +87,10 @@ const Card = styled.div`
   flex-direction: column;
   gap: 1rem;
   grid-row: 1 / 3;
+
+  @media (max-width: 750px){
+    border-bottom: 1px solid black;
+  }
 `
 
 const About = () => {
@@ -78,23 +103,6 @@ const About = () => {
           <Name>Jorge Rosano</Name>
         </Card>
         <Title>Acerca de Mí</Title>
-        <ProfesionalDetails>
-          Ced. Prof: 000000
-          < br/>
-          Ced. Esp: En proceso de homologación
-          < br/>
-          (Ya saben lo lenta que suele ser la burocracia)
-          < br/>
-          < br/>
-          Mientras tanto...
-          <br /> 
-          pueden consultar mi título español {" "}
-          <a
-            href="/doc/neu-t.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >aquí</a>.
-        </ProfesionalDetails>
         <Description>
           Soy un psicólogo especializado en neuropsicología con 8 años de experiencia. 
           Me dedico a ofrecer servicios de psicología basada en evidencia, ayudando 
@@ -133,6 +141,23 @@ const About = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
           deserunt mollit anim id est laborum.
         </Description>
+        <ProfesionalDetails>
+          Ced. Prof: 000000
+          < br/>
+          Ced. Esp: En proceso de homologación
+          < br/>
+          (Ya saben lo lenta que suele ser la burocracia)
+          < br/>
+          < br/>
+          Mientras tanto...
+          <br /> 
+          pueden consultar mi título español {" "}
+          <a
+            href="/doc/neu-t.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >aquí</a>.
+        </ProfesionalDetails>
       </AboutSection>
       <Footer />
     </GeneralContainer>
