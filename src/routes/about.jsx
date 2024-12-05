@@ -3,22 +3,22 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import profile_pic from "../assets/images/profile_pic_npsic.jpg"
 import { typography } from "../styles/typography";
+import Terms from "../components/terms";
 
 const GeneralContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0;
-  padding: 9rem 2rem 0;
 `
 
 const AboutSection = styled.section`
+  margin: 10rem 2rem 4rem 2rem;
   width: 75%;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  padding-bottom: 4rem;
 
   @media (max-width: 1000px){
     width: 95%;
@@ -160,6 +160,7 @@ const About = () => {
         </ProfesionalDetails>
       </AboutSection>
       <Footer />
+      <Terms />
     </GeneralContainer>
   );
 };

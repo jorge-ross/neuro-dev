@@ -7,6 +7,7 @@ import servicesBrain from '../assets/images/brain-services.png'
 import { typography, typography2 } from '../styles/typography';
 import { colors } from '../styles/colors';
 import { psychServices } from '../data/services';
+import Footer from '../components/footer';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -221,6 +222,7 @@ const Services = () => {
         onClose={() => setSelectedService(null)} 
         />
       )}
+      <Footer />
       <Terms />
     </GeneralContainer>
   );
