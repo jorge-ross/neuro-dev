@@ -18,72 +18,73 @@ const GeneralContainer = styled.div`
 `
 
 const ServicesSection = styled.section`
-  margin: 7rem 2rem 5rem 2rem;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
+  margin: 10rem 2rem 5rem 2rem;
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
+
+const TextContainer = styled.div`
+  display: flex:
+  flex-direction: column;
+  text-align: center;
+  grid-column: 1;
+  grid-row: 1;
+`
 
 const SectionTitle = styled.h1`
  ${typography.head.lgx}
   color: black;
-  text-align: center;
-  margin: 1.5rem 0 0 0;
+  text-align: center; 
+  margin: 0;
   padding-bottom: 2rem;
-
-   @media (max-width: 600px) {
-    ${typography.head.lg};
-  }
 `;
 
 const Subtitle = styled.h1`
   ${typography2.text.lg}
   color: black;
-  padding-bottom: 3rem;
   font-weight: 500;
-  text-align: center;
+  text-align: center; 
   margin: 0;
-
-  @media (max-width: 650px) {
-    ${typography2.head.xxs}
-    font-weight: 400;
-  }
+  padding-bottom: 2.5rem;
 `;
 
-const FrontServiceCont = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-
-  @media (max-width: 900px) {
-    flex-direction: column;
-  }
-`
 
 const ServicesContainer = styled.div`
   display: grid;
+  width: 90%;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  justify-self: center;
+  gap: 2rem;
+  grid-row: 1;
+  grid-column: 2 / 4;
 
-  @media (max-width: 1130px) {
+  @media (max-width: 1350px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(3, 1fr);
+  @media (max-width: 1000px) {
+    width: 100%;
   }
 
-  @media (max-width: 650px) {
-    grid-template-columns: repeat(2, 1fr);
+  @media (max-width: 550px) {
+    column-gap: 1rem;
   }
 `;
 
 const ServiceCard = styled.div`
   background-color: black;
   border-radius: 1rem;
-  width: 220px;
-  height: 110px;
+  width: 250px;
+  height: 130px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -94,24 +95,17 @@ const ServiceCard = styled.div`
     background-color: ${colors.stone[900]};
   }
 
-   @media (max-width: 900px) {
-    width: 180px;
-    height: 90px;
+  @media (max-width: 550px) {
+    width: 190px;
+    height: 110px;
   }
 
-  @media (max-width: 500px) {
-    width: 160px;
-    height: 90px;
-  }
-
-  @media (max-width: 400px) {
-    width: 130px;
-    height: 70px;
+  @media (max-width: 450px) {
+    width: 170px;
   }
 
   @media (max-width: 400px) {
-    width: 110px;
-    height: 65px;
+    width: 150px;
   }
 `;
 
@@ -120,20 +114,15 @@ const ServiceTitle = styled.h1`
   color: white;
   margin: 2rem;
 
-  @media (max-width: 900px) {
-    ${typography2.head.xxs}
-    font-weight: 400;
-  }
 
-  @media (max-width: 320px) {
-    ${typography2.text.xss}
+  @media (max-width: 450px) {
+    ${typography2.text.md}
     font-weight: 400;
   }
 `;
 
 const ServicesImg = styled.img`
-  display: flex;
-  align-self: flex-start;
+  align-self: center;
   max-width: 300px;
   border-radius: 1rem;
   border-bottom-right-radius: 40%;
@@ -203,10 +192,11 @@ const Services = () => {
     <GeneralContainer>
       <Header />
       <ServicesSection>
-        <SectionTitle>Servicios</SectionTitle>
-        <Subtitle>Da click en cualquiera de los servicios para conocer más.</Subtitle>
-        <FrontServiceCont>
+        <TextContainer>
+          <SectionTitle>Servicios</SectionTitle>
+          <Subtitle>Da click en cualquiera de los servicios para conocer más.</Subtitle>
           <ServicesImg src={servicesBrain}/>
+        </TextContainer>
           <ServicesContainer>
             {psychServices.map(service => (
               <ServiceCard key={service.id} onClick={() => setSelectedService(service)}>
@@ -214,7 +204,7 @@ const Services = () => {
               </ServiceCard>
             ))}
           </ServicesContainer>
-        </FrontServiceCont>
+
       </ServicesSection>
       {selectedService && (
         <Modal 
@@ -222,6 +212,7 @@ const Services = () => {
         onClose={() => setSelectedService(null)} 
         />
       )}
+      
       <Footer />
       <Terms />
     </GeneralContainer>
