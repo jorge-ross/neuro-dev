@@ -6,23 +6,26 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7rem 2rem 0;
+  padding: 10rem 2rem 0;
   background-color: white;
   text-align: center;
+
+  @media (max-width: 600px) {
+    padding-top: 9rem;
+  }
 `;
 
 const SectionTitle = styled.h1`
   ${typography.head.xxl}
   color: black;
-  margin: 2.5rem 0 1.5rem 0;
+  margin: 0;
+  padding-bottom: 2rem;
   font-weight: 600;
   line-height: 1.2;
 
   @media (max-width: 600px) {
     ${typography.head.lga}
     line-height: 1.1;
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
   }
 `;
 
@@ -33,19 +36,18 @@ const Description = styled.p`
   line-height: 1.6;
   max-width: 600px;
   width: 90%;
-  margin: 0 0 1.5rem 0;
+  margin: 0;
+  padding-bottom: 2rem;
 
   @media (max-width: 600px) {
     ${typography.text.md}
-    line-height: 1.6;
-    margin-bottom: 2rem;
   }
 `;
 
 const BookButton = styled.button`
-  ${typography.text.sm}
-  max-width: 250px;
-  padding: 0.7rem 2rem;
+  ${typography.text.md};
+  max-width: 350px;
+  padding: 1rem 2rem;
   background-color: black;
   color: white;
   border-radius: 0.5rem;

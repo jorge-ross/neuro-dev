@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { useState, useEffect } from 'react';
 import { typography, typography2 } from '../styles/typography';
 import { Link } from 'react-router-dom';
 import { colors } from '../styles/colors';
@@ -17,11 +16,11 @@ const ServicesContainer = styled.div`
   }
 
   @media (max-width: 500px) {
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
-  @media (max-width: 320px) {
-    grid-template-columns: repeat(1, 1fr);
+  @media (max-width: 350px) {
+    gap: 0.5rem;
   }
 `;
 
@@ -29,13 +28,13 @@ const ServiceCard = styled.div`
   background-color: black;
   border-radius: 10px;
   width: 250px;
-  height: 120px;
+  height: 130px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
 
-   @media (max-width: 650px) {
+   @media (max-width: 600px) {
     width: 200px;
     height: 100px;
   }
@@ -45,22 +44,23 @@ const ServiceCard = styled.div`
     height: 90px;
   }
 
-  @media (max-width: 400px) {
-    width: 130px;
-    height: 70px;
+  @media (max-width: 350px) {
+    width: 140px;
+    height: 80px;
   }
 `;
 
-const SectionSubtitle = styled.h1`
+const Title = styled.h1`
   ${typography.head.lgx}
   color: black;
-  padding-top: 4.5rem;
+  padding: 5rem 0 2rem 0;
   text-align: center;
+  margin: 0;
 
    @media (max-width: 600px) {
     ${typography.head.lg};
     margin-bottom: 0;
-    padding-top: 3.5rem;
+    padding: 3rem 0 0.5rem 0;
   }
 `;
 
@@ -69,14 +69,21 @@ const ServiceTitle = styled.h1`
   color: white;
   margin: 2rem;
 
-  @media (max-width: 650px) {
-    ${typography2.head.xxs}
+  @media (max-width: 600px) {
     font-weight: 400;
+  }
+
+  @media (max-width: 500px) {
+    ${typography.text.lg};
+  }
+
+  @media (max-width: 350px) {
+    ${typography.text.md};
   }
 `;
 
 const AllServices = styled(Link)`
-  ${typography2.text.sm}
+  ${typography2.text.md}
   padding-top: 2rem;
   text-decoration: none;
   color: black;
@@ -95,7 +102,7 @@ const ServicesComponent = () => {
 
   return(
     <>
-      <SectionSubtitle>Servicios</SectionSubtitle>
+      <Title>Servicios</Title>
       <ServicesContainer>
       {psychServices.slice(0, 6).map(service => (
         <ServiceCard key={service.id}>
