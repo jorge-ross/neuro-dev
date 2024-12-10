@@ -5,38 +5,61 @@ import { Link } from 'react-router-dom';
 import mv from "../assets/images/mvtarget.png"
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem;
+  border-top: 1px solid black;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  padding: 3rem 0 5rem 0;
+
+  @media (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 3rem;
+    border: none;
+  }
 
   @media (max-width: 600px) {
-    padding: 2rem;
+    width: 85%;
+    padding: 1rem 0 3rem 0;
   }
 `;
 
-const Title = styled.h1`
+const Title = styled.div`
   ${typography.head.lgx}
   font-weight: bold;
-  color: #000;
-  margin-bottom: 0;
-  text-align: center;
+  margin-bottom: 2rem;
+  justify-self: center;
+  align-self: end;
+  grid-column: 1;
+  width: 85%;
 
+  @media (max-width: 1000px) {
+    width: 100%;
+    text-align: center;
+  }
+  
   @media (max-width: 600px) {
     ${typography.head.lg};
   }
 `;
-
+    
 const Description = styled.p`
-  ${typography2.text.md}
+  ${typography2.text.lg}
   color: ${colors.grey[700]};
-  margin: 2rem 0;
+  margin: 0;
   width: 85%;
-  text-align: center;
+  justify-self: center;
+  text-align: justify;
+  grid-column: 1;
+  grid-row: 2;
 
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding-bottom: 3rem;
+
+  }
   
   @media (max-width: 600px) {
-    text-align: justify;
     width: 100%;
   }
 `;
@@ -45,12 +68,16 @@ const ImagePlaceholder = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  grid-column: 2;
+  grid-row: 1 / 3;
 `;
 
 const MV = styled(Link)`
-  ${typography2.text.sm}
+  ${typography2.text.md}
   color: black;
-  margin: 2rem 0;
+  grid-column: 1;
+  grid-row: 2;
+  justify-self: center;
 
   &:hover {
     color: ${colors.stone[500]};
@@ -58,27 +85,30 @@ const MV = styled(Link)`
 `
 
 const MVImg = styled.img`
-  width: 35%;
+  width: 70%;
   border-radius: 50%;
 
-  @media (max-width: 600px) {
-    width: 50%;
+  @media (max-width: 1000px) {
+    width: 60%;
   }
 `
 
 const Mision = () => {
   return (
     <Container>
-      <Title>La mision de Neurodev</Title>
+      
+      <Title>La misión de Neurodev</Title>
       <Description>
         En Neuro-dev, nos dedicamos a brindar un apoyo a la salud mental serio, comprensivo y basado en evidencia. El objetivo es simple pero poderoso: ayudarte a alcanzar el bienestar mental que necesitas para llevar una vida plena.
+        <br />
+        <br />
+      <MV>
+        Descubra más sobre la misión y los valores de Neurodev
+      </MV>
       </Description>
       <ImagePlaceholder>
         <MVImg src={mv} alt="m" />
       </ImagePlaceholder>
-      <MV>
-        Descubra más sobre la misión y los valores de Neurodev
-      </MV>
     </Container>
   );
 };

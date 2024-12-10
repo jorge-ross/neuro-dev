@@ -83,8 +83,8 @@ const ServiceTitle = styled.h1`
 `;
 
 const AllServices = styled(Link)`
-  ${typography2.text.md}
-  padding-top: 2rem;
+  ${typography2.text.lg}
+  padding: 2rem 0 4rem 0;
   text-decoration: none;
   color: black;
 
@@ -93,7 +93,8 @@ const AllServices = styled(Link)`
   }
 
   @media (max-width: 650px) {
-    padding-top: 1rem;
+    padding: 1rem 0 3rem 0;
+    text-decoration: underline;
   }
 `
 
