@@ -14,11 +14,10 @@ import { colors } from '../styles/colors';
 
 const SectionContainer = styled.section`
   margin: 1rem 2rem;
-  background-color: white;
   text-align: center;
   width: 50%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     width: 70%;
   }
 `;
@@ -29,10 +28,6 @@ const SectionTitle = styled.h1`
   margin-bottom: 2rem;
 
   @media (max-width: 600px) {
-    ${typography.head.lg};
-  }
-
-  @media (max-width: 400px) {
     ${typography.head.md};
   }
 `;
@@ -53,31 +48,47 @@ const BenefitCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 1rem;
+  padding-top: 2rem;
 `;
 
 const BenefitImage = styled.img`
-  max-width: 220px;
+  max-width: 400px;
   height: auto;
   border-radius: 20px;
   margin-bottom: 1rem;
 
-  @media(max-width: 320px){
-    max-width: 120px;
+  @media(max-width: 1000px){
+    max-width: 320px;
+  }
+
+  @media(max-width: 600px){
+    max-width: 220px;
+  }
+
+  @media(max-width: 350px){
+    max-width: 180px;
   }
 `;
 
 const BenefitText = styled.p`
-  ${typography2.head.xss}
-  margin: 2rem 1rem 1rem;
+  ${typography2.head.md}
+  margin: 2rem 1rem;
   color: black;
+
+  @media(max-width: 600px){
+    ${typography2.head.sm};
+  }
 `;
 
 const BenefitDescription = styled.p`
-  ${typography2.text.md}
+  ${typography2.text.lg}
   color: ${colors.grey[700]};
-  margin: 0 0 1rem 0;
+  margin: 0 0 2rem 0;
   width: 85%;
+
+   @media(max-width: 600px){
+    ${typography2.text.md};
+  }
 `;
 
 const Arrow = styled.div`
@@ -91,6 +102,11 @@ const Arrow = styled.div`
 
   @media (max-width: 600px) {
     top: 30%;
+    font-size: 4.5rem;
+  }
+    
+  @media (max-width: 350px) {
+    top: 28%;
     font-size: 4rem;
   }
 `;
