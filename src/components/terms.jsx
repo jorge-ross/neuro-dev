@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useState } from 'react';
 import { typography } from '../styles/typography';
-import { Link } from 'react-router-dom';
 import GralModal from './modals/gral-modal';
 import logow from '../assets/images/logow.png';
 
@@ -82,11 +81,6 @@ const BrandContainer = styled.div`
   }
 `
 
-const StyledLink = styled(Link)`
-  align-items: center;
-  text-decoration: none;
-`;
-
 const LogoImgCont = styled.img`
 max-width: 2rem;
 `
@@ -116,9 +110,6 @@ const Terms = () => {
           <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
           <Option onClick={() => setShowTermsModal(true)}>Términos y condiciones</Option>
           <Option onClick={() => setShowCancellationModal(true)}>Políticas de cancelación</Option>
-          <StyledLink to="/promotions" onClick={() => window.scrollTo(0, 0)}>
-            <Option>Promoción y descuentos</Option>
-          </StyledLink>
         </Section>
       <GralModal show={showModal} onClose={handleCloseModal}>
           <p>
