@@ -9,18 +9,17 @@ const Container = styled.div`
   width: 80%;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  padding: 3rem 0 5rem 0;
+  padding: 3rem 0;
 
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
-    padding-bottom: 3rem;
     border: none;
   }
 
   @media (max-width: 600px) {
     width: 85%;
-    padding: 1rem 0 3rem 0;
+    padding-top: 1rem;
   }
 `;
 

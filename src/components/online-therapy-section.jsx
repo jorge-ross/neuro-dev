@@ -13,7 +13,8 @@ import { colors } from '../styles/colors';
 
 
 const SectionContainer = styled.section`
-  margin: 1rem 2rem;
+  margin: 0;
+  padding: 3rem 0 5rem;
   text-align: center;
   width: 50%;
 
@@ -25,10 +26,11 @@ const SectionContainer = styled.section`
 const SectionTitle = styled.h1`
   ${typography.head.lgx};
   color: black;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 
   @media (max-width: 600px) {
-    ${typography.head.md};
+    ${typography.head.lg};
+    margin-top: 0;
   }
 `;
 

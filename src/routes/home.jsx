@@ -4,7 +4,6 @@ import Footer from "../components/footer";
 import IntroSection from "../components/intro-section";
 import Mision from "../components/mision";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
-import TestimonialSection from "../components/testimonial";
 import Terms from "../components/terms";
 import ServicesComponent from "../components/services-component";
 
@@ -25,7 +24,6 @@ function Home() {
       <ServicesComponent />
       <Mision />
       <OnlineTherapyBenefits />
-      <TestimonialSection />
       <Footer />
       <Terms />
     </GeneralContainer>

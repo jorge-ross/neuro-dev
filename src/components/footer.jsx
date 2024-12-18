@@ -7,14 +7,9 @@ import WhatsAppButton from './whats-app-button';
 const Gral = styled.div`
 background:white;
 border-top: 1px solid black;
-width: 95%;
+width: 100%;
 display: flex;
 justify-content: center;
-
-@media (max-width: 600px) {
-  width: 100%;
-}
-
 `
 
 const FooterContainer = styled.footer`

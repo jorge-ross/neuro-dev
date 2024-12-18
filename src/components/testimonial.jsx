@@ -15,7 +15,11 @@ const SectionContainer = styled.section`
 const SectionTitle = styled.h1`
   ${typography.head.lgx}
   color: black;
-  margin: 2rem 0 3rem;
+  margin: 2rem 0;
+
+  @media (max-width: 600px) {
+    ${typography.head.lg};
+  }
 `;
 
 const CardsContainer = styled.div`

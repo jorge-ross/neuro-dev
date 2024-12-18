@@ -4,11 +4,21 @@ import { Link } from 'react-router-dom';
 import { colors } from '../styles/colors';
 import { psychServices } from '../data/services';
 
+const Container = styled.div`
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1000px) {
+    padding-bottom: 3rem;
+  }
+`
+
 const ServicesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  margin: 2rem;
+  margin: 2rem 0;
   gap: 2rem;
 
   @media (max-width: 900px) {
@@ -53,9 +63,8 @@ const ServiceCard = styled.div`
 const Title = styled.h1`
   ${typography.head.lgx}
   color: black;
-  padding: 5rem 0 2rem 0;
   text-align: center;
-  margin: 0;
+  margin: 2rem 0;
 
    @media (max-width: 600px) {
     ${typography.head.lg};
@@ -84,9 +93,10 @@ const ServiceTitle = styled.h1`
 
 const AllServices = styled(Link)`
   ${typography2.text.lg}
-  padding: 2rem 0 4rem 0;
   text-decoration: none;
   color: black;
+  margin: 2rem 0;
+  text-align: center;
 
   &:hover {
     color: ${colors.stone[500]};
@@ -102,7 +112,7 @@ const AllServices = styled(Link)`
 const ServicesComponent = () => {
 
   return(
-    <>
+    <Container>
       <Title>Servicios</Title>
       <ServicesContainer>
       {psychServices.slice(0, 6).map(service => (
@@ -112,7 +122,7 @@ const ServicesComponent = () => {
       ))}
       </ServicesContainer>
       <AllServices to="/services" onClick={() => window.scrollTo(0, 0)}>Ver todos los servicios →</AllServices>
-    </>
+    </Container>
   )
 }
 
