@@ -5,7 +5,7 @@ import { colors } from '../styles/colors';
 import { psychServices } from '../data/services';
 
 const Container = styled.div`
-  padding: 4rem 0;
+  padding: 5.5rem 0 4rem;
   display: flex;
   flex-direction: column;
 

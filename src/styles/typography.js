@@ -63,7 +63,7 @@ export const typography = {
     font-size: 4rem;
     `,
     xxl: `
-    font-size: 5rem;
+    font-size: 5.5rem;
     `,
   },
 };

@@ -1,28 +1,36 @@
 import styled from 'styled-components';
 import { colors } from '../styles/colors';
 import { typography, typography2 } from '../styles/typography';
+import bgImage from '../assets/images/intro-background.png';
 
 const SectionContainer = styled.section`
+  width: 100%;
+  background-image: url('${bgImage}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  position: relative;
+  top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15rem 2rem 2rem;
+  padding: 16rem 0 8rem 0;
   background-color: white;
   text-align: center;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     padding-top: 10rem;
-    padding-bottom: 3rem;
+     padding-bottom: 3rem;
   }
 `;
 
 const SectionTitle = styled.h1`
   ${typography.head.xxl}
-  color: black;
+  color: white;
   margin: 0;
   padding-bottom: 2rem;
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.5;
 
   @media (max-width: 700px) {
     ${typography.head.lgx}
@@ -33,7 +41,7 @@ const SectionTitle = styled.h1`
 
 const Description = styled.p`
   ${typography2.text.xl};
-  color: ${colors.grey[700]};
+  color: white;
   line-height: 1.6;
   max-width: 600px;
   width: 90%;
@@ -46,7 +54,7 @@ const Description = styled.p`
 `;
 
 const BookButton = styled.button`
-  ${typography.text.md};
+  ${typography.text.lg};
   max-width: 350px;
   padding: 1rem 2rem;
   background-color: black;
@@ -54,6 +62,10 @@ const BookButton = styled.button`
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
+
+   @media (max-width: 700px) {
+    ${typography.text.md}
+  }
 `
 
 
