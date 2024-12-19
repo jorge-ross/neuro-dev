@@ -28,7 +28,7 @@ const SectionTitle = styled.h1`
   color: black;
   margin: 2rem 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     ${typography.head.lg};
     margin-top: 0;
   }
@@ -77,7 +77,7 @@ const BenefitText = styled.p`
   margin: 2rem 1rem;
   color: black;
 
-  @media(max-width: 600px){
+  @media(max-width: 700px){
     ${typography2.head.sm};
   }
 `;
@@ -88,7 +88,7 @@ const BenefitDescription = styled.p`
   margin: 0 0 2rem 0;
   width: 85%;
 
-   @media(max-width: 600px){
+   @media(max-width: 700px){
     ${typography2.text.md};
   }
 `;

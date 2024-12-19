@@ -9,8 +9,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 1000px) {
-    padding-bottom: 3rem;
+  @media (max-width: 700px) {
+    padding: 1rem 0 3rem;
   }
 `
 
@@ -66,10 +66,9 @@ const Title = styled.h1`
   text-align: center;
   margin: 2rem 0;
 
-   @media (max-width: 600px) {
+   @media (max-width: 700px) {
     ${typography.head.lg};
-    margin-bottom: 0;
-    padding: 3rem 0 0.5rem 0;
+    margin: 1rem 0;
   }
 `;
 
@@ -78,7 +77,7 @@ const ServiceTitle = styled.h1`
   color: white;
   margin: 2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     font-weight: 400;
   }
 
@@ -102,8 +101,8 @@ const AllServices = styled(Link)`
     color: ${colors.stone[500]};
   }
 
-  @media (max-width: 650px) {
-    padding: 1rem 0 3rem 0;
+  @media (max-width: 700px) {
+    margin-top: 1rem;
     text-decoration: underline;
   }
 `

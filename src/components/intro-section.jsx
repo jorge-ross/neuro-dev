@@ -6,12 +6,13 @@ const SectionContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10rem 2rem 0;
+  padding: 15rem 2rem 2rem;
   background-color: white;
   text-align: center;
 
-  @media (max-width: 600px) {
-    padding-top: 9rem;
+  @media (max-width: 700px) {
+    padding-top: 10rem;
+    padding-bottom: 3rem;
   }
 `;
 
@@ -23,8 +24,8 @@ const SectionTitle = styled.h1`
   font-weight: 600;
   line-height: 1.2;
 
-  @media (max-width: 600px) {
-    ${typography.head.lga}
+  @media (max-width: 700px) {
+    ${typography.head.lgx}
     line-height: 1.1;
   }
 `;
@@ -39,7 +40,7 @@ const Description = styled.p`
   margin: 0;
   padding-bottom: 2rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     ${typography.text.md}
   }
 `;

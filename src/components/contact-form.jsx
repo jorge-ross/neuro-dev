@@ -16,7 +16,7 @@ const InputContainer = styled.div`
   grid-row: 1;
   grid-column: 1 / 3;
 
-  @media (max-width: 600px){
+  @media (max-width: 700px){
     display: flex;
     flex-direction: column;
     gap: 2rem;

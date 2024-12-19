@@ -14,12 +14,7 @@ const Container = styled.div`
   @media (max-width: 1000px) {
     display: flex;
     flex-direction: column;
-    border: none;
-  }
-
-  @media (max-width: 600px) {
     width: 85%;
-    padding-top: 1rem;
   }
 `;
 
@@ -37,13 +32,14 @@ const Title = styled.div`
     text-align: center;
   }
   
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     ${typography.head.lg};
+    margin-bottom: 1.5rem;
   }
 `;
     
 const Description = styled.p`
-  ${typography2.text.lg}
+  ${typography2.text.lg};
   color: ${colors.grey[700]};
   margin: 0;
   width: 85%;
@@ -55,11 +51,10 @@ const Description = styled.p`
   @media (max-width: 1000px) {
     width: 100%;
     padding-bottom: 3rem;
-
   }
-  
-  @media (max-width: 600px) {
-    width: 100%;
+
+  @media (max-width: 700px) {
+    ${typography.text.md}
   }
 `;
 
