@@ -1,39 +1,41 @@
 import styled from 'styled-components';
-import { colors } from '../styles/colors';
 import { typography, typography2 } from '../styles/typography';
 import bgImage from '../assets/images/intro-background.png';
 
 const SectionContainer = styled.section`
   width: 100%;
+  min-height: 400px;
   background-image: url('${bgImage}');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; 
-  position: relative;
-  top: 80px;
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 16rem 0 8rem 0;
+  padding: 14rem 0 8rem 0;
   background-color: white;
   text-align: center;
 
   @media (max-width: 1000px) {
-    padding-top: 10rem;
+    padding-top: 9rem;
      padding-bottom: 3rem;
   }
 `;
 
-const SectionTitle = styled.h1`
-  ${typography.head.xxl}
+
+
+const SectionTitle = styled.div`
+  ${typography.head.xxl};
   color: white;
   margin: 0;
   padding-bottom: 2rem;
   font-weight: 600;
   line-height: 1.5;
+  width: 90%;
 
   @media (max-width: 700px) {
-    ${typography.head.lgx}
+    ${typography.head.lga}
     line-height: 1.1;
   }
 `;
@@ -81,7 +83,7 @@ const IntroSection = () => {
 
   return (
       <SectionContainer>
-      <SectionTitle>Tu camino hacia la salud mental.</SectionTitle>
+      <SectionTitle>Servicios profesionales de Psicología y Neuropsicología.</SectionTitle>
       <Description>
         Comienza hoy tu viaje hacia una mente más saludable con Neuro-dev. Un servicio profesional adaptado a tus necesidades.
       </Description>
