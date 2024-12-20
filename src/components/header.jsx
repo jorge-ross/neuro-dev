@@ -33,7 +33,7 @@ justify-content: space-between;
 width: 95%;
 
 
-  @media (max-width: 650px) {
+  @media (max-width: 700px) {
     padding: 1rem 1.5rem;
   }
 `
@@ -44,7 +44,7 @@ const OptionsContainer = styled.li`
   align-items: center;
   gap: 1.5rem;
 
-  @media (max-width: 650px) {
+  @media (max-width: 700px) {
     display: none;
   }
 `
@@ -89,8 +89,8 @@ const HamMenu = styled.div`
   background-color: white;
   border-left: 2px solid #1D2C60;
 
-  @media (max-width: 900px) {
-    width: 75%;
+  @media (max-width: 700px) {
+    width: 70%;
     right: ${props => (props.visible ? "0" : "-80%")};
   }
 `;
@@ -113,7 +113,7 @@ const HamburgerIcon = styled.div`
   padding-top: 4px;
   border: 1px solid #1D2C60;
 
-  @media (max-width: 650px) {
+  @media (max-width: 700px) {
     display: ${props => (props.isOpen ? "none" : "block")};
   }
 `;

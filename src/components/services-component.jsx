@@ -5,13 +5,9 @@ import { colors } from '../styles/colors';
 import { psychServices } from '../data/services';
 
 const Container = styled.div`
-  margin: 5.5rem 0 4rem;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 700px) {
-    padding: 1rem 0 3rem;
-  }
+  padding: 2rem 0;
 `
 
 const ServicesContainer = styled.div`
@@ -23,6 +19,7 @@ const ServicesContainer = styled.div`
 
   @media (max-width: 900px) {
     grid-template-columns: repeat(2, 1fr);
+    margin-top: 1rem;
   }
 
   @media (max-width: 500px) {
@@ -36,7 +33,7 @@ const ServicesContainer = styled.div`
 
 const ServiceCard = styled.div`
   background-color: black;
-  border-radius: 10px;
+  border-radius: 1.5rem;
   width: 250px;
   height: 130px;
   text-align: center;
@@ -44,9 +41,9 @@ const ServiceCard = styled.div`
   justify-content: center;
   align-items: center;
 
-   @media (max-width: 600px) {
-    width: 200px;
-    height: 100px;
+   @media (max-width: 700px) {
+    width: 220px;
+    height: 110px;
   }
 
   @media (max-width: 500px) {
@@ -61,14 +58,13 @@ const ServiceCard = styled.div`
 `;
 
 const Title = styled.h1`
-  ${typography.head.lgx}
+  ${typography.head.lga}
   color: black;
   text-align: center;
   margin: 2rem 0;
 
    @media (max-width: 700px) {
     ${typography.head.lg};
-    margin: 1rem 0;
   }
 `;
 
@@ -78,11 +74,8 @@ const ServiceTitle = styled.h1`
   margin: 2rem;
 
   @media (max-width: 700px) {
-    font-weight: 400;
-  }
-
-  @media (max-width: 500px) {
     ${typography.text.lg};
+    font-weight: 400;
   }
 
   @media (max-width: 350px) {
@@ -102,7 +95,6 @@ const AllServices = styled(Link)`
   }
 
   @media (max-width: 700px) {
-    margin-top: 1rem;
     text-decoration: underline;
   }
 `
