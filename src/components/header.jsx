@@ -19,7 +19,7 @@ width: 100%;
 display: flex;
 justify-content: center;
 border-bottom: 1px solid black;
-height: 80px;
+height: 70px;
 position: fixed;
 top: 0;
 z-index: 10;
@@ -27,10 +27,10 @@ z-index: 10;
 
 const NavBarContainer = styled.div`
 display: flex;
-padding: 1rem 2.5rem;
+padding: 1rem 2rem;
 align-items: center;
 justify-content: space-between;
-width: 90%;
+width: 95%;
 
 
   @media (max-width: 650px) {
@@ -50,7 +50,7 @@ const OptionsContainer = styled.li`
 `
 
 const BrandTitle = styled.h3`
-  ${typography.head.md}
+  ${typography.head.smx}
   margin: 0;
   color: black;
   font-weight: 600;

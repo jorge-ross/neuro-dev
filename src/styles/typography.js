@@ -1,3 +1,5 @@
+import { SiMxlinux } from "react-icons/si";
+
 export const fonts = {
   primary: `sans-serif`,
   secondary: `'Roboto', sans-serif`,
@@ -16,8 +18,6 @@ export const typography = {
     `,
     md: `
     font-size: 1rem;
-    font-style: normal;
-    line-height: 1.26rem;
     `,
     lg: `
     font-size: 1.125rem;
@@ -38,10 +38,14 @@ export const typography = {
     line-height: 1.75rem;
     `,
     xss: `
-    font-size: 1.1rem;
+    font-size: 1rem;
     `,
     sm: `
     font-size: 1.5rem;
+    line-height: 2rem;
+    `,
+    smx: `
+    font-size: 1.7rem;
     line-height: 2rem;
     `,
     md: `
@@ -63,7 +67,7 @@ export const typography = {
     font-size: 4rem;
     `,
     xxl: `
-    font-size: 5.5rem;
+    font-size: 5rem;
     `,
   },
 };
@@ -94,8 +98,6 @@ export const typography2 = {
     `,
     md: `
     font-size: 1rem;
-    font-style: normal;
-    line-height: 1.26rem;
     `,
     lg: `
     font-size: 1.125rem;
@@ -120,7 +122,6 @@ export const typography2 = {
     `,
     xs: `
     font-size: 1.25rem;
-  
     `,
     xss: `
     font-size: 1.4rem;
