@@ -1,5 +1,3 @@
-import { SiMxlinux } from "react-icons/si";
-
 export const fonts = {
   primary: `sans-serif`,
   secondary: `'Roboto', sans-serif`,

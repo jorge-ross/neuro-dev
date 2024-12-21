@@ -4,7 +4,7 @@ import { typography } from "../styles/typography";
 import { FaWhatsapp  } from "react-icons/fa";
 
 const WhatsButton = styled.button`
-  ${typography.text.md};
+  ${typography.text.sm};
   width: 75%;
   height: 50px;
   padding: 0.7rem 2rem;
@@ -28,8 +28,9 @@ const WhatsButton = styled.button`
 
 const Icon = styled.span`
   margin-right: 0.6rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: white;
+  margin-top: 0.1rem;
 
   @media (max-width: 350px){
     margin-right: 0.5rem;

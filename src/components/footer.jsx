@@ -18,7 +18,7 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 80%;
+  width: 70%;
 
   @media (max-width: 400px) {
     margin: 0 2rem;
@@ -39,17 +39,17 @@ const Section = styled.div`
 `;
 
 const SectionTitle = styled.h1`
-  ${typography.head.sm}
-  margin: 0.5rem 0;
+  ${typography.head.md}
+  margin: 0;
   color: black;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.7rem;
   text-align: center;
 `;
 
 const Inst = styled.p`
-  ${typography2.text.md}
+  ${typography2.text.sm}
   margin: 0;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
   text-align: center;
 `
 
@@ -64,7 +64,7 @@ const Footer = () => {
   return (
     <Gral id="contact">
       <FooterContainer>
-        <SectionTitle>TE ESCUCHO</SectionTitle>
+        <SectionTitle>Te escucho...</SectionTitle>
         <Section>
           <ContactForm />
           <WhatsContainer>

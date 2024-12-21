@@ -6,13 +6,13 @@ import emailjs from 'emailjs-com'
 const Form = styled.form`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+  gap: 1rem;
 `;
 
 const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 1.2rem;
+  gap: 1rem;
   grid-row: 1;
   grid-column: 1 / 3;
 
@@ -24,7 +24,7 @@ const InputContainer = styled.div`
 `
 
 const Input = styled.input`
-  ${typography2.text.md};
+  ${typography2.text.sm};
   padding: 10px;
   margin: 0;
   border: 1px solid #ccc;
@@ -44,7 +44,7 @@ const Input = styled.input`
 `;
 
 const TextArea = styled.textarea`
-  ${typography2.text.md};
+  ${typography2.text.sm};
   background-color: #f5f5f5;
   max-width: auto;
   padding: 10px;
@@ -61,7 +61,7 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  ${typography.text.md};
+  ${typography.text.sm};
   padding: 0.7rem 2rem;
   background-color: black;
   color: white;

@@ -14,7 +14,7 @@ import { colors } from '../styles/colors';
 
 const SectionContainer = styled.section`
   margin: 0;
-  padding: 3rem 0 5rem;
+  padding: 2.5rem 0 5rem;
   text-align: center;
   width: 50%;
 
@@ -24,9 +24,9 @@ const SectionContainer = styled.section`
 `;
 
 const SectionTitle = styled.h1`
-  ${typography.head.lgx};
+  ${typography.head.lga};
   color: black;
-  margin: 2rem 0;
+  margin: 2rem 0 0;
 
   @media (max-width: 700px) {
     ${typography.head.lg};
@@ -54,10 +54,9 @@ const BenefitCard = styled.div`
 `;
 
 const BenefitImage = styled.img`
-  max-width: 400px;
+  max-width: 350px;
   height: auto;
   border-radius: 20px;
-  margin-bottom: 1rem;
 
   @media(max-width: 1000px){
     max-width: 320px;
@@ -97,18 +96,18 @@ const Arrow = styled.div`
   color: black;
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 35%;
   transform: translateY(-50%);
   z-index: 1;
   font-size: 6rem;
 
   @media (max-width: 600px) {
-    top: 30%;
+    top: 28%;
     font-size: 4.5rem;
   }
     
   @media (max-width: 350px) {
-    top: 28%;
+    top: 26%;
     font-size: 4rem;
   }
 `;
@@ -146,7 +145,7 @@ const OnlineTherapyBenefits = () => {
 
   return (
     <SectionContainer>
-      <SectionTitle>Beneficios de Tomar Terapia en Línea</SectionTitle>
+      <SectionTitle>Beneficios de los servicios en línea</SectionTitle>
       <SliderContainer>
         <Slider {...settings}>
 
