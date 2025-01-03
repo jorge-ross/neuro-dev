@@ -20,6 +20,7 @@ const SectionContainer = styled.section`
 
   @media (max-width: 1000px) {
     width: 70%;
+    padding-top: 1.5rem;
   }
 `;
 

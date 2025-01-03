@@ -20,6 +20,10 @@ const FooterContainer = styled.footer`
   gap: 1.5rem;
   width: 70%;
 
+  @media (max-width: 700px) {
+    gap: 1rem;
+  }
+
   @media (max-width: 400px) {
     margin: 0 2rem;
   }
@@ -32,7 +36,7 @@ const Section = styled.div`
   gap: 3rem;
 
   @media (max-width: 1000px) {
-    gap: 2rem;
+    gap: 1.5rem;
     display: flex;
     flex-direction: column;
   }
@@ -42,7 +46,7 @@ const SectionTitle = styled.h1`
   ${typography.head.md}
   margin: 0;
   color: black;
-  padding-bottom: 0.7rem;
+  padding-bottom: 0.5rem;
   text-align: center;
 `;
 

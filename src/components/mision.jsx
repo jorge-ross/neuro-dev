@@ -50,7 +50,7 @@ const Description = styled.p`
 
   @media (max-width: 1000px) {
     width: 100%;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
   }
 
   @media (max-width: 700px) {

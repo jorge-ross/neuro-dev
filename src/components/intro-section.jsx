@@ -13,12 +13,12 @@ const SectionContainer = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  padding: 8rem 0;
+  padding: 8.5rem 0;
   background-color: white;
   text-align: center;
 
   @media (max-width: 1600px) {
-    padding: 100px 0;
+    padding: 6rem 0;
   }
 
   @media (max-width: 600px) {

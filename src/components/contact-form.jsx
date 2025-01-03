@@ -19,7 +19,6 @@ const InputContainer = styled.div`
   @media (max-width: 700px){
     display: flex;
     flex-direction: column;
-    gap: 2rem;
   }
 `
 
@@ -33,7 +32,7 @@ const Input = styled.input`
   background-color: #f5f5f5;
   width: 100%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     width: 95%;
     align-self: center;
   }

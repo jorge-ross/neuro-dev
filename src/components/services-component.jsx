@@ -7,7 +7,7 @@ import { psychServices } from '../data/services';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 1rem 0;
 `
 
 const ServicesContainer = styled.div`
@@ -61,7 +61,7 @@ const Title = styled.h1`
   ${typography.head.lga}
   color: black;
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem 0 1rem;
 
    @media (max-width: 700px) {
     ${typography.head.lg};
@@ -87,7 +87,7 @@ const AllServices = styled(Link)`
   ${typography2.text.lg}
   text-decoration: none;
   color: black;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem;
   text-align: center;
 
   &:hover {
