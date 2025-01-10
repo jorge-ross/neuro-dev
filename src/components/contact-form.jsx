@@ -54,7 +54,7 @@ const TextArea = styled.textarea`
   grid-row: 2;
   grid-column: 1 / 3;
 
-   @media (max-width: 350px){
+  @media (max-width: 350px){
     ${typography2.text.xss}
   }
 `;

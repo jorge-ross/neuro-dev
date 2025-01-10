@@ -1,119 +1,139 @@
 import styled from 'styled-components';
-import { typography, typography2 } from '../styles/typography';
+import { typography2 } from '../styles/typography';
 import { Link } from 'react-router-dom';
-import { colors } from '../styles/colors';
-import { psychServices } from '../data/services';
+import logoservices from '../assets/images/corpimage.png';
+import logow from '../assets/images/logow.png';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  width: 100%;
+  align-items: center;
 `
 
 const ServicesContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  margin: 2rem 0;
-  gap: 2rem;
+  display: flex;
+  width: 75%;
+  justify-content: space-around;
+  padding: 2rem 0 4rem;
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-    margin-top: 1rem;
-  }
-
-  @media (max-width: 500px) {
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
     gap: 1.5rem;
   }
 
-  @media (max-width: 350px) {
-    gap: 0.5rem;
-  }
-`;
-
-const ServiceCard = styled.div`
-  background-color: black;
-  border-radius: 1.5rem;
-  width: 250px;
-  height: 130px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-   @media (max-width: 700px) {
-    width: 220px;
-    height: 110px;
-  }
-
-  @media (max-width: 500px) {
-    width: 160px;
-    height: 90px;
-  }
-
-  @media (max-width: 350px) {
-    width: 140px;
-    height: 80px;
-  }
-`;
-
-const Title = styled.h1`
-  ${typography.head.lga}
-  color: black;
-  text-align: center;
-  margin: 2rem 0 1rem;
-
-   @media (max-width: 700px) {
-    ${typography.head.lg};
-  }
-`;
-
-const ServiceTitle = styled.h1`
-  ${typography2.head.xs}
-  color: white;
-  margin: 2rem;
-
-  @media (max-width: 700px) {
-    ${typography.text.lg};
-    font-weight: 400;
-  }
-
-  @media (max-width: 350px) {
-    ${typography.text.md};
-  }
-`;
-
-const AllServices = styled(Link)`
-  ${typography2.text.lg}
-  text-decoration: none;
-  color: black;
-  margin: 1rem 0 2rem;
-  text-align: center;
-
-  &:hover {
-    color: ${colors.stone[500]};
-  }
-
-  @media (max-width: 700px) {
-    text-decoration: underline;
+  @media (max-width: 600px) {
+    gap: 1.2rem;
   }
 `
 
+const CorpImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items; center;
+  color: black;
+  padding: 4rem 0;
+
+  @media (max-width: 1000px) {
+    padding-bottom: 2rem;
+  }
+
+  @media (max-width: 400px) {
+    padding-bottom: 1rem;
+  }
+  `
+  
+  const CorpImage = styled.img`
+  width: 60%;
+
+  @media (max-width: 600px) {
+    width: 75%;
+  }
+`
+
+const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  ${typography2.text.xl};
+  font-weight: 500;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 3rem;
+  cursor: pointer;
+  min-width: 390px;
+  min-height: 90px;
+
+  @media (max-width: 1000px) {
+    min-width: 530px;
+  }
+
+  @media (max-width: 700px) {
+    ${typography2.text.lg};
+    min-width: 400px;
+    min-height: 80px;
+  }
+
+   @media (max-width: 600px) {
+    min-width: 380px;
+  }
+
+  @media (max-width: 400px) {
+    ${typography2.text.md};
+    min-width: 270px;
+    min-height: 60px;
+  }
+
+  &:hover {
+    background-color: #292929;
+  }
+`;
+
+const LogoImgCont = styled.img`
+  max-width: 1.7rem;
+
+  @media (max-width: 500px) {
+    max-width: 1.3rem;
+  }
+
+  @media (max-width: 400px) {
+    max-width: 1rem;
+  }
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none; /* Remove underline */
+`;
 
 const ServicesComponent = () => {
 
   return(
+    <>
+    <CorpImageContainer>
+      <CorpImage src={logoservices} />
+    </CorpImageContainer>
+
     <Container>
-      <Title>Servicios</Title>
       <ServicesContainer>
-      {psychServices.slice(0, 6).map(service => (
-        <ServiceCard key={service.id}>
-          <ServiceTitle>{service.title}</ServiceTitle>
-        </ServiceCard>
-      ))}
+        <StyledLink to="/services">
+        <Button onClick={() => window.scrollTo(0, 0)}>
+          <LogoImgCont src={logow} alt="logo" />
+          Psicología
+        </Button>
+        </StyledLink>
+        <StyledLink to="/services">
+        <Button onClick={() => window.scrollTo(0, 0)}>
+          <LogoImgCont src={logow} alt="logo" />
+          Neuropsicología
+        </Button>
+        </StyledLink>
       </ServicesContainer>
-      <AllServices to="/services" onClick={() => window.scrollTo(0, 0)}>Ver todos los servicios →</AllServices>
     </Container>
+    </>
   )
 }
 
