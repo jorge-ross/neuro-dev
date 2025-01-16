@@ -6,7 +6,7 @@ import Mision from "../components/mision";
 import OnlineTherapyBenefits from "../components/online-therapy-section";
 import Terms from "../components/terms";
 import ServicesComponent from "../components/services-component";
-
+import TestimonialSection from '../components/testimonial';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -23,6 +23,7 @@ function Home() {
       <IntroSection />
       <ServicesComponent />
       <Mision />
+      <TestimonialSection />
       <OnlineTherapyBenefits />
       <Footer />
       <Terms />

@@ -8,7 +8,6 @@ import { typography, typography2 } from '../styles/typography';
 import { colors } from '../styles/colors';
 import { psychServices } from '../data/services';
 import Footer from '../components/footer';
-import TestimonialSection from '../components/testimonial';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -213,7 +212,6 @@ const Services = () => {
         onClose={() => setSelectedService(null)} 
         />
       )}
-      <TestimonialSection />
       <Footer />
       <Terms />
     </GeneralContainer>
