@@ -126,7 +126,7 @@ const CloseIcon = styled.div`
 
   @media (max-width: 900px) {
     display: ${props =>
-      props.isOpen ? "block" : "none"};
+    props.isOpen ? "block" : "none"};
   }
   margin: .75rem .75rem 0 0;
   align-self: flex-end;
@@ -239,7 +239,7 @@ function Header() {
     setIsOpen(prevOpen => !prevOpen);
   };
 
-  const closeMenu  = () => {
+  const closeMenu = () => {
     setIsOpen(false)
   }
 
@@ -252,79 +252,79 @@ function Header() {
   }
   return (
     <Gral>
-    <NavBarContainer isOpen={isOpen}>
-      <BrandContainer>
-        <BrandHomeLink to="/" onClick={() => window.scrollTo(0, 0)}>
-          <LogoImgCont src={logond} alt="logo" />
-          <BrandTitle>Neuro-dev</BrandTitle>
-        </BrandHomeLink>
-      </BrandContainer>
+      <NavBarContainer isOpen={isOpen}>
+        <BrandContainer>
+          <BrandHomeLink to="/" onClick={() => window.scrollTo(0, 0)}>
+            <LogoImgCont src={logond} alt="logo" />
+            <BrandTitle>Neuro-dev</BrandTitle>
+          </BrandHomeLink>
+        </BrandContainer>
 
-      <HamburgerIcon 
-        onClick={toggleMenu}
-        isOpen={isOpen}
-        >
-        <GiHamburgerMenu style={{height: "25px", width: "30px", padding: 4}}/>
-      </HamburgerIcon>
-
-      <OptionsContainer>
-        <NavOption to="/about" onClick={() => window.scrollTo(0, 0)}>
-            <Option>Sobre mí</Option>
-        </NavOption>
-        <NavOption to="/services" onClick={() => window.scrollTo(0, 0)}>
-            <Option>Servicios</Option>
-        </NavOption>
-        <Option >Blog</Option>
-        <NavOption onClick={handleScrollToFooter}>
-            <Option>Contacto</Option>
-        </NavOption>
-      </OptionsContainer>  
-
-      <HamMenu visible={isOpen}>
-
-    {/* Hamburger Menu Options */}
-
-        <ImgHeader>
-        <CloseIcon
+        <HamburgerIcon
           onClick={toggleMenu}
           isOpen={isOpen}
-          rotate={rotate}
-          >
-          <IoClose style={{height: "25px", width: "25px"}}/>
-        </CloseIcon>
-        <StyledLink to="/" onClick={() => window.scrollTo(0, 0)}>
-          <Logo src={logoSideBar} alt='n-dev-sb' />
-          <TitleHeader>
-            Neuro-dev
-          </TitleHeader>
-        </StyledLink>
-        </ImgHeader>
+        >
+          <GiHamburgerMenu style={{ height: "25px", width: "30px", padding: 4 }} />
+        </HamburgerIcon>
 
-        <NavOptionsContainer>
-          <HamOption to="/about" onClick={() => window.scrollTo(0, 0)}>
-            Sobre mí
-            <ImUser />
-          </HamOption>
+        <OptionsContainer>
+          <NavOption to="/sobre-neurodev" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Sobre mí</Option>
+          </NavOption>
+          <NavOption to="/psicología" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Servicios</Option>
+          </NavOption>
+          <Option >Blog</Option>
+          <NavOption onClick={handleScrollToFooter}>
+            <Option>Contacto</Option>
+          </NavOption>
+        </OptionsContainer>
 
-          <HamOption to="/services" onClick={() => window.scrollTo(0, 0)}>
-            Servicios
-            <GiBrain />
-          </HamOption>
+        <HamMenu visible={isOpen}>
 
-          <HamOption>Blog
-            <FaPencil />
-          </HamOption>
+          {/* Hamburger Menu Options */}
 
-          <HamOption onClick={handleScrollToFooter}>
-            Contacto
-            <GrContact />
-          </HamOption>
-        </NavOptionsContainer>
-      </HamMenu>
+          <ImgHeader>
+            <CloseIcon
+              onClick={toggleMenu}
+              isOpen={isOpen}
+              rotate={rotate}
+            >
+              <IoClose style={{ height: "25px", width: "25px" }} />
+            </CloseIcon>
+            <StyledLink to="/" onClick={() => window.scrollTo(0, 0)}>
+              <Logo src={logoSideBar} alt='n-dev-sb' />
+              <TitleHeader>
+                Neuro-dev
+              </TitleHeader>
+            </StyledLink>
+          </ImgHeader>
 
-    </NavBarContainer>
+          <NavOptionsContainer>
+            <HamOption to="/sobre-neurodev" onClick={() => window.scrollTo(0, 0)}>
+              Sobre mí
+              <ImUser />
+            </HamOption>
 
-    <Modal visible={isOpen} onClose={closeMenu} />
+            <HamOption to="/psicología" onClick={() => window.scrollTo(0, 0)}>
+              Servicios
+              <GiBrain />
+            </HamOption>
+
+            <HamOption>Blog
+              <FaPencil />
+            </HamOption>
+
+            <HamOption onClick={handleScrollToFooter}>
+              Contacto
+              <GrContact />
+            </HamOption>
+          </NavOptionsContainer>
+        </HamMenu>
+
+      </NavBarContainer>
+
+      <Modal visible={isOpen} onClose={closeMenu} />
     </Gral>
   )
 }

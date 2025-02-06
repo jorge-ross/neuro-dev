@@ -44,8 +44,8 @@ const CorpImageContainer = styled.div`
     padding-bottom: 1rem;
   }
   `
-  
-  const CorpImage = styled.img`
+
+const CorpImage = styled.img`
   width: 60%;
 
   @media (max-width: 600px) {
@@ -111,28 +111,28 @@ const StyledLink = styled(Link)`
 
 const ServicesComponent = () => {
 
-  return(
+  return (
     <>
-    <CorpImageContainer>
-      <CorpImage src={logoservices} />
-    </CorpImageContainer>
+      <CorpImageContainer>
+        <CorpImage src={logoservices} />
+      </CorpImageContainer>
 
-    <Container>
-      <ServicesContainer>
-        <StyledLink to="/services">
-        <Button onClick={() => window.scrollTo(0, 0)}>
-          <LogoImgCont src={logow} alt="logo" />
-          Psicología
-        </Button>
-        </StyledLink>
-        <StyledLink to="/services">
-        <Button onClick={() => window.scrollTo(0, 0)}>
-          <LogoImgCont src={logow} alt="logo" />
-          Neuropsicología
-        </Button>
-        </StyledLink>
-      </ServicesContainer>
-    </Container>
+      <Container>
+        <ServicesContainer>
+          <StyledLink to="/psicología">
+            <Button onClick={() => window.scrollTo(0, 0)}>
+              <LogoImgCont src={logow} alt="logo" />
+              Psicología
+            </Button>
+          </StyledLink>
+          <StyledLink to="/services">
+            <Button onClick={() => window.scrollTo(0, 0)}>
+              <LogoImgCont src={logow} alt="logo" />
+              Neuropsicología
+            </Button>
+          </StyledLink>
+        </ServicesContainer>
+      </Container>
     </>
   )
 }
