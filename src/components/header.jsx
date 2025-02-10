@@ -1,17 +1,19 @@
 import styled from '@emotion/styled';
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { keyframes } from '@emotion/react';
 import logond from '../assets/images/logond.png';
 import logoSideBar from './../assets/images/logow.png'
 import { typography } from '../styles/typography';
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdArrowDropdown } from "react-icons/io";
 import { IoClose } from 'react-icons/io5';
 import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
 import { FaPencil } from "react-icons/fa6";
 import { GrContact } from "react-icons/gr";
 import Modal from "./modals/modal"
+import { colors } from '../styles/colors';
 
 const Gral = styled.div`
 background: white;
@@ -74,6 +76,8 @@ color: black;
 margin: 0;
 font-weight: 600;
 padding: 16px 0;
+display: flex;
+align-items: center;
 `
 
 const HamMenu = styled.div`
@@ -175,6 +179,25 @@ const NavOption = styled(Link)`
   }
 `;
 
+const DropNavOption = styled.div`
+  ${typography.text.lg}
+  color: black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+
+  @media (max-width: 500px) {
+    ${typography.text.md};
+  }
+
+  @media (max-width: 300px) {
+    ${typography.text.xs};
+  }
+`;
+
 const HamOption = styled(Link)`
   ${typography.text.lg}
   color: black;
@@ -231,9 +254,50 @@ const LogoImgCont = styled.img`
   max-width: 2rem;
 `
 
+const DropdownMenu = styled.div`
+  position: absolute;
+  top: 100%;
+  background: black;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+`;
+
+const DropdownItem = styled(Link)`
+  margin: 0;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  color: white;
+  transition: background 0.3s;
+
+  &:hover {
+    background: ${colors.stone[600]};
+  }
+`;
+
 function Header() {
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isClicked, setIsClicked] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleDropdown = () => {
+    setIsClicked((prev) => (!prev));
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsClicked(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsOpen(prevOpen => !prevOpen);
@@ -271,10 +335,21 @@ function Header() {
           <NavOption to="/sobre-neurodev" onClick={() => window.scrollTo(0, 0)}>
             <Option>Sobre mí</Option>
           </NavOption>
-          <NavOption to="/psicología" onClick={() => window.scrollTo(0, 0)}>
-            <Option>Servicios</Option>
-          </NavOption>
+
+          <DropNavOption ref={dropdownRef}>
+            <Option onClick={toggleDropdown}>Servicios
+              <IoMdArrowDropdown style={{ paddingLeft: 3 }} />
+            </Option>
+            {isClicked && (
+              <DropdownMenu>
+                <DropdownItem to="/psicología" onClick={() => window.scrollTo(0, 0)}>Psicología</DropdownItem>
+                <DropdownItem to="/psicología" onClick={() => window.scrollTo(0, 0)}>Neuropsicología</DropdownItem>
+              </DropdownMenu>
+            )}
+          </DropNavOption>
+
           <Option >Blog</Option>
+
           <NavOption onClick={handleScrollToFooter}>
             <Option>Contacto</Option>
           </NavOption>
@@ -307,7 +382,12 @@ function Header() {
             </HamOption>
 
             <HamOption to="/psicología" onClick={() => window.scrollTo(0, 0)}>
-              Servicios
+              Psicología
+              <GiBrain />
+            </HamOption>
+
+            <HamOption to="/psicología" onClick={() => window.scrollTo(0, 0)}>
+              Neuropsicología
               <GiBrain />
             </HamOption>
 

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import testimonials from '../data/testimonials';
 import { typography } from '../styles/typography';
 
@@ -21,25 +20,6 @@ const SectionTitle = styled.h1`
   @media (max-width: 600px) {
     ${typography.head.lg};
   }
-`;
-
-const CardsContainer = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
-`;
-
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  max-width: 300px;
-  margin: 1rem;
-  border: 1px solid black;
-  border-radius: 2rem;
 `;
 
 const SliderContainer = styled.div`
@@ -100,8 +80,8 @@ const TestimonialSection = () => {
 
   return (
     <SectionContainer>
-        <SectionTitle>Los pacientes opinan</SectionTitle>
-        <SliderContainer>
+      <SectionTitle>Los pacientes opinan</SectionTitle>
+      <SliderContainer>
         {testimonials.map((testimonial, index) => (
           <Slide
             key={testimonial.id}
