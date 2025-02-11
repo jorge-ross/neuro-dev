@@ -13,8 +13,8 @@ const Container = styled.div`
 
 const ServicesContainer = styled.div`
   display: flex;
-  width: 75%;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 3rem;
   padding: 2rem 0 4rem;
 
   @media (max-width: 1000px) {
@@ -65,8 +65,8 @@ const Button = styled.button`
   border: none;
   border-radius: 3rem;
   cursor: pointer;
-  min-width: 390px;
-  min-height: 90px;
+  min-width: 320px;
+  min-height: 100px;
 
   @media (max-width: 1000px) {
     min-width: 530px;
@@ -125,10 +125,16 @@ const ServicesComponent = () => {
               Psicología
             </Button>
           </StyledLink>
-          <StyledLink to="/services">
+          <StyledLink to="/neuropsicologia">
             <Button onClick={() => window.scrollTo(0, 0)}>
               <LogoImgCont src={logow} alt="logo" />
               Neuropsicología
+            </Button>
+          </StyledLink>
+          <StyledLink to="/consultoria-rrhh">
+            <Button onClick={() => window.scrollTo(0, 0)}>
+              <LogoImgCont src={logow} alt="logo" />
+              Consultoría HR
             </Button>
           </StyledLink>
         </ServicesContainer>
