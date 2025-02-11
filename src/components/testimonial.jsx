@@ -1,15 +1,21 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import testimonials from '../data/testimonials';
 import { typography } from '../styles/typography';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const SectionContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 2rem;
-  background-color: white;
+  margin: 0;
+  padding: 2.5rem 0 5rem;
   text-align: center;
+  width: 70%;
+
+  @media (max-width: 1000px) {
+    width: 70%;
+    padding-top: 1.5rem;
+  }
 `;
 
 const SectionTitle = styled.h1`
@@ -23,82 +29,118 @@ const SectionTitle = styled.h1`
 `;
 
 const SliderContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  overflow: hidden;
-`;
-
-const Slide = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
-  text-align: center;
-  border: 1px solid black;
-  border-radius: 2rem;
-  min-width: 40%;
-  transform: translateX(${(props) => props.translate}%);
-  transition: transform 0.5s ease-in-out;
-`;
-
-const NavigationButton = styled.button`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  z-index: 10;
-
-  ${(props) => (props.left ? "left: 1rem;" : "right: 1rem;")}
-
-  &:hover {
-    color: gray;
+  .slick-slide > div {
+    display: flex;
+    margin: 0 1rem;
+    justify-content: center;
+  }
+  .slick-list {
+    margin: 0 -1.5rem;
   }
 `;
 
+const Arrow = styled.div`
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  font-size: 4rem;
+
+  @media (max-width: 600px) {
+    top: 45%;
+  }
+    
+`;
+
+const OpCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  max-width: 300px;
+  height: 150px;
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(64, 64, 64, 0.4);
+  margin: 1rem;
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #333;
+  }
+
+  p:last-child {
+    font-weight: bold;
+    color: #555;
+  }
+
+  @media (max-width: 600px) {
+  height: 120px;
+  }
+`;
+
+const NextArrow = (props) => {
+  const { onClick } = props;
+  return <Arrow onClick={onClick} style={{ right: '-40px' }}>›</Arrow>;
+};
+
+const PrevArrow = ({ onClick = () => { } }) => {
+  return <Arrow onClick={onClick} style={{ left: '-40px' }}>‹</Arrow>;
+};
+
+NextArrow.propTypes = {
+  onClick: PropTypes.func,
+};
+
+PrevArrow.propTypes = {
+  onClick: PropTypes.func,
+};
+
 const TestimonialSection = () => {
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
-    );
-  };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrows: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ]
+  }
 
   return (
     <SectionContainer>
       <SectionTitle>Los pacientes opinan</SectionTitle>
       <SliderContainer>
-        {testimonials.map((testimonial, index) => (
-          <Slide
-            key={testimonial.id}
-            translate={(index - currentIndex) * 100}
-          >
-            <p>{testimonial.text}</p>
-            <p>
-              <strong>- {testimonial.author}</strong>
-            </p>
-          </Slide>
-        ))}
-        <NavigationButton left onClick={prevSlide}>
-          &#10094;
-        </NavigationButton>
-        <NavigationButton onClick={nextSlide}>
-          &#10095;
-        </NavigationButton>
+        <Slider {...settings}>
+          {testimonials.map((testimonial) => (
+            <OpCard key={testimonial.id}>
+              <p>{testimonial.text}</p>
+              <p>{testimonial.author}</p>
+            </OpCard>
+          ))}
+        </Slider>
       </SliderContainer>
     </SectionContainer>
   );

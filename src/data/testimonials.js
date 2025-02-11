@@ -2,7 +2,7 @@ const testimonials = [
   {
     id: 1,
     text: "La atención que recibí fue excelente y muy profesional. Me sentí completamente apoyado en cada paso del proceso.",
-    author: "Juan P.",
+    author: "Juan One.",
   },
   {
     id: 2,

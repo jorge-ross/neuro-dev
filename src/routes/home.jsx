@@ -23,8 +23,8 @@ function Home() {
       <IntroSection />
       <ServicesComponent />
       <Mision />
-      <TestimonialSection />
       <OnlineTherapyBenefits />
+      <TestimonialSection />
       <Footer />
       <Terms />
     </GeneralContainer>
