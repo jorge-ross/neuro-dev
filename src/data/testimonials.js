@@ -27,7 +27,7 @@ const testimonials = [
   {
     id: 6,
     text: "Los resultados han sido muy positivos para mí. La terapia ha mejorado mi calidad de vida de una manera sorprendente.",
-    author: "Carlos T.",
+    author: "Carlos Six",
   },
 ];
 

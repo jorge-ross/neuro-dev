@@ -5,6 +5,7 @@ import { typography } from '../styles/typography';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { colors } from '../styles/colors';
 
 const SectionContainer = styled.section`
   margin: 0;
@@ -43,7 +44,7 @@ const Arrow = styled.div`
   color: black;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: 48%;
   transform: translateY(-50%);
   z-index: 1;
   font-size: 4rem;
@@ -56,10 +57,9 @@ const Arrow = styled.div`
 
 const OpCard = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem;
+  align-content: center;
+  text-align: left;
+  padding: 2rem;
   max-width: 300px;
   height: 150px;
   background-color: black;
@@ -68,20 +68,30 @@ const OpCard = styled.div`
   margin: 1rem;
 
   p {
-    margin: 0.5rem 0;
-    font-size: 1rem;
-    color: #333;
+    margin: 0;
+    ${typography.text.md};
+    color: ${colors.stone[100]};
+    text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
   }
 
   p:last-child {
+    margin-top: 0.5rem;
     font-weight: bold;
-    color: #555;
+    color: ${colors.stone[400]};
+    
   }
 
   @media (max-width: 600px) {
-  height: 120px;
+    height: 120px;
   }
 `;
+
+
 
 const NextArrow = (props) => {
   const { onClick } = props;
