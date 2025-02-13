@@ -12,6 +12,7 @@ import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
 import { FaPencil } from "react-icons/fa6";
 import { GrContact } from "react-icons/gr";
+import { MdPsychology, MdAssessment } from "react-icons/md";
 import Modal from "./modals/modal"
 import { colors } from '../styles/colors';
 
@@ -342,8 +343,9 @@ function Header() {
             </Option>
             {isClicked && (
               <DropdownMenu>
-                <DropdownItem to="/psicología" onClick={() => window.scrollTo(0, 0)}>Psicología</DropdownItem>
-                <DropdownItem to="/psicología" onClick={() => window.scrollTo(0, 0)}>Neuropsicología</DropdownItem>
+                <DropdownItem to="/psicologia" onClick={() => window.scrollTo(0, 0)}>Psicología</DropdownItem>
+                <DropdownItem to="/neuropsicologia" onClick={() => window.scrollTo(0, 0)}>Neuropsicología</DropdownItem>
+                <DropdownItem to="/consultoria" onClick={() => window.scrollTo(0, 0)}>Consultoría</DropdownItem>
               </DropdownMenu>
             )}
           </DropNavOption>
@@ -381,14 +383,19 @@ function Header() {
               <ImUser />
             </HamOption>
 
-            <HamOption to="/psicología" onClick={() => window.scrollTo(0, 0)}>
+            <HamOption to="/psicologia" onClick={() => window.scrollTo(0, 0)}>
               Psicología
+              <MdPsychology />
+            </HamOption>
+
+            <HamOption to="/neuropsicologia" onClick={() => window.scrollTo(0, 0)}>
+              Neuropsicología
               <GiBrain />
             </HamOption>
 
-            <HamOption to="/psicología" onClick={() => window.scrollTo(0, 0)}>
-              Neuropsicología
-              <GiBrain />
+            <HamOption to="/consultoria" onClick={() => window.scrollTo(0, 0)}>
+              Consultoría
+              <MdAssessment />
             </HamOption>
 
             <HamOption>Blog

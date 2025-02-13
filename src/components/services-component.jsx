@@ -131,10 +131,10 @@ const ServicesComponent = () => {
               Neuropsicología
             </Button>
           </StyledLink>
-          <StyledLink to="/consultoria-rrhh">
+          <StyledLink to="/consultoria">
             <Button onClick={() => window.scrollTo(0, 0)}>
               <LogoImgCont src={logow} alt="logo" />
-              Consultoría HR
+              Consultoría
             </Button>
           </StyledLink>
         </ServicesContainer>

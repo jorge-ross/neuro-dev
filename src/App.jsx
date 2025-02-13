@@ -4,6 +4,8 @@ import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import Home from './routes/home'
 import About from './routes/about'
 import PsychServices from './routes/psych-services'
+import NeuroServices from './routes/neuro'
+import ConsultancyServices from './routes/consultancy'
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Routes>
         <Route path="" element={<Home />} />
         <Route path="sobre-neurodev" element={<About />} />
-        <Route path="psicología" element={<PsychServices />} />
+        <Route path="psicologia" element={<PsychServices />} />
+        <Route path="neuropsicologia" element={<NeuroServices />} />
+        <Route path="consultoria" element={<ConsultancyServices />} />
         <Route path="*" element={<Navigate to="/" replace={true} />} />
       </Routes>
     </Router>
