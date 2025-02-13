@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import convenienceIcon from '../assets/images/comodidad.png'; 
+import convenienceIcon from '../assets/images/comodidad.png';
 import accessibilityIcon from '../assets/images/accesibilidad.png';
 import privacyIcon from '../assets/images/privacy.png';
 import parkingIcon from '../assets/images/parking.png';
@@ -14,7 +14,7 @@ import { colors } from '../styles/colors';
 
 const SectionContainer = styled.section`
   margin: 0;
-  padding: 2.5rem 0 5rem;
+  padding: 2.5rem 0;
   text-align: center;
   width: 50%;
 
@@ -115,11 +115,11 @@ const Arrow = styled.div`
 
 const NextArrow = (props) => {
   const { onClick } = props;
-  return <Arrow onClick={onClick} style={{ right: '-20px'}}>›</Arrow>;
+  return <Arrow onClick={onClick} style={{ right: '-20px' }}>›</Arrow>;
 };
 
-const PrevArrow = ({ onClick = () => {} }) => {
-  return <Arrow onClick={onClick} style={{ left: '-20px'}}>‹</Arrow>;
+const PrevArrow = ({ onClick = () => { } }) => {
+  return <Arrow onClick={onClick} style={{ left: '-20px' }}>‹</Arrow>;
 };
 
 NextArrow.propTypes = {
@@ -165,7 +165,7 @@ const OnlineTherapyBenefits = () => {
           <BenefitCard>
             <BenefitImage src={privacyIcon} alt="Privacidad" />
             <BenefitText>Privacidad</BenefitText>
-            <BenefitDescription>Mantén la privacidad y confidencialidad de tus sesiones en un entorno seguro y protegido.</BenefitDescription>    
+            <BenefitDescription>Mantén la privacidad y confidencialidad de tus sesiones en un entorno seguro y protegido.</BenefitDescription>
           </BenefitCard>
 
           <BenefitCard>

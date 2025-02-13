@@ -6,12 +6,15 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { colors } from '../styles/colors';
+import { FaStar } from 'react-icons/fa';
+
 
 const SectionContainer = styled.section`
   margin: 0;
-  padding: 2.5rem 0 5rem;
+  padding: 2rem 0 6rem;
   text-align: center;
   width: 70%;
+
 
   @media (max-width: 1000px) {
     width: 70%;
@@ -34,6 +37,7 @@ const SliderContainer = styled.div`
     display: flex;
     margin: 0 1rem;
     justify-content: center;
+    padding-bottom: 1.5rem;
   }
   .slick-list {
     margin: 0 -1.5rem;
@@ -79,7 +83,7 @@ const OpCard = styled.div`
     -webkit-line-clamp: 4;
   }
 
-  p:last-child {
+  .author {
     margin-top: 0.5rem;
     font-weight: bold;
     color: ${colors.stone[400]};
@@ -88,6 +92,18 @@ const OpCard = styled.div`
 
   @media (max-width: 600px) {
     height: 120px;
+  }
+`;
+
+
+const StarRating = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 0.75rem;
+
+  svg {
+    color: gold;
+    margin: 0 0.1rem;
   }
 `;
 
@@ -147,7 +163,12 @@ const TestimonialSection = () => {
           {testimonials.map((testimonial) => (
             <OpCard key={testimonial.id}>
               <p>{testimonial.text}</p>
-              <p>{testimonial.author}</p>
+              <p className='author'>{testimonial.author}</p>
+              <StarRating>
+                {[...Array(5)].map((_, index) => (
+                  <FaStar key={index} />
+                ))}
+              </StarRating>
             </OpCard>
           ))}
         </Slider>

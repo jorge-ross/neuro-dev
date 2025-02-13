@@ -46,9 +46,9 @@ const CorpImageContainer = styled.div`
   `
 
 const CorpImage = styled.img`
-  width: 60%;
+  width: 57%;
 
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     width: 75%;
   }
 `
