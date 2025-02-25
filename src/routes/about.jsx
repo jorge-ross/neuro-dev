@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import profile_pic from "../assets/images/profile_pic_npsic.jpg"
 import { typography } from "../styles/typography";
 import Terms from "../components/terms";
+import descriptionText from '../data/about';
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -32,8 +33,8 @@ const AboutSection = styled.section`
 `;
 
 const ProfileImage = styled.img`
-  width: 50%;
-  border-radius: 20%;
+  width: 45%;
+  border-radius: 30%;
   justify-self: center;
   align-self: center;
 `;
@@ -42,7 +43,7 @@ const Title = styled.h1`
   ${typography.head.lg};
   text-align: center;
   color: black;
-  margin-bottom: 1rem;
+  margin: 0 0 0.5rem 0;
   grid-column: 2 / 4;
   grid-row: 1;
 
@@ -55,7 +56,6 @@ const Title = styled.h1`
 const Name = styled.h2`
   ${typography.head.sm};
   color: black;
-  margin-bottom: 2rem;
   text-align: center;
 `;
 
@@ -65,6 +65,7 @@ const Description = styled.p`
   grid-row: 2 / 5;
   text-align: justify;
   align-self: flex-start;
+  white-space: pre-line;
 `;
 
 const ProfesionalDetails = styled.div`
@@ -104,53 +105,18 @@ const About = () => {
         </Card>
         <Title>Acerca de Mí</Title>
         <Description>
-          Soy un psicólogo especializado en neuropsicología con 8 años de experiencia. 
-          Me dedico a ofrecer servicios de psicología basada en evidencia, ayudando 
-          a las personas a superar sus retos mentales y emocionales con un enfoque científico
-          y personalizado.
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-          deserunt mollit anim id est laborum.
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-          deserunt mollit anim id est laborum.
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-          deserunt mollit anim id est laborum.
-          <br />
-          <br />
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-          irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-          deserunt mollit anim id est laborum.
+          {descriptionText}
         </Description>
         <ProfesionalDetails>
           Ced. Prof: 000000
-          < br/>
+          < br />
           Ced. Esp: En proceso de homologación
-          < br/>
+          < br />
           (Ya saben lo lenta que suele ser la burocracia)
-          < br/>
-          < br/>
+          < br />
+          < br />
           Mientras tanto...
-          <br /> 
+          <br />
           pueden consultar mi título español {" "}
           <a
             href="/doc/neu-t.pdf"
