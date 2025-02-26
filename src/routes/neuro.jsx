@@ -4,22 +4,24 @@ import Terms from '../components/terms';
 import psych from '../assets/images/psique.png'
 import { typography, typography2 } from '../styles/typography';
 import { colors } from '../styles/colors';
-import { psychServices } from '../data/services';
+import { neuroServices } from '../data/services';
 import Footer from '../components/footer';
 
 const GeneralContainer = styled.div`
   display: flex;
-  min-height: auto;
   flex-direction: column;
   align-items: center;
   margin: 0;
 `
 
 const ServicesSection = styled.section`
-  margin: 10rem 2rem 5rem 2rem;
+  margin: 10rem 0 5rem 0;
   display: grid;
   grid-gap: 2rem;
+  row-gap: 4rem;
   align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  width: 75%;
 
   // @media (max-width: 1000px) {
   //   display: flex;
@@ -27,35 +29,27 @@ const ServicesSection = styled.section`
   // }
 `;
 
-const PContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  text-align: center;
-  gap: 2rem;
-`
-
 const SectionTitle = styled.h1`
  ${typography.head.lgx}
   color: black;
-  text-align: center; 
+  text-align: left; 
   margin: 0;
-  grid-row: 1;
-  grid-column: 2 / 3;
   align-self: center;
-  justify-self: center;
+  grid-row: 1;
+  grid-column: 2;
 `;
 
 
 
 const ServicesContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: flex-start;
   align-items: center;
   justify-self: center;
-  gap: 2rem;
-  grid-row: 1;
-  grid-column: 2 / 4;
+  gap: 3rem;
+  grid-row: 3;
+  grid-column: 1 / 3;
 
   @media (max-width: 1350px) {
     grid-template-columns: repeat(2, 1fr);
@@ -70,40 +64,11 @@ const ServicesContainer = styled.div`
   }
 `;
 
-const ServiceCard = styled.div`
-  background-color: black;
-  border-radius: 1rem;
-  width: 250px;
-  height: 70px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  &:hover {
-    background-color: ${colors.stone[900]};
-  }
-
-  @media (max-width: 550px) {
-    width: 190px;
-    height: 110px;
-  }
-
-  @media (max-width: 450px) {
-    width: 170px;
-  }
-
-  @media (max-width: 400px) {
-    width: 150px;
-  }
-`;
 
 const ServiceTitle = styled.h1`
-  ${typography2.head.xs}
-  color: white;
-  margin: 2rem;
-
+  ${typography2.head.xs};
+  color: black;
+  margin: 0;
 
   @media (max-width: 450px) {
     ${typography2.text.md}
@@ -113,7 +78,8 @@ const ServiceTitle = styled.h1`
 
 const ServicesImg = styled.img`
   align-self: center;
-  max-width: 200px;
+  justify-self: center;
+  max-width: 150px;
   border-radius: 1rem;
   border-bottom-right-radius: 40%;
   filter: brightness(0.9) grayscale(100%);
@@ -131,7 +97,19 @@ const ServicesImg = styled.img`
   }
 `
 
+const NeuroText = styled.p`
+  ${typography.text.md};
+  color: black;
+  width: 80%;
+  text-align: justify;
+  justify-self: center;
+  grid-column: 1 / 3;
+  grid-row: 2;
 
+  @media (max-width: 450px) {
+    ${typography2.text.sm}
+  }
+`
 
 const NeuroServices = () => {
 
@@ -139,15 +117,14 @@ const NeuroServices = () => {
     <GeneralContainer>
       <Header />
       <ServicesSection>
-        <PContainer>
-          <SectionTitle>Neuropsicología</SectionTitle>
-          <ServicesImg src={psych} />
-        </PContainer>
+        <ServicesImg src={psych} />
+        <SectionTitle>Neuropsicología</SectionTitle>
+        <NeuroText>La Neuropsicología clínica es una disciplina que se engloba dentro de la neurociencia. Recoge las aportaciones de la neurología y la psicología, estudiando así la relación que hay entre cerebro-conducta. Toda conducta es realizada por el cerebro y éste puede cambiarla, a la misma vez que cualquier tipo de actividad del exterior puede producir cambios en el. Esta relación bidireccional es muy importante para la neurorrehabilitación, ya que podemos usar este conocimiento para potenciar las funciones cognitivas que deseemos y mejorar así su funcionalidad. </NeuroText>
         <ServicesContainer>
-          {psychServices.map(service => (
-            <ServiceCard key={service.id}>
-              <ServiceTitle>{service.title}</ServiceTitle>
-            </ServiceCard>
+          {neuroServices.map(service => (
+
+            <ServiceTitle key={service.id}>{service.title}</ServiceTitle>
+
           ))}
         </ServicesContainer>
 

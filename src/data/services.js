@@ -69,3 +69,75 @@ export const psychServices = [
     "/images/logond.png"
   ),
 ];
+
+class NeuroPsychServices {
+  constructor(id, title, description, imageUrl) {
+    this.id = id;
+    this.title = title;
+    this.description = description;
+    this.imageUrl = imageUrl;
+  }
+}
+
+export const neuroServices = [
+  new NeuroPsychServices(
+    1,
+    "Evaluación",
+    "Enfoque terapéutico que ayuda a identificar y cambiar patrones de pensamiento y comportamiento negativos.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    2,
+    "Rehabilitación",
+    "Sesiones de terapia para mejorar la comunicación y resolver conflictos en relaciones de pareja.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    3,
+    "Intervención",
+    "Evaluación exhaustiva de las funciones cognitivas para diagnosticar trastornos neurológicos o del desarrollo.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    4,
+    "Rehabilitación",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    5,
+    "Corporativo",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    6,
+    "Técnicas de estudio",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    7,
+    "Orientación Psicológica",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    8,
+    "Orientación Psicológica",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    9,
+    "Orientación Psicológica",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    10,
+    "Orientación ",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+];
