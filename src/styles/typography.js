@@ -118,6 +118,9 @@ export const typography2 = {
     xxs: `
     font-size: 0.875rem;
     `,
+    xls: `
+    font-size: 1.1rem;
+    `,
     xs: `
     font-size: 1.25rem;
     `,

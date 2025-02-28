@@ -3,7 +3,6 @@ import Header from '../components/header';
 import Terms from '../components/terms';
 import psych from '../assets/images/psique.png'
 import { typography, typography2 } from '../styles/typography';
-import { colors } from '../styles/colors';
 import { neuroServices } from '../data/services';
 import Footer from '../components/footer';
 
