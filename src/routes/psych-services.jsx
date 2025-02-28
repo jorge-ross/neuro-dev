@@ -23,7 +23,7 @@ const TopContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0;
-  gap: 3.5rem;
+  gap: 3rem;
   width: 75%;
   align-self: center;
 

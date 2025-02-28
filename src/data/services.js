@@ -82,61 +82,73 @@ class NeuroPsychServices {
 export const neuroServices = [
   new NeuroPsychServices(
     1,
-    "Evaluación",
+    "Trastornos del aprendizaje",
     "Enfoque terapéutico que ayuda a identificar y cambiar patrones de pensamiento y comportamiento negativos.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     2,
-    "Rehabilitación",
+    "Altas capacidades intelectuales",
     "Sesiones de terapia para mejorar la comunicación y resolver conflictos en relaciones de pareja.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     3,
-    "Intervención",
+    "Deterioro cognitivo",
     "Evaluación exhaustiva de las funciones cognitivas para diagnosticar trastornos neurológicos o del desarrollo.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     4,
-    "Rehabilitación",
+    "Trastornos neurocognitivos",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     5,
-    "Corporativo",
+    "Traumatismos Craneoencefálicos",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     6,
-    "Técnicas de estudio",
+    "Trastorno del espectro del autismo",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     7,
-    "Orientación Psicológica",
+    "Trastorno por Déficit de Atención con Hiperactividad (TDAH)",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     8,
-    "Orientación Psicológica",
+    "Funcionamiento Intelectual Límite",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     9,
-    "Orientación Psicológica",
+    "Discapacidad Intelectual",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     10,
-    "Orientación ",
+    "Accidentes cerebrovasculares ",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    11,
+    "Demencias",
+    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
+    "/images/logond.png"
+  ),
+  new NeuroPsychServices(
+    12,
+    "Rehabilitación cognitiva",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),

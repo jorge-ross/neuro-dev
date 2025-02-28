@@ -1,61 +1,106 @@
 import styled from 'styled-components';
 import Header from '../components/header';
 import Terms from '../components/terms';
-import psych from '../assets/images/psique.png'
+import neuro from '../assets/images/neuro.png'
 import { typography, typography2 } from '../styles/typography';
 import { neuroServices } from '../data/services';
 import Footer from '../components/footer';
+import neuroImage from '../assets/images/neuro-background.png';
 
-const GeneralContainer = styled.div`
+const GeneralContainer = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 0;
+  margin-top: 70px;
+  background-image: url('${neuroImage}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 `
 
-const ServicesSection = styled.section`
-  margin: 10rem 0 5rem 0;
-  display: grid;
-  grid-gap: 2rem;
-  row-gap: 4rem;
-  align-items: center;
-  grid-template-columns: repeat(2, 1fr);
+
+const TopContainer = styled.div`
+  padding: 6rem 0 3rem 0;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  gap: 2.5rem;
   width: 75%;
+  align-self: center;
 
-  // @media (max-width: 1000px) {
-  //   display: flex;
-  //   flex-direction: column;
-  // }
-`;
+  @media (max-width: 750px) {
+    width: 90%;
+    gap: 2rem;
+  }
 
-const SectionTitle = styled.h1`
- ${typography.head.lgx}
-  color: black;
-  text-align: left; 
+  @media (max-width: 600px) {
+    gap: 1rem;
+  }
+`
+
+const Title = styled.h1`
+ ${typography.head.xl}
+  color: white;
   margin: 0;
   align-self: center;
-  grid-row: 1;
-  grid-column: 2;
+
+  @media (max-width: 750px) {
+    ${typography.head.lgx}
+  }
+
+  @media (max-width: 600px) {
+    ${typography.head.lga}
+  }
+
+  @media (max-width: 400px) {
+    ${typography.head.lg}
+  }
 `;
 
+const PsychText = styled.p`
+  ${typography2.text.md}
+  width: 65%;
+  color: white;
+  text-align: justify;
+  align-self: center;
+  line-height: 1.7rem;
+  margin: 0;
+
+  @media (max-width: 750px) {
+    width: 80%;
+  }
+
+  @media (max-width: 450px) {
+    ${typography2.text.sm}
+  }
+`;
 
 
 const ServicesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 75%;
+  padding-top: 3.5rem;
+`
+
+const Services = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   justify-items: flex-start;
   align-items: center;
   justify-self: center;
+  align-self: center;
   gap: 3rem;
-  grid-row: 3;
-  grid-column: 1 / 3;
+  padding-bottom: 5rem;
+  width: 80%;
 
   @media (max-width: 1350px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 1000px) {
-    width: 100%;
+  @media (max-width: 750px) {
+    padding-bottom: 6.5rem;
+    width: 95%;
   }
 
   @media (max-width: 550px) {
@@ -64,14 +109,15 @@ const ServicesContainer = styled.div`
 `;
 
 
-const ServiceTitle = styled.h1`
-  ${typography2.head.xs};
-  color: black;
+const ServiceTitle = styled.li`
+  ${typography2.head.xls};
+  color: white;
   margin: 0;
+  font-weight: 400;
+  list-style: square;
 
   @media (max-width: 450px) {
     ${typography2.text.md}
-    font-weight: 400;
   }
 `;
 
@@ -79,34 +125,13 @@ const ServicesImg = styled.img`
   align-self: center;
   justify-self: center;
   max-width: 150px;
-  border-radius: 1rem;
-  border-bottom-right-radius: 40%;
-  filter: brightness(0.9) grayscale(100%);
+
+  @media (max-width: 600px) {
+    max-width: 100px;
+  }
   
-  @media (max-width: 900px) {
-    align-self: center;
-  }
-
-  @media (max-width: 650px) {
-    max-width: 270px;
-  }
-
-   @media (max-width: 400px) {
-    max-width: 220px;
-  }
-`
-
-const NeuroText = styled.p`
-  ${typography.text.md};
-  color: black;
-  width: 80%;
-  text-align: justify;
-  justify-self: center;
-  grid-column: 1 / 3;
-  grid-row: 2;
-
-  @media (max-width: 450px) {
-    ${typography2.text.sm}
+  @media (max-width: 400px) {
+    max-width: 80px;
   }
 `
 
@@ -115,20 +140,22 @@ const NeuroServices = () => {
   return (
     <GeneralContainer>
       <Header />
-      <ServicesSection>
-        <ServicesImg src={psych} />
-        <SectionTitle>Neuropsicología</SectionTitle>
-        <NeuroText>La Neuropsicología clínica es una disciplina que se engloba dentro de la neurociencia. Recoge las aportaciones de la neurología y la psicología, estudiando así la relación que hay entre cerebro-conducta. Toda conducta es realizada por el cerebro y éste puede cambiarla, a la misma vez que cualquier tipo de actividad del exterior puede producir cambios en el. Esta relación bidireccional es muy importante para la neurorrehabilitación, ya que podemos usar este conocimiento para potenciar las funciones cognitivas que deseemos y mejorar así su funcionalidad. </NeuroText>
-        <ServicesContainer>
+
+      <TopContainer>
+        <ServicesImg src={neuro} />
+        <Title>Neuropsicología</Title>
+      </TopContainer>
+
+
+      <PsychText>La neuropsicología clínica es una disciplina especializada en los trastornos neurológicos que afectan a nuestra cognición, conducta y emociones. Así pues, el objetivo del área de neuropsicología es dar asistencia, a través de un proceso de evaluación, diagnóstico e intervención personalizado, a los pacientes y a sus familias.</PsychText>
+
+      <ServicesContainer>
+        <Services>
           {neuroServices.map(service => (
-
             <ServiceTitle key={service.id}>{service.title}</ServiceTitle>
-
           ))}
-        </ServicesContainer>
-
-      </ServicesSection>
-
+        </Services>
+      </ServicesContainer>
       <Footer />
       <Terms />
     </GeneralContainer>

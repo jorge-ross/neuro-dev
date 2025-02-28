@@ -119,7 +119,7 @@ const ServicesComponent = () => {
 
       <Container>
         <ServicesContainer>
-          <StyledLink to="/psicología">
+          <StyledLink to="/psicologia">
             <Button onClick={() => window.scrollTo(0, 0)}>
               <LogoImgCont src={logow} alt="logo" />
               Psicología
