@@ -68,12 +68,12 @@ const Footer = () => {
   return (
     <Gral id="contact">
       <FooterContainer>
-        <SectionTitle>Te escucho...</SectionTitle>
+        <SectionTitle>Agenda tu consulta hoy mismo.</SectionTitle>
         <Section>
           <ContactForm />
           <WhatsContainer>
             <Inst>También puedes enviar un mensaje vía Whatsapp</Inst>
-            <WhatsAppButton phoneNumber={import.meta.env.VITE_PHONE_NUMBER}/>
+            <WhatsAppButton phoneNumber={import.meta.env.VITE_PHONE_NUMBER} />
           </WhatsContainer>
         </Section>
       </FooterContainer>
