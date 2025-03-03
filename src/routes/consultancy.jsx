@@ -15,6 +15,10 @@ const GeneralContainer = styled.section`
   width: 75%;
   align-self: center;
   justify-self: center;
+
+  @media (max-width: 750px) {
+    width: 80%;
+  }
 `
 
 
@@ -28,6 +32,7 @@ const TopContainer = styled.div`
   @media (max-width: 750px) {
     width: 90%;
     gap: 2rem;
+    padding: 3.5rem 0 2rem 0;
   }
 
   @media (max-width: 600px) {
@@ -49,8 +54,8 @@ const Title = styled.h1`
     ${typography.head.lga}
   }
 
-  @media (max-width: 400px) {
-    ${typography.head.lg}
+  @media (max-width: 450px) {
+    ${typography.head.md}
   }
 `;
 
@@ -61,10 +66,6 @@ const CorpText = styled.p`
   align-self: center;
   line-height: 1.7rem;
   margin: 0 0 2rem 0;
-
-  @media (max-width: 750px) {
-    width: 80%;
-  }
 
   @media (max-width: 450px) {
     ${typography2.text.sm}
@@ -81,8 +82,8 @@ const ServicesImg = styled.img`
     max-width: 100px;
   }
   
-  @media (max-width: 400px) {
-    max-width: 80px;
+  @media (max-width: 450px) {
+    max-width: 50px;
   }
 `
 
@@ -91,6 +92,10 @@ const SubTitle = styled.h2`
   width: 70%;
   color: black;
   margin: 0;
+
+  @media (max-width: 750px) {
+    width: 100%;
+  }
 
   @media (max-width: 450px) {
     ${typography2.text.md}
@@ -115,6 +120,11 @@ const BenefitsList = styled.ol`
   width: 75%;
   padding-left: 1.5rem;
   margin: 1.5rem 0 0.5rem 0;
+
+  
+  @media (max-width: 750px) {
+    width: 85%;
+  }
 
   li {
     ${typography2.text.md}
@@ -143,10 +153,22 @@ const CorpImg = styled.img`
   padding: 2rem 0 3rem;
   border-radius: 50%;
 
-  @media (max-width: 600px) {
-    max-width: 100px;
+  @media (max-width: 900px) {
+    max-width: 180px;
   }
   
+  @media (max-width: 750px) {
+    max-width: 150px;
+  }
+
+  @media (max-width: 600px) {
+    max-width: 120px;
+  }
+
+  @media (max-width: 500px) {
+    max-width: 100px;
+  }
+
   @media (max-width: 400px) {
     max-width: 80px;
   }

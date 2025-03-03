@@ -30,10 +30,15 @@ const TopContainer = styled.div`
   @media (max-width: 750px) {
     width: 90%;
     gap: 2rem;
+    padding: 3.5rem 0 2rem 0;
   }
 
   @media (max-width: 600px) {
     gap: 1rem;
+  }
+
+  @media (max-width: 420px) {
+    gap: 0.75rem;
   }
 `
 
@@ -43,7 +48,7 @@ const Title = styled.h1`
   margin: 0;
   align-self: center;
 
-  @media (max-width: 750px) {
+  @media (max-width: 800px) {
     ${typography.head.lgx}
   }
 
@@ -51,8 +56,12 @@ const Title = styled.h1`
     ${typography.head.lga}
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 500px) {
     ${typography.head.lg}
+  }
+
+  @media (max-width: 420px) {
+    ${typography.head.md}
   }
 `;
 
@@ -66,7 +75,7 @@ const PsychText = styled.p`
   margin: 0;
 
   @media (max-width: 750px) {
-    width: 80%;
+    width: 82%;
   }
 
   @media (max-width: 450px) {
@@ -129,9 +138,13 @@ const ServicesImg = styled.img`
   @media (max-width: 600px) {
     max-width: 100px;
   }
-  
-  @media (max-width: 400px) {
+
+  @media (max-width: 500px) {
     max-width: 80px;
+  }
+  
+  @media (max-width: 420px) {
+    max-width: 50px;
   }
 `
 
