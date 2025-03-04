@@ -67,7 +67,7 @@ const Title = styled.h1`
 
 const PsychText = styled.p`
   ${typography2.text.md}
-  width: 65%;
+  width: 70%;
   color: white;
   text-align: justify;
   align-self: center;
@@ -88,8 +88,13 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 75%;
-  padding-top: 3.5rem;
+  width: 70%;
+  padding-top: 1.5rem;
+
+  @media (max-width: 750px) {
+    width: 82%;
+    padding-top: 1rem;
+  }
 `
 
 const Services = styled.div`
@@ -119,7 +124,7 @@ const Services = styled.div`
 
 
 const ServiceTitle = styled.li`
-  ${typography2.head.xls};
+  ${typography2.text.md};
   color: white;
   margin: 0;
   font-weight: 400;
@@ -148,6 +153,21 @@ const ServicesImg = styled.img`
   }
 `
 
+const InfoTitle = styled.h2`
+  ${typography2.head.sm};
+  color: white;
+  text-align: left;
+  margin: 2rem 0 2.5rem 0;
+
+  @media (max-width: 500px) {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  @media (max-width: 450px) {
+    ${typography2.head.xss}
+  }
+`;
+
 const NeuroServices = () => {
 
   return (
@@ -163,6 +183,7 @@ const NeuroServices = () => {
       <PsychText>La neuropsicología clínica es una disciplina especializada en los trastornos neurológicos que afectan a nuestra cognición, conducta y emociones. Así pues, el objetivo del área de neuropsicología es dar asistencia, a través de un proceso de evaluación, diagnóstico e intervención personalizado, a los pacientes y a sus familias.</PsychText>
 
       <ServicesContainer>
+        <InfoTitle>Diagnóstico y tratamiento</InfoTitle>
         <Services>
           {neuroServices.map(service => (
             <ServiceTitle key={service.id}>{service.title}</ServiceTitle>

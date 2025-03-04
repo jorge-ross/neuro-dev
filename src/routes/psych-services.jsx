@@ -67,7 +67,7 @@ const Title = styled.h1`
 
 const PsychText = styled.p`
   ${typography2.text.md}
-  width: 65%;
+  width: 70%;
   color: white;
   text-align: justify;
   align-self: center;
@@ -88,8 +88,13 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 75%;
-  padding-top: 3.5rem;
+  width: 70%;
+  padding-top: 1.5rem;
+
+  @media (max-width: 750px) {
+    width: 82%;
+    padding-top: 1rem;
+  }
 `
 
 const Services = styled.div`
@@ -148,6 +153,21 @@ const ServicesImg = styled.img`
   }
 `
 
+const InfoTitle = styled.h2`
+  ${typography2.head.sm};
+  color: white;
+  text-align: left;
+  margin: 2rem 0 2.5rem 0;
+
+  @media (max-width: 500px) {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  @media (max-width: 450px) {
+    ${typography2.head.xss}
+  }
+`;
+
 const PsychServices = () => {
 
   return (
@@ -164,6 +184,7 @@ const PsychServices = () => {
         ornos mentales y emocionales, así como de promover el bienestar y la calidad de vida de las personas. En este sentido, la psicología clínica es una de las ramas más importantes de la psicología, ya que se encarga de diagnosticar y tratar los trastornos mentales y emocionales, así como de prevenir su aparición. En este sentido, la psicología clínica se basa en la aplicación de técnicas y métodos psicológicos para ayudar a las personas a superar sus problemas emocionales y a mejorar su calidad de vida.</PsychText>
 
       <ServicesContainer>
+        <InfoTitle>Servicios</InfoTitle>
         <Services>
           {psychServices.map(service => (
             <ServiceTitle key={service.id}>{service.title}</ServiceTitle>

@@ -62,12 +62,6 @@ export const psychServices = [
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
-  new PsychService(
-    10,
-    "Orientación Psicológica",
-    "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
-    "/images/logond.png"
-  ),
 ];
 
 class NeuroPsychServices {
