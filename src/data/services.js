@@ -10,7 +10,7 @@ class PsychService {
 export const psychServices = [
   new PsychService(
     1,
-    "Terapia Individual",
+    "Individual",
     "Enfoque terapéutico que ayuda a identificar y cambiar patrones de pensamiento y comportamiento negativos.",
     "/images/logond.png"
   ),
@@ -22,19 +22,19 @@ export const psychServices = [
   ),
   new PsychService(
     3,
-    "Evaluaciones",
+    "Manejo del estrés",
     "Evaluación exhaustiva de las funciones cognitivas para diagnosticar trastornos neurológicos o del desarrollo.",
     "/images/logond.png"
   ),
   new PsychService(
     4,
-    "Rehabilitación",
+    "Problemas de conducta",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new PsychService(
     5,
-    "Corporativo",
+    "Adquisición de hábitos y rutinas",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
@@ -46,7 +46,7 @@ export const psychServices = [
   ),
   new PsychService(
     7,
-    "Orientación Psicológica",
+    "Habilidades Sociales",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
@@ -58,7 +58,7 @@ export const psychServices = [
   ),
   new PsychService(
     9,
-    "Orientación Psicológica",
+    "Corporativo (No coaching)",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),

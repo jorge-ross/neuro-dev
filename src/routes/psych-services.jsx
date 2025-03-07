@@ -6,6 +6,7 @@ import { typography, typography2 } from '../styles/typography';
 import { psychServices } from '../data/services';
 import Footer from '../components/footer';
 import psychImage from '../assets/images/psico-background.png';
+import psyText from '../data/definitions';
 
 const GeneralContainer = styled.section`
   display: flex;
@@ -67,7 +68,7 @@ const Title = styled.h1`
 
 const PsychText = styled.p`
   ${typography2.text.md}
-  width: 70%;
+  width: 67%;
   color: white;
   text-align: justify;
   align-self: center;
@@ -88,7 +89,7 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 70%;
+  width: 75%;
   padding-top: 1.5rem;
 
   @media (max-width: 750px) {
@@ -106,7 +107,7 @@ const Services = styled.div`
   align-self: center;
   gap: 3rem;
   padding-bottom: 5rem;
-  width: 80%;
+  width: 90%;
 
   @media (max-width: 1350px) {
     grid-template-columns: repeat(2, 1fr);
@@ -157,6 +158,7 @@ const InfoTitle = styled.h2`
   ${typography2.head.sm};
   color: white;
   text-align: left;
+  padding-left: 3rem;
   margin: 2rem 0 2.5rem 0;
 
   @media (max-width: 500px) {
@@ -180,8 +182,7 @@ const PsychServices = () => {
       </TopContainer>
 
 
-      <PsychText>La psicología es una disciplina que se encarga de estudiar el comportamiento humano y los procesos mentales. En el ámbito de la salud, la psicología se encarga de estudiar y tratar los trast
-        ornos mentales y emocionales, así como de promover el bienestar y la calidad de vida de las personas. En este sentido, la psicología clínica es una de las ramas más importantes de la psicología, ya que se encarga de diagnosticar y tratar los trastornos mentales y emocionales, así como de prevenir su aparición. En este sentido, la psicología clínica se basa en la aplicación de técnicas y métodos psicológicos para ayudar a las personas a superar sus problemas emocionales y a mejorar su calidad de vida.</PsychText>
+      <PsychText>{psyText}</PsychText>
 
       <ServicesContainer>
         <InfoTitle>Servicios</InfoTitle>
