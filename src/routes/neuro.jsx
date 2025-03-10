@@ -6,6 +6,7 @@ import { typography, typography2 } from '../styles/typography';
 import { neuroServices } from '../data/services';
 import Footer from '../components/footer';
 import neuroImage from '../assets/images/neuro-background.png';
+import { neuroText } from '../data/definitions';
 
 const GeneralContainer = styled.section`
   display: flex;
@@ -65,9 +66,9 @@ const Title = styled.h1`
   }
 `;
 
-const PsychText = styled.p`
+const NeuroText = styled.p`
   ${typography2.text.md}
-  width: 70%;
+  width: 67%;
   color: white;
   text-align: justify;
   align-self: center;
@@ -88,7 +89,7 @@ const ServicesContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-self: center;
-  width: 70%;
+  width: 75%;
   padding-top: 1.5rem;
 
   @media (max-width: 750px) {
@@ -124,7 +125,7 @@ const Services = styled.div`
 
 
 const ServiceTitle = styled.li`
-  ${typography2.text.md};
+  ${typography2.head.xls};
   color: white;
   margin: 0;
   font-weight: 400;
@@ -157,6 +158,7 @@ const InfoTitle = styled.h2`
   ${typography2.head.sm};
   color: white;
   text-align: left;
+  padding-left: 3rem;
   margin: 2rem 0 2.5rem 0;
 
   @media (max-width: 500px) {
@@ -180,7 +182,7 @@ const NeuroServices = () => {
       </TopContainer>
 
 
-      <PsychText>La neuropsicología clínica es una disciplina especializada en los trastornos neurológicos que afectan a nuestra cognición, conducta y emociones. Así pues, el objetivo del área de neuropsicología es dar asistencia, a través de un proceso de evaluación, diagnóstico e intervención personalizado, a los pacientes y a sus familias.</PsychText>
+      <NeuroText>{neuroText}</NeuroText>
 
       <ServicesContainer>
         <InfoTitle>Diagnóstico y tratamiento</InfoTitle>

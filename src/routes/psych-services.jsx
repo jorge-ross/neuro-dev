@@ -6,7 +6,7 @@ import { typography, typography2 } from '../styles/typography';
 import { psychServices } from '../data/services';
 import Footer from '../components/footer';
 import psychImage from '../assets/images/psico-background.png';
-import psyText from '../data/definitions';
+import { psyText } from '../data/definitions';
 
 const GeneralContainer = styled.section`
   display: flex;
@@ -107,7 +107,7 @@ const Services = styled.div`
   align-self: center;
   gap: 3rem;
   padding-bottom: 5rem;
-  width: 90%;
+  width: 80%;
 
   @media (max-width: 1350px) {
     grid-template-columns: repeat(2, 1fr);

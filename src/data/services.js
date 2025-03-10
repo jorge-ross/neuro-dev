@@ -58,7 +58,7 @@ export const psychServices = [
   ),
   new PsychService(
     9,
-    "Corporativo (No coaching)",
+    "Corporativo",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
@@ -82,7 +82,7 @@ export const neuroServices = [
   ),
   new NeuroPsychServices(
     2,
-    "Altas capacidades intelectuales",
+    "Funcionamiento Intelectual Límite",
     "Sesiones de terapia para mejorar la comunicación y resolver conflictos en relaciones de pareja.",
     "/images/logond.png"
   ),
@@ -94,7 +94,7 @@ export const neuroServices = [
   ),
   new NeuroPsychServices(
     4,
-    "Trastornos neurocognitivos",
+    "Accidentes cerebrovasculares",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
@@ -112,13 +112,13 @@ export const neuroServices = [
   ),
   new NeuroPsychServices(
     7,
-    "Trastorno por Déficit de Atención con Hiperactividad (TDAH)",
+    "Trastornos Neurocognitivos",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
   new NeuroPsychServices(
     8,
-    "Funcionamiento Intelectual Límite",
+    "Altas capacidades intelectuales",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
@@ -130,7 +130,7 @@ export const neuroServices = [
   ),
   new NeuroPsychServices(
     10,
-    "Accidentes cerebrovasculares ",
+    "Trastorno por Déficit de Atención con Hiperactividad (TDAH)",
     "Programa de ejercicios mentales para mejorar la memoria, atención y otras funciones cognitivas después de una lesión cerebral.",
     "/images/logond.png"
   ),
