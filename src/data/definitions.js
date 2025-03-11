@@ -50,3 +50,9 @@ const conclusionCorpText = [
 ]
 
 export { conclusionCorpText };
+
+const CedulaProfAbout = [
+  "00000000",
+]
+
+export { CedulaProfAbout };

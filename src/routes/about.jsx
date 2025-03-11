@@ -1,10 +1,11 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import profile_pic from "../assets/images/profile_pic_npsic.jpg"
+import profile_pic from "../assets/images/profile_pic_npsic.png"
 import { typography } from "../styles/typography";
 import Terms from "../components/terms";
 import descriptionText from '../data/about';
+import { CedulaProfAbout } from "../data/definitions";
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -14,7 +15,7 @@ const GeneralContainer = styled.div`
 `
 
 const AboutSection = styled.section`
-  margin: 10rem 2rem 4rem 2rem;
+  margin: 9rem 2rem 4rem 2rem;
   width: 75%;
   display: grid;
   grid-gap: 10px;
@@ -33,8 +34,8 @@ const AboutSection = styled.section`
 `;
 
 const ProfileImage = styled.img`
-  width: 45%;
-  border-radius: 30%;
+  width: 55%;
+  border-radius: 40%;
   justify-self: center;
   align-self: center;
 `;
@@ -103,16 +104,14 @@ const About = () => {
           <ProfileImage src={profile_pic} alt="npsic" />
           <Name>Jorge Rosano</Name>
         </Card>
-        <Title>Acerca de Mí</Title>
+        <Title>Acerca de mí</Title>
         <Description>
           {descriptionText}
         </Description>
         <ProfesionalDetails>
-          Ced. Prof: 000000
+          Ced. Prof: {CedulaProfAbout}
           < br />
           Ced. Esp: En proceso de homologación
-          < br />
-          (Ya saben lo lenta que suele ser la burocracia)
           < br />
           < br />
           Mientras tanto...
