@@ -7,6 +7,7 @@ import corpTwo from '../assets/images/corpTwo.png'
 import corpThree from '../assets/images/corpThree.png'
 import { typography, typography2 } from '../styles/typography';
 import Footer from '../components/footer';
+import { benefitCorpList, conclusionCorpText, corpText, subtitleCorpText } from '../data/definitions';
 
 const GeneralContainer = styled.section`
   display: flex;
@@ -117,7 +118,7 @@ const InfoTitle = styled.h2`
 `;
 
 const BenefitsList = styled.ol`
-  width: 75%;
+  width: 79%;
   padding-left: 1.5rem;
   margin: 1.5rem 0 0.5rem 0;
 
@@ -188,34 +189,18 @@ const ConsultancyServices = () => {
         </TopContainer>
 
 
-        <CorpText>La consultoría en Recursos Humanos es un servicio profesional que tiene como
-          objetivo ayudar a las organizaciones a optimizar la gestión de su capital humano.
-          A través de estrategias, herramientas y metodologías especializadas,
-          los consultores trabajan para mejorar procesos como el reclutamiento,
-          la selección, la formación, el desarrollo organizacional, la retención
-          de talento y la gestión del clima laboral. El fin último es alinear las
-          prácticas de Recursos Humanos con los objetivos estratégicos del negocio,
-          promoviendo un entorno laboral más productivo, saludable y sostenible.
-        </CorpText>
-        <SubTitle>Ventajas de integrar principios de la psicología clínica en la
-          consultoría de Recursos Humanos</SubTitle>
+        <CorpText>{corpText}</CorpText>
+        <SubTitle>{subtitleCorpText}</SubTitle>
 
         <BenefitsList>
-          <li>
-            <strong>Mejora del clima laboral:</strong><br /> Al aplicar técnicas basadas en la psicología, se pueden identificar y resolver conflictos de manera efectiva, creando un ambiente de trabajo más armónico y colaborativo.
-          </li>
-          <li>
-            <strong>Mayor retención de talento:</strong><br /> Comprender las necesidades emocionales y profesionales de los colaboradores permite diseñar programas de engagement y retención más efectivos.
-          </li>
-          <li>
-            <strong>Desarrollo de liderazgos más humanos:</strong><br /> Los líderes que comprenden principios psicológicos pueden gestionar a sus equipos con mayor empatía y eficacia, fomentando la confianza y la motivación.
-          </li>
-          <li>
-            <strong>Prevención de riesgos psicosociales:</strong><br /> La aplicación de conocimientos clínicos ayuda a identificar y mitigar factores de estrés laboral, burnout o acoso, promoviendo entornos más saludables.
-          </li>
-          <li>
-            <strong>Toma de decisiones basada en datos y emociones:</strong><br /> Combinar análisis cuantitativo con una comprensión profunda del comportamiento humano permite tomar decisiones más equilibradas y efectivas.
-          </li>
+          {benefitCorpList.map((benefit, index) => {
+            const [title, ...description] = benefit.split(':');
+            return (
+              <li key={index}>
+                <strong>{title}:</strong>{description.join(':')}
+              </li>
+            );
+          })}
         </BenefitsList>
 
         <CorpImgContainer>
@@ -223,10 +208,7 @@ const ConsultancyServices = () => {
           <CorpImg src={corpThree} />
           <CorpImg src={corpTwo} />
         </CorpImgContainer>
-        <CorpText>La consultoría en Recursos Humanos, enriquecida con principios de la psicología clínica, no solo se enfoca en mejorar procesos organizacionales, sino también en entender y potenciar el factor humano. Este enfoque integral permite crear organizaciones más resilientes, productivas y comprometidas con el bienestar de sus colaboradores.
-
-          ¿Listo para transformar tu empresa? ¡Contáctanos y descubre cómo podemos ayudarte!
-        </CorpText>
+        <CorpText>{conclusionCorpText}</CorpText>
 
         <InfoTitle>¡Puedes utilizar los mismos canales de contacto para solicitar información!</InfoTitle>
       </GeneralContainer>
