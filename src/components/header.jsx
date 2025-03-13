@@ -334,7 +334,7 @@ function Header() {
 
         <OptionsContainer>
           <NavOption to="/sobre-neurodev" onClick={() => window.scrollTo(0, 0)}>
-            <Option>Sobre mí</Option>
+            <Option>Acerca de</Option>
           </NavOption>
 
           <DropNavOption ref={dropdownRef}>
@@ -379,7 +379,7 @@ function Header() {
 
           <NavOptionsContainer>
             <HamOption to="/sobre-neurodev" onClick={() => window.scrollTo(0, 0)}>
-              Sobre mí
+              Acerca de
               <ImUser />
             </HamOption>
 

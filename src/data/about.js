@@ -1,11 +1,9 @@
 const descriptionText = [
-  "Soy un psicólogo especializado en neuropsicología con 8 años de experiencia. Me dedico a ofrecer servicios de psicología basada en evidencia, ayudando, a las personas a superar sus retos mentales y emocionales con un enfoque científico y personalizado.",
+  "Psicólogo especializado en Neuropsicología clínica por la Universidad Internacional de Valencia. Su pasión por el ejercicio clínico lo llevó a fundar Neuro-dev y desde el 2017 se ha dedicado a ofrecer servicios de psicología basada en evidencia y, más recientemente, de neuropsicología clínica, ayudando a personas a recuperar y potenciar su bienestar cognitivo y emocional.",
   "",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr,exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis au,irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nul,pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offic,deserunt mollit anim id est laboru",
+  "Durante su formación, destacan ampliamente las prácticas curriculares en la Unidad de Neuropsicología Neurovita en Valencia, España, donde fortaleció sus habilidades en evaluación, diagnóstico e intervención. Además, ha desempeñado roles de liderazgo, teniendo la oportunidad de ser docente universitario y colaborando con centros de atención psicológica, colegios y otras instituciones, capacitando y participando en equipos multidisciplinarios con metas clínicas o académicas en común.",
   "",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr,exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis au,irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nul,pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offic,deserunt mollit anim id est laboru",
-  "",
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor, incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostr,exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis au,irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nul,pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui offic,deserunt mollit anim id est laboru",
+  "También ha colaborado con el DIF y el IMSS, brindando asesoría psicológica y apoyo a diversas comunidades. Su enfoque se basa en la evidencia científica y en la cercanía con sus pacientes, buscando siempre estrategias que les ayuden a mejorar su calidad de vida de manera significativa.",
 ].join('\n');
 
 export default descriptionText;
