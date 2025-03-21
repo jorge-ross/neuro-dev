@@ -22,8 +22,8 @@ const GeneralContainer = styled.div`
 `
 
 const AboutSection = styled.section`
-  padding: 4rem 0 3rem 0;
-  width: 75%;
+  padding: 3.5rem 0;
+  width: 70%;
   display: grid;
   grid-gap: 1rem;
   column-gap: 2.5rem;
@@ -64,6 +64,7 @@ const Description = styled.p`
   align-self: start;
   white-space: pre-line;
   line-height: 1.5rem;
+  width: 95%;
 `;
 
 const ProfesionalDetails = styled.div`
@@ -136,13 +137,13 @@ const About = () => {
               Ced. Prof: {CedulaProfAbout}
               < br />
               Ced. Esp: En proceso de homologación
-              < br />
-              Mientras tanto, pueden consultar mi título español {" "}
+              {" ("}
               <a
                 href="/doc/neu-t.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-              >aquí</a>.
+              >título especialidad</a>
+              {")"}.
             </ProfesionalDetails>
           </Description>
 
