@@ -22,8 +22,8 @@ const GeneralContainer = styled.div`
 `
 
 const AboutSection = styled.section`
-  padding: 3.5rem 0;
-  width: 70%;
+  padding: 3.5rem 0 4rem;
+  width: 77%;
   display: grid;
   grid-gap: 1rem;
   column-gap: 2.5rem;
