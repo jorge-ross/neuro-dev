@@ -157,7 +157,7 @@ const TestimonialSection = () => {
 
   return (
     <SectionContainer>
-      <SectionTitle>Los pacientes opinan</SectionTitle>
+      <SectionTitle>Algunas experiencias compartidas.</SectionTitle>
       <SliderContainer>
         <Slider {...settings}>
           {testimonials.map((testimonial) => (

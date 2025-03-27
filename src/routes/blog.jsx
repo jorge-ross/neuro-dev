@@ -83,7 +83,7 @@ const Blog = () => {
           <ArticleLink to="/blog/salud-mental">
             <ArticleImage src={logotest} />
             <ArticleTitle>
-              Importancia de la Salud Mental
+              Preludio 2.0
             </ArticleTitle>
           </ArticleLink>
         </ArticleList>

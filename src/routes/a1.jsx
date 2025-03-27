@@ -1,32 +1,50 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import articleImageOne from "../assets/images/article-imgs/img-1.png";
+import { typography } from "../styles/typography";
 
 const ArticleContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2rem;
+  margin-top: 70px;
+  width: 60%;
+  align-self: center;
+  justify-self: center;
+  padding: 2rem 0 4rem;
+
+  @media (max-width: 600px) {
+    width: 70%;
+  }
 `;
 
 const Title = styled.h1`
+  ${typography.head.md};
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 1.5rem;
+  margin: 1rem 0;
 `;
 
 const Content = styled.div`
-  max-width: 800px;
   line-height: 1.6;
   text-align: justify;
 `;
+
+const ImageContainer = styled.img`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-self: center;
+  padding: 1.5rem 0;
+`
 
 const SaludMental = () => {
   return (
     <>
       <Header />
       <ArticleContainer>
-        <Title>Importancia de la Salud Mental</Title>
+        <ImageContainer src={articleImageOne} alt="prelude" />
+        <Title>Preludio 2.0</Title>
         <Content>
           <p>
             La salud mental es un aspecto fundamental del bienestar general de
