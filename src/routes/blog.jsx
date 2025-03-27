@@ -3,7 +3,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { typography } from "../styles/typography";
 import { Link } from "react-router-dom";
-import logotest from "../assets/images/logond.png";
+import coverOne from "../assets/images/article-imgs/cover-1.png";
 
 
 const BlogContainer = styled.div`
@@ -48,7 +48,7 @@ const ArticleList = styled.div`
 const ArticleLink = styled(Link)`
   text-decoration: none;
   color: black;
-  border: 1px solid #ccc;
+  border-bottom: 1px solid black;
   padding: 1rem;
   border-radius: 0.75rem;
   transition: background-color 0.3s, transform 0.3s;
@@ -57,6 +57,7 @@ const ArticleLink = styled(Link)`
   align-items: center;
   align-self: center;
   justify-self: center;
+  justify-content: space-evenly;
   gap: 0.5rem;
   width: 250px;
   height: 310px;
@@ -81,7 +82,7 @@ const Blog = () => {
         <Title>Entradas recientes</Title>
         <ArticleList>
           <ArticleLink to="/blog/salud-mental">
-            <ArticleImage src={logotest} />
+            <ArticleImage src={coverOne} />
             <ArticleTitle>
               Preludio 2.0
             </ArticleTitle>
