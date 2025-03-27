@@ -1,7 +1,10 @@
 import styled from 'styled-components';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { typography2 } from '../styles/typography';
 import { Link } from 'react-router-dom';
 import logoservices from '../assets/images/corpimage.png';
+import logon from '../assets/images/logond.png';
 import logow from '../assets/images/logow.png';
 
 const Container = styled.div`
@@ -34,7 +37,7 @@ const CorpImageContainer = styled.div`
   justify-content: center;
   align-items; center;
   color: black;
-  padding: 4rem 0;
+  padding: 4rem 0 3rem 0;
 
   @media (max-width: 1000px) {
     padding-bottom: 2rem;
@@ -57,16 +60,16 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.75rem;
   ${typography2.text.xl};
   font-weight: 500;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   border: none;
-  border-radius: 3rem;
+  border-radius: 0.5rem;
   cursor: pointer;
   min-width: 320px;
-  min-height: 100px;
+  min-height: 50px;
 
   @media (max-width: 1000px) {
     min-width: 530px;
@@ -75,7 +78,6 @@ const Button = styled.button`
   @media (max-width: 700px) {
     ${typography2.text.lg};
     min-width: 400px;
-    min-height: 80px;
   }
 
    @media (max-width: 600px) {
@@ -89,12 +91,13 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: #292929;
+    background-color:rgb(19, 19, 19);
+    color: white;
   }
 `;
 
 const LogoImgCont = styled.img`
-  max-width: 1.7rem;
+  max-width: 1.5rem;
 
   @media (max-width: 500px) {
     max-width: 1.3rem;
@@ -106,8 +109,33 @@ const LogoImgCont = styled.img`
 `
 
 const StyledLink = styled(Link)`
-  text-decoration: none; /* Remove underline */
+  text-decoration: none;
 `;
+
+const HoverButton = ({ to, text, logon, logow }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <StyledLink to={to}>
+      <Button
+        onClick={() => window.scrollTo(0, 0)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <LogoImgCont src={isHovered ? logow : logon} alt="logo" />
+        {text}
+      </Button>
+    </StyledLink>
+  );
+};
+
+HoverButton.propTypes = {
+  to: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  logon: PropTypes.string.isRequired,
+  logow: PropTypes.string.isRequired,
+};
+
 
 const ServicesComponent = () => {
 
@@ -119,24 +147,9 @@ const ServicesComponent = () => {
 
       <Container>
         <ServicesContainer>
-          <StyledLink to="/psicologia">
-            <Button onClick={() => window.scrollTo(0, 0)}>
-              <LogoImgCont src={logow} alt="logo" />
-              Psicología
-            </Button>
-          </StyledLink>
-          <StyledLink to="/neuropsicologia">
-            <Button onClick={() => window.scrollTo(0, 0)}>
-              <LogoImgCont src={logow} alt="logo" />
-              Neuropsicología
-            </Button>
-          </StyledLink>
-          <StyledLink to="/consultoria">
-            <Button onClick={() => window.scrollTo(0, 0)}>
-              <LogoImgCont src={logow} alt="logo" />
-              Consultoría
-            </Button>
-          </StyledLink>
+          <HoverButton to="/psicologia" text="Psicología" logon={logon} logow={logow} />
+          <HoverButton to="/neuropsicologia" text="Neuropsicología" logon={logon} logow={logow} />
+          <HoverButton to="/consultoria" text="Consultoría" logon={logon} logow={logow} />
         </ServicesContainer>
       </Container>
     </>

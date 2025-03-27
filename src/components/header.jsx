@@ -350,7 +350,9 @@ function Header() {
             )}
           </DropNavOption>
 
-          <Option >Blog</Option>
+          <NavOption to="/blog" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Blog</Option>
+          </NavOption>
 
           <NavOption onClick={handleScrollToFooter}>
             <Option>Contacto</Option>
@@ -398,7 +400,8 @@ function Header() {
               <MdAssessment />
             </HamOption>
 
-            <HamOption>Blog
+            <HamOption to="/blog" onClick={() => window.scrollTo(0, 0)}>
+              Blog
               <FaPencil />
             </HamOption>
 
