@@ -3,8 +3,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { typography } from "../styles/typography";
 import { Link } from "react-router-dom";
-import coverOne from "../assets/images/article-imgs/cover-1.png";
-
+import { articles } from "../data/articles";
 
 const BlogContainer = styled.div`
   display: flex;
@@ -13,7 +12,7 @@ const BlogContainer = styled.div`
   width: 75%;
   align-self: center;
   justify-self: center;
-  padding: 2rem 0 4rem;
+  padding: 1.5rem 0 4rem;
 
   @media (max-width: 750px) {
     
@@ -81,14 +80,17 @@ const Blog = () => {
       <BlogContainer>
         <Title>Entradas recientes</Title>
         <ArticleList>
-          <ArticleLink to="/blog/salud-mental">
-            <ArticleImage src={coverOne} />
-            <ArticleTitle>
-              Preludio 2.0
-            </ArticleTitle>
-          </ArticleLink>
+          {articles.map((article) => (
+            <ArticleLink
+              to={article.route ? article.route.replace("/blog/", "") : "/"}
+              key={article.id}
+            >
+              <ArticleImage src={article.postUrl} alt={article.alt} />
+              <ArticleTitle>{article.title}</ArticleTitle>
+            </ArticleLink>
+          ))}
         </ArticleList>
-      </BlogContainer>
+      </BlogContainer >
       <Footer />
     </>
   );

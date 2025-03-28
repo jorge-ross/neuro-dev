@@ -7,7 +7,7 @@ import PsychServices from './routes/psych-services'
 import NeuroServices from './routes/neuro'
 import ConsultancyServices from './routes/consultancy'
 import Blog from './routes/blog'
-import Article1 from './routes/a1'
+import ArticleDetail from './routes/a1'
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
         <Route path="consultoria" element={<ConsultancyServices />} />
         <Route path="*" element={<Navigate to="/" replace={true} />} />
         <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/salud-mental" element={<Article1 />} />
+        <Route path="/blog/:slug" element={<ArticleDetail />} />
       </Routes>
     </Router>
   )

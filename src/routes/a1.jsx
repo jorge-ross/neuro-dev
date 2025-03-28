@@ -1,8 +1,9 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import articleImageOne from "../assets/images/article-imgs/img-1.png";
 import { typography } from "../styles/typography";
+import { articles } from "../data/articles";
+import { useParams } from "react-router-dom";
 
 const ArticleContainer = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const ArticleContainer = styled.div`
   width: 60%;
   align-self: center;
   justify-self: center;
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 5rem;
 
   @media (max-width: 600px) {
     width: 70%;
@@ -25,9 +26,19 @@ const Title = styled.h1`
   margin: 1rem 0;
 `;
 
-const Content = styled.div`
-  line-height: 1.6;
+const ContentContainer = styled.div`
+  display: flex;
+  border-right: 2px solid #000;
+  padding-top: 0.75rem;
+`;
+
+const Content = styled.p`
+  ${typography.text.md};
+  margin: 0;
+  line-height: 1.5;
   text-align: justify;
+  width: 95%;
+  white-space: pre-line;
 `;
 
 const ImageContainer = styled.img`
@@ -38,39 +49,29 @@ const ImageContainer = styled.img`
   padding: 1.5rem 0;
 `
 
-const SaludMental = () => {
+const ArticleDetail = () => {
+  const { slug } = useParams();
+  const article = articles.find((a) => a.route === `/blog/${slug}`);
+
+  if (!article) {
+    return <div>Artículo no encontrado</div>;
+  }
+
   return (
     <>
       <Header />
       <ArticleContainer>
-        <ImageContainer src={articleImageOne} alt="prelude" />
-        <Title>Preludio 2.0</Title>
-        <Content>
-          <p>
-            La salud mental es un aspecto fundamental del bienestar general de
-            las personas. No solo afecta cómo pensamos, sentimos y actuamos en
-            nuestra vida diaria, sino que también influye en cómo manejamos el
-            estrés, nos relacionamos con los demás y tomamos decisiones.
-          </p>
-          <p>
-            Cuidar de nuestra salud mental es tan importante como cuidar de
-            nuestra salud física. Practicar hábitos saludables como el ejercicio
-            regular, una dieta equilibrada y el descanso adecuado puede marcar
-            una gran diferencia. Además, buscar apoyo profesional cuando sea
-            necesario es clave para enfrentar desafíos emocionales o
-            psicológicos.
-          </p>
-          <p>
-            En Neuro-dev, creemos en la importancia de promover la salud mental
-            y brindar herramientas para que las personas puedan alcanzar su
-            máximo potencial. Recuerda: cuidar de tu mente es cuidar de ti
-            mismo.
-          </p>
-        </Content>
+        <ImageContainer src={article.imageUrl} alt={article.alt} />
+        <Title>{article.title}</Title>
+        <ContentContainer>
+          <Content>
+            {article.content}
+          </Content>
+        </ContentContainer>
       </ArticleContainer>
       <Footer />
     </>
   );
 };
 
-export default SaludMental;
+export default ArticleDetail;
