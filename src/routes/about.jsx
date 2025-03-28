@@ -56,7 +56,7 @@ const NeurodevImage = styled.img`
   align-self: center;
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   ${typography.text.md};
   grid-column: 2 / 4;
   grid-row: 2 / 5;
@@ -65,13 +65,15 @@ const Description = styled.p`
   white-space: pre-line;
   line-height: 1.5rem;
   width: 95%;
+  padding: 1rem 0
 `;
 
-const ProfesionalDetails = styled.div`
+const ProfesionalDetails = styled.p`
   ${typography.text.sm};
   text-align: left;
   align-self: flex-start;
   padding-top: 1.5rem;
+  margin: 0;
 `
 
 const Card = styled.div`
