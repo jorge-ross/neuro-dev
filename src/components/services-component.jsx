@@ -18,13 +18,16 @@ const Title = styled.h2`
   color: black;
   text-align: center;
   margin: 3rem 0 1rem;
+
+  @media (max-width: 1000px) {
+  }
 `
 
 const ServicesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  padding: 2rem 0;
+  padding: 2rem 0 3rem;
   gap: 2rem;
 
   @media (max-width: 1000px) {
@@ -47,6 +50,9 @@ const ServiceText = styled.p`
 
   @media (max-width: 1000px) {
     min-width: 530px;
+    color: white;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
   }
 
   @media (max-width: 700px) {
@@ -68,7 +74,11 @@ const ServiceText = styled.p`
 const LogoImgCont = styled.img`
   max-width: 2.5rem;
 
-  @media (max-width: 500px) {
+  @media (max-width: 1000px) {
+    filter: brightness(0) invert(1); 
+  }
+
+  @media (max-width: 700px) {
     max-width: 1.3rem;
   }
 
@@ -90,7 +100,7 @@ const Wrapper = styled(Link)`
   justify-content: center;
   width: 300px;
   height: 280px;
-  padding: 11rem 0 0 0;
+  padding-top: 11rem;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
   text-decoration: none;
@@ -98,11 +108,13 @@ const Wrapper = styled(Link)`
   filter: brightness(0.4);
 
   @media (max-width: 1000px) {
-    width: 75%;
+    width: 81%;
     height: 50px;
     padding-bottom: 1.5rem;
     background-position: 0 30%;
-
+    opacity: 1;
+    filter: brightness(1);
+    padding-top: 9rem;
   }
 
   &:hover ${ServiceText} {
