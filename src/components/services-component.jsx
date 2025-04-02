@@ -1,11 +1,10 @@
 import styled from 'styled-components';
-import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { typography2 } from '../styles/typography';
 import { Link } from 'react-router-dom';
-import logoservices from '../assets/images/corpimage.png';
 import logon from '../assets/images/logond.png';
-import logow from '../assets/images/logow.png';
+import psicCard from '../assets/images/psic-card.png';
+import neuroCard from '../assets/images/neu-card.png';
+import consCard from '../assets/images/cons-card.png';
 
 const Container = styled.div`
   display: flex;
@@ -14,62 +13,37 @@ const Container = styled.div`
   align-items: center;
 `
 
+const Title = styled.h2`
+  ${typography2.head.lgx};
+  color: black;
+  text-align: center;
+  margin: 3rem 0 1rem;
+`
+
 const ServicesContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  gap: 3rem;
-  padding: 2rem 0 4rem;
+  padding: 2rem 0;
+  gap: 2rem;
 
   @media (max-width: 1000px) {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 1rem;
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 600px) {
-    gap: 1.2rem;
+    gap: 1rem;
+    width: 100%;
   }
 `
 
-const CorpImageContainer = styled.div`
+const ServiceText = styled.p`
   display: flex;
-  justify-content: center;
-  align-items; center;
-  color: black;
-  padding: 4rem 0 3rem 0;
-
-  @media (max-width: 1000px) {
-    padding-bottom: 2rem;
-  }
-
-  @media (max-width: 400px) {
-    padding-bottom: 1rem;
-  }
-  `
-
-const CorpImage = styled.img`
-  width: 57%;
-
-  @media (max-width: 900px) {
-    width: 75%;
-  }
-`
-
-const Button = styled.button`
-  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  ${typography2.text.xl};
-  font-weight: 500;
-  background-color: white;
+  gap: 0.85rem;
+  ${typography2.head.sm};
   color: black;
-  border: none;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  min-width: 320px;
-  min-height: 50px;
 
   @media (max-width: 1000px) {
     min-width: 530px;
@@ -89,15 +63,10 @@ const Button = styled.button`
     min-width: 270px;
     min-height: 60px;
   }
-
-  &:hover {
-    background-color:rgb(19, 19, 19);
-    color: white;
-  }
 `;
 
 const LogoImgCont = styled.img`
-  max-width: 1.5rem;
+  max-width: 2.5rem;
 
   @media (max-width: 500px) {
     max-width: 1.3rem;
@@ -108,48 +77,79 @@ const LogoImgCont = styled.img`
   }
 `
 
-const StyledLink = styled(Link)`
+const Wrapper = styled(Link)`
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0.75rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 280px;
+  padding: 11rem 0 0 0;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
   text-decoration: none;
-`;
+  opacity: 0.88;
+  filter: brightness(0.4);
 
-const HoverButton = ({ to, text, logon, logow }) => {
-  const [isHovered, setIsHovered] = useState(false);
+  @media (max-width: 1000px) {
+    width: 75%;
+    height: 50px;
+    padding-bottom: 1.5rem;
+    background-position: 0 30%;
 
-  return (
-    <StyledLink to={to}>
-      <Button
-        onClick={() => window.scrollTo(0, 0)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        <LogoImgCont src={isHovered ? logow : logon} alt="logo" />
-        {text}
-      </Button>
-    </StyledLink>
-  );
-};
+  }
 
-HoverButton.propTypes = {
-  to: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  logon: PropTypes.string.isRequired,
-  logow: PropTypes.string.isRequired,
-};
+  &:hover ${ServiceText} {
+    color: white;
+  }
+
+  &:hover ${LogoImgCont} {
+    filter: brightness(0) invert(1); 
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    opacity: 1;
+    filter: brightness(1);
+ }
+`
 
 
 const ServicesComponent = () => {
 
   return (
     <>
-      <CorpImageContainer>
-        <CorpImage src={logoservices} />
-      </CorpImageContainer>
 
       <Container>
+        <Title>Servicios</Title>
         <ServicesContainer>
-          <HoverButton to="/psicologia" text="Psicología" logon={logon} logow={logow} />
-          <HoverButton to="/neuropsicologia" text="Neuropsicología" logon={logon} logow={logow} />
-          <HoverButton to="/consultoria" text="Consultoría" logon={logon} logow={logow} />
+          <Wrapper to="/psicologia" src={psicCard} alt="psicCard" onClick={() => window.scrollTo(0, 0)}>
+            <ServiceText>
+              Psicología
+              <LogoImgCont src={logon} alt="logo" />
+            </ServiceText>
+          </Wrapper>
+
+          <Wrapper to="/neuropsicologia" src={neuroCard} alt="neuroCard" onClick={() => window.scrollTo(0, 0)}>
+            <ServiceText>
+              Neuropsicología
+              <LogoImgCont src={logon} alt="logo" />
+            </ServiceText>
+
+          </Wrapper>
+          <Wrapper to="/consultoria" src={consCard} alt="consCard" onClick={() => window.scrollTo(0, 0)}>
+            <ServiceText>
+              Consultoría
+              <LogoImgCont src={logon} alt="logo" />
+            </ServiceText>
+          </Wrapper>
         </ServicesContainer>
       </Container>
     </>
