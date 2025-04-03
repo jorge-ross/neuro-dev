@@ -15,16 +15,25 @@ const BlogContainer = styled.div`
   padding: 1.5rem 0 4rem;
 
   @media (max-width: 750px) {
-    
+    width: 90%;
   }
 `;
 
 const Title = styled.h1`
   ${typography.head.xl}
   text-align: center;
+  margin: 2.5rem 0;
 
   @media (max-width: 750px) {
     ${typography.head.lgx}
+  }
+
+  @media (max-width: 500px) {
+    ${typography.head.lga}
+  }
+
+  @media (max-width: 400px) {
+    ${typography.head.md}
   }
 `;
 
@@ -33,7 +42,7 @@ const ArticleTitle = styled.h1`
   text-align: center;
 
   @media (max-width: 750px) {
-    // ${typography.head.lgx}
+    ${typography.head.xss};
   }
 `;
 
@@ -41,7 +50,11 @@ const ArticleList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
+
+   @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 const ArticleLink = styled(Link)`
@@ -64,6 +77,28 @@ const ArticleLink = styled(Link)`
   &:hover {
     background-color:rgb(241, 241, 241);
     transform: scale(1.05);
+  }
+
+  @media (max-width: 750px) {
+    width: 90%;
+    height: 310px;
+    justify-content: start;
+  }
+
+  @media (max-width: 650px) {
+    height: 280px;
+  }
+
+  @media (max-width: 580px) {
+    height: 250px;
+  }
+
+   @media (max-width: 500px) {
+    height: 220px;
+  }
+
+  @media (max-width: 400px) {
+    height: 200px;
   }
 `;
 

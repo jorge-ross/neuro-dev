@@ -9,7 +9,7 @@ const ArticleContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 70px;
-  width: 60%;
+  width: 57%;
   align-self: center;
   justify-self: center;
   padding: 2rem 0 5rem;
@@ -46,7 +46,7 @@ const ImageContainer = styled.img`
   justify-content: center;
   width: 100%;
   align-self: center;
-  padding: 1.5rem 0;
+  padding: 1rem 0 1.5rem;
 `
 
 const ArticleDetail = () => {
