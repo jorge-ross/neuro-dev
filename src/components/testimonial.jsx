@@ -17,7 +17,6 @@ const SectionContainer = styled.section`
 
 
   @media (max-width: 1000px) {
-    width: 70%;
     padding-top: 1.5rem;
   }
 `;
@@ -38,6 +37,11 @@ const SliderContainer = styled.div`
     margin: 0 1rem;
     justify-content: center;
     padding-bottom: 1.5rem;
+
+    @media (max-width: 471px) {
+    padding-bottom: 3.5rem;
+    }
+
   }
   .slick-list {
     margin: 0 -1.5rem;
@@ -48,13 +52,17 @@ const Arrow = styled.div`
   color: black;
   cursor: pointer;
   position: absolute;
-  top: 48%;
+  top: 44%;
   transform: translateY(-50%);
   z-index: 1;
   font-size: 4rem;
 
-  @media (max-width: 600px) {
-    top: 45%;
+  @media (max-width: 700px) {
+    top: 42%;
+  }
+
+  @media (max-width: 471px) {
+    top: 38%;
   }
     
 `;
