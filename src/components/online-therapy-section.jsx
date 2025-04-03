@@ -153,13 +153,13 @@ const OnlineTherapyBenefits = () => {
           <BenefitCard>
             <BenefitImage src={convenienceIcon} alt="Conveniencia" />
             <BenefitText>Conveniencia</BenefitText>
-            <BenefitDescription>Accede a sesiones de terapia desde la comodidad de tu hogar, sin necesidad de desplazarte.</BenefitDescription>
+            <BenefitDescription>Accede a las sesiones desde la comodidad de tu hogar, sin necesidad de desplazarte.</BenefitDescription>
           </BenefitCard>
 
           <BenefitCard>
             <BenefitImage src={accessibilityIcon} alt="Accesibilidad" />
             <BenefitText>Accesibilidad</BenefitText>
-            <BenefitDescription>La terapia en línea facilita el acceso a servicios terapéuticos a personas con movilidad reducida o en áreas remotas.</BenefitDescription>
+            <BenefitDescription>El servicio en línea facilita el acceso a personas con movilidad reducida o en áreas remotas.</BenefitDescription>
           </BenefitCard>
 
           <BenefitCard>
@@ -171,7 +171,7 @@ const OnlineTherapyBenefits = () => {
           <BenefitCard>
             <BenefitImage src={parkingIcon} alt="Parking" />
             <BenefitText>Olvídate de los estacionamientos</BenefitText>
-            <BenefitDescription>Con la terapia en línea, no tienes que pagar por estacionamientos ni preocuparte por la seguridad de tu coche.</BenefitDescription>
+            <BenefitDescription>Con los servicios online, no tienes que pagar por estacionamientos ni preocuparte por la seguridad de tu coche.</BenefitDescription>
           </BenefitCard>
 
         </Slider>

@@ -37,7 +37,7 @@ const Content = styled.p`
   margin: 0;
   line-height: 1.5;
   text-align: justify;
-  width: 95%;
+  width: 90%;
   white-space: pre-line;
 `;
 

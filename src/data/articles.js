@@ -30,7 +30,7 @@ const articles = [
 
   new Article(
     2,
-    "Sobre la salud mental",
+    "¿Vale la pena pensar?",
     "mentalhealth",
     "/assets/article-imgs/img-2.png",
     "/assets/article-imgs/cover-2.png",
