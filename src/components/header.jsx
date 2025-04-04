@@ -333,7 +333,7 @@ function Header() {
         </HamburgerIcon>
 
         <OptionsContainer>
-          <NavOption to="/sobre-neurodev" onClick={() => window.scrollTo(0, 0)}>
+          <NavOption to="/jorge-ros-acerca-de-neurodev" onClick={() => window.scrollTo(0, 0)}>
             <Option>Acerca de</Option>
           </NavOption>
 
@@ -380,7 +380,7 @@ function Header() {
           </ImgHeader>
 
           <NavOptionsContainer>
-            <HamOption to="/sobre-neurodev" onClick={() => window.scrollTo(0, 0)}>
+            <HamOption to="/jorge-ros-acerca-de-neurodev" onClick={() => window.scrollTo(0, 0)}>
               Acerca de
               <ImUser />
             </HamOption>

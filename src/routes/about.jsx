@@ -19,6 +19,10 @@ const GeneralContainer = styled.div`
   @media (max-width: 750px) {
     width: 80%;
   }
+
+  @media (max-width: 500px) {
+    width: 87%;
+  }
 `
 
 const AboutSection = styled.section`
@@ -36,9 +40,8 @@ const AboutSection = styled.section`
   }
 
   @media (max-width: 750px){
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1rem 0 2.5rem;
   }
 `;
 
@@ -47,6 +50,17 @@ const ProfileImage = styled.img`
   border-radius: 5%;
   justify-self: center;
   align-self: center;
+
+  @media (max-width: 750px) {
+    width: 70%;
+    border-radius: 50%;
+    justify-self: end;
+  }
+
+  @media (max-width: 450px) {
+    width: 75%;
+  }
+
 `;
 
 const NeurodevImage = styled.img`
@@ -54,6 +68,16 @@ const NeurodevImage = styled.img`
   border-radius: 40%;
   justify-self: center;
   align-self: center;
+
+  @media (max-width: 750px) {
+    width: 70%;
+    border-radius: 50%;
+    justify-self: start;
+  }
+
+  @media (max-width: 450px) {
+    width: 75%;
+  }
 `;
 
 const Description = styled.div`
@@ -65,7 +89,21 @@ const Description = styled.div`
   white-space: pre-line;
   line-height: 1.5rem;
   width: 95%;
-  padding: 1rem 0
+  padding: 1rem 0;
+
+  @media (max-width: 750px) {
+    grid-column: 1 / 3;
+    grid-row: 3;
+    align-self: center;
+    justify-self: center;
+    text-align: justify;
+    padding: 0.25rem 0;
+    width: 100%;
+  }
+
+  @media (max-width: 500px) {
+    ${typography.text.sm};
+  }
 `;
 
 const ProfesionalDetails = styled.p`
@@ -84,8 +122,20 @@ const Card = styled.div`
   grid-row: 1 / 3;
 
   @media (max-width: 750px){
-    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row: 2;
+    grid-column: 1 / 3;
+    flex-direction: row;
   }
+
+  & > img:first-of-type {
+    grid-column: 1;
+  }
+
+  & > img:last-of-type {
+      grid-column: 2;
+    }
 `
 
 const Title = styled.h1`
@@ -95,7 +145,11 @@ const Title = styled.h1`
 
   @media (max-width: 750px){
     margin: 1.5rem 0 0 0;
-    align-self: flex-start;
+    align-self: start;
+  }
+
+  @media (max-width: 500px){
+    ${typography2.head.sm};
   }
 `;
 
@@ -106,7 +160,13 @@ const Subtitle = styled.h2`
 
   @media (max-width: 750px){
     margin: 0.5rem 0 0 0;
-    align-self: flex-start;
+    align-self: start;
+  }
+
+  @media (max-width: 500px){
+    ${typography2.head.xs};
+    margin: 0;
+    font-weight: 500;
   }
 `;
 
@@ -115,6 +175,13 @@ const Titles = styled.div`
   flex-direction: column;
   grid-row: 1;
   grid-column: 2 / 4;
+
+  @media (max-width: 750px){
+    grid-row: 1;
+    grid-column: 1 / 3;
+    align-items: center;
+    justify-content: center;
+  }
 `
 
 const About = () => {

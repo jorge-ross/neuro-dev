@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="" element={<Home />} />
-        <Route path="sobre-neurodev" element={<About />} />
+        <Route path="jorge-ros-acerca-de-neurodev" element={<About />} />
         <Route path="psicologia" element={<PsychServices />} />
         <Route path="neuropsicologia" element={<NeuroServices />} />
         <Route path="consultoria" element={<ConsultancyServices />} />
