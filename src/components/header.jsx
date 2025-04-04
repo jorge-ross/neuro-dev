@@ -92,7 +92,6 @@ const HamMenu = styled.div`
   transition: right 0.5s ease;
   z-index: 100;
   background-color: white;
-  border-left: 2px solid #1D2C60;
 
   @media (max-width: 700px) {
     width: 70%;

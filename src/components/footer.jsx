@@ -22,6 +22,7 @@ const FooterContainer = styled.footer`
 
   @media (max-width: 700px) {
     gap: 1rem;
+    padding: 2.5rem 0 3.5rem;; 
   }
 
   @media (max-width: 400px) {
@@ -53,8 +54,13 @@ const SectionTitle = styled.h1`
 const Inst = styled.p`
   ${typography2.text.sm}
   margin: 0;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
   text-align: center;
+
+  @media (max-width: 1000px) {
+   padding-bottom: 0.9rem;
+  }
+
 `
 
 const WhatsContainer = styled.div`
@@ -68,11 +74,11 @@ const Footer = () => {
   return (
     <Gral id="contact">
       <FooterContainer>
-        <SectionTitle>Agenda tu consulta hoy mismo.</SectionTitle>
+        <SectionTitle>Te escucho.</SectionTitle>
         <Section>
           <ContactForm />
           <WhatsContainer>
-            <Inst>También puedes enviar un mensaje vía Whatsapp</Inst>
+            <Inst>O, si lo prefieres, puedes enviar un mensaje vía Whatsapp.</Inst>
             <WhatsAppButton phoneNumber={import.meta.env.VITE_PHONE_NUMBER} />
           </WhatsContainer>
         </Section>

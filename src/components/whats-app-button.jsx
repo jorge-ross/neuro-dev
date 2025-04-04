@@ -1,57 +1,45 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { typography } from "../styles/typography";
-import { FaWhatsapp  } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
-const WhatsButton = styled.button`
-  ${typography.text.sm};
-  width: 75%;
-  height: 50px;
-  padding: 0.7rem 2rem;
-  background-color: black;
-  color: white;
-  border-radius: 1rem;
-  border: none;
-  cursor: pointer;
+
+const Icon = styled.span`
+  font-size: 2.5rem;
+  color:rgb(30, 30, 30);
+  margin-top: 0.1rem;
+  width: 3rem;
+  height: 3rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 
-  @media (max-width: 600px){
-    width: 100%;
+  @media (max-width: 350px){
+    font-size: 2rem;
   }
 
   &:hover {
-    background-color: #292929;
-  }
-`
-
-const Icon = styled.span`
-  margin-right: 0.6rem;
-  font-size: 1.2rem;
-  color: white;
-  margin-top: 0.1rem;
-
-  @media (max-width: 350px){
-    margin-right: 0.5rem;
-    font-size: 1.3rem;
+    cursor: pointer;
+    color: green;
+    background-color: #f0f0f0;
+    border-radius: 50%;
   }
 `;
 
 const WhatsAppButton = ({ phoneNumber }) => {
-   
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
 
-    const handleClick = () => {
-        window.open(whatsappUrl, '_blank');
-    };
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}`;
 
-    return (
-        <WhatsButton onClick={handleClick} >
-            <Icon><FaWhatsapp /></Icon> 
-            55 5555 5555
-        </WhatsButton>
-    );
+  const handleClick = () => {
+    window.open(whatsappUrl, '_blank');
+  };
+
+  return (
+
+    <Icon onClick={handleClick}>
+      <FaWhatsapp />
+    </Icon>
+
+  );
 };
 
 WhatsAppButton.propTypes = {
