@@ -14,8 +14,13 @@ const ArticleContainer = styled.div`
   justify-self: center;
   padding: 2rem 0 5rem;
 
+  @media (max-width: 1000px) {
+    width: 75%;
+  }
+
   @media (max-width: 600px) {
-    width: 70%;
+    width: 85%;
+    padding-bottom: 3rem;
   }
 `;
 
@@ -24,12 +29,21 @@ const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   margin: 1rem 0;
+
+  @media (max-width: 600px) {
+    text-align: center;
+  }
 `;
 
 const ContentContainer = styled.div`
   display: flex;
   border-right: 2px solid #000;
   padding-top: 0.75rem;
+
+  @media (max-width: 600px) {
+    border-right: none;
+    justify-content: center;
+  }
 `;
 
 const Content = styled.p`
@@ -39,6 +53,10 @@ const Content = styled.p`
   text-align: justify;
   width: 90%;
   white-space: pre-line;
+
+  @media (max-width: 600px) {
+    width: 95%;
+  }
 `;
 
 const ImageContainer = styled.img`
