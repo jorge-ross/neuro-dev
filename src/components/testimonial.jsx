@@ -154,6 +154,15 @@ const ModalContent = styled.div`
     line-height: 1.5;
     margin-bottom: 1rem;
   }
+
+  @media (max-width: 600px) {
+    max-width: 290px;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 400px) {
+    max-width: 240px;
+  }
 `;
 
 const CloseButton = styled.button`
