@@ -19,7 +19,10 @@ const ModalContent = styled.div`
   padding: 2rem;
   border-radius: 8px;
   max-width: 500px;
-  width: 100%;
+
+  @media (max-width: 750px) {
+    max-width: 400px;
+  }
 `;
 
 const GralModal = ({ show, onClose, children }) => {

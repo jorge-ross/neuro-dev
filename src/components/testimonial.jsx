@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import styled from 'styled-components';
 import testimonials from '../data/testimonials';
 import { typography } from '../styles/typography';
@@ -6,7 +7,7 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { colors } from '../styles/colors';
-import { FaStar } from 'react-icons/fa';
+import { FaStar, FaTimes } from 'react-icons/fa';
 
 
 const SectionContainer = styled.section`
@@ -80,7 +81,7 @@ const OpCard = styled.div`
   margin: 1rem;
 
   p {
-    margin: 0;
+    margin: 0 0 1rem 0;
     ${typography.text.md};
     color: ${colors.stone[100]};
     text-align: left;
@@ -92,10 +93,15 @@ const OpCard = styled.div`
   }
 
   .author {
+    ${typography.text.sm};
     margin-top: 0.5rem;
     font-weight: bold;
     color: ${colors.stone[400]};
     
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   @media (max-width: 600px) {
@@ -115,7 +121,55 @@ const StarRating = styled.div`
   }
 `;
 
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
 
+const ModalContent = styled.div`
+  position: relative;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  h2 {
+    ${typography.head.md};
+    margin: 1rem 0;
+  }
+
+  p {
+    ${typography.text.md};
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+`;
+
+const CloseButton = styled.button`
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: ${colors.stone[400]};
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  &:hover {
+    color: ${colors.stone[500]};
+  }
+`;
 
 const NextArrow = (props) => {
   const { onClick } = props;
@@ -135,6 +189,19 @@ PrevArrow.propTypes = {
 };
 
 const TestimonialSection = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+
+  const openModal = (testimonial) => {
+    setSelectedTestimonial(testimonial);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedTestimonial(null);
+  };
 
   const settings = {
     dots: true,
@@ -169,7 +236,7 @@ const TestimonialSection = () => {
       <SliderContainer>
         <Slider {...settings}>
           {testimonials.map((testimonial) => (
-            <OpCard key={testimonial.id}>
+            <OpCard key={testimonial.id} onClick={() => openModal(testimonial)}>
               <p>{testimonial.text}</p>
               <p className='author'>{testimonial.author}</p>
               <StarRating>
@@ -181,6 +248,19 @@ const TestimonialSection = () => {
           ))}
         </Slider>
       </SliderContainer>
+
+      {isModalOpen && (
+        <ModalOverlay onClick={closeModal}>
+          <ModalContent onClick={(e) => e.stopPropagation()}>
+            <CloseButton onClick={closeModal}>
+              <FaTimes />
+            </CloseButton>
+            <h2>{selectedTestimonial.author}</h2>
+            <p>{selectedTestimonial.text}</p>
+          </ModalContent>
+        </ModalOverlay>
+      )}
+
     </SectionContainer>
   );
 };
