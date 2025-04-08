@@ -26,10 +26,11 @@ const SectionTitle = styled.h1`
     ${typography.head.lg};
     width: 120%;
     justify-self: center;
+    margin: 1.5rem 0;
   }
 
   @media (max-width: 500px) {
-    width: 120%;
+    ${typography.head.md};
   }
 `;
 

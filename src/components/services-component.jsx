@@ -5,6 +5,7 @@ import logon from '../assets/images/logond.png';
 import psicCard from '../assets/images/psic-card.png';
 import neuroCard from '../assets/images/neu-card.png';
 import consCard from '../assets/images/cons-card.png';
+import { typography } from '../styles/typography';
 
 const Container = styled.div`
   display: flex;
@@ -20,6 +21,8 @@ const Title = styled.h2`
   margin: 3rem 0 1rem;
 
   @media (max-width: 1000px) {
+    ${typography.head.lg};
+    margin: 2rem 0 1rem;
   }
 `
 
@@ -36,6 +39,7 @@ const ServicesContainer = styled.div`
     align-items: center;
     gap: 1rem;
     width: 100%;
+    padding-top: 1rem;
   }
 `
 

@@ -15,6 +15,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     width: 85%;
+    padding-top: 2rem;
   }
 `;
 
@@ -30,10 +31,10 @@ const Title = styled.div`
   @media (max-width: 1000px) {
     width: 100%;
     text-align: center;
+    ${typography.head.lg};
   }
   
   @media (max-width: 700px) {
-    ${typography.head.lg};
     margin-bottom: 1.5rem;
   }
 `;
@@ -49,8 +50,9 @@ const Description = styled.p`
   grid-row: 2;
 
   @media (max-width: 1000px) {
-    width: 100%;
+    width: 90%;
     padding-bottom: 2rem;
+    align-self: center;
   }
 
   @media (max-width: 700px) {
