@@ -3,10 +3,10 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import IntroSection from "../components/intro-section";
 import Mision from "../components/mision";
-import OnlineTherapyBenefits from "../components/online-therapy-section";
 import Terms from "../components/terms";
 import ServicesComponent from "../components/services-component";
 import TestimonialSection from '../components/testimonial';
+import OnlineServices from "../components/online-services";
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ function Home() {
       <IntroSection />
       <ServicesComponent />
       <Mision />
-      <OnlineTherapyBenefits />
+      <OnlineServices />
       <TestimonialSection />
       <Footer />
       <Terms />

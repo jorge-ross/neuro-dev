@@ -14,24 +14,24 @@ import { colors } from '../styles/colors';
 
 const SectionContainer = styled.section`
   margin: 0;
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 2rem;
   text-align: center;
   width: 50%;
 
-  @media (max-width: 1000px) {
-    width: 70%;
-    padding-top: 1.5rem;
+  @media(max-width: 1000px){
+    padding: 1.5rem 0 0 0;
+    width: 85%;
+    border-bottom: 1px solid black;
   }
 `;
 
 const SectionTitle = styled.h1`
   ${typography.head.lga};
   color: black;
-  margin: 2rem 0 0;
+  margin: 1rem 0 0;
 
-  @media (max-width: 700px) {
+  @media (max-width: 1000px) {
     ${typography.head.lg};
-    margin-top: 0;
   }
 `;
 
@@ -41,8 +41,9 @@ const SliderContainer = styled.div`
     margin: 0 1rem;
     justify-content: center;
   }
+
   .slick-list {
-    margin: 0 -1.5rem;
+    margin: 0 1.5rem;
   }
 `;
 
@@ -51,7 +52,7 @@ const BenefitCard = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 2rem;
+  padding: 2rem 0;
 `;
 
 const BenefitImage = styled.img`
@@ -63,11 +64,15 @@ const BenefitImage = styled.img`
     max-width: 320px;
   }
 
+  @media(max-width: 750px){
+    max-width: 275px;
+  }
+
   @media(max-width: 600px){
     max-width: 220px;
   }
 
-  @media(max-width: 350px){
+  @media(max-width: 400px){
     max-width: 180px;
   }
 `;
@@ -77,19 +82,29 @@ const BenefitText = styled.p`
   margin: 2rem 1rem;
   color: black;
 
+  @media(max-width: 1000px){
+    margin: 2rem 0 1rem 0;
+  }
+
   @media(max-width: 700px){
     ${typography2.head.sm};
+    width: 110%;
   }
 `;
 
 const BenefitDescription = styled.p`
   ${typography2.text.lg}
   color: ${colors.grey[700]};
-  margin: 0 0 2rem 0;
+  margin: 0;
   width: 85%;
+
+  @media(max-width: 1000px){
+    padding-bottom: 1.2rem;
+  }
 
    @media(max-width: 700px){
     ${typography2.text.md};
+    width: 100%;
   }
 `;
 
@@ -97,17 +112,29 @@ const Arrow = styled.div`
   color: black;
   cursor: pointer;
   position: absolute;
-  top: 35%;
+  top: 34%;
   transform: translateY(-50%);
   z-index: 1;
   font-size: 6rem;
 
+  ${({ direction }) => direction === "next" && `right: -20px;`}
+  ${({ direction }) => direction === "prev" && `left: -20px;`}
+
+  @media (max-width: 1000px) {
+    top: 33%;
+    ${({ direction }) => direction === "next" && `right: 20px;`}
+    ${({ direction }) => direction === "prev" && `left: 20px;`}
+  }
+
   @media (max-width: 600px) {
-    top: 28%;
+    top: 31%;
+  }
+
+  @media (max-width: 500px) {
     font-size: 4.5rem;
   }
     
-  @media (max-width: 350px) {
+  @media (max-width: 380px) {
     top: 26%;
     font-size: 4rem;
   }
@@ -115,11 +142,11 @@ const Arrow = styled.div`
 
 const NextArrow = (props) => {
   const { onClick } = props;
-  return <Arrow onClick={onClick} style={{ right: '-20px' }}>›</Arrow>;
+  return <Arrow onClick={onClick} direction="next">›</Arrow>;
 };
 
 const PrevArrow = ({ onClick = () => { } }) => {
-  return <Arrow onClick={onClick} style={{ left: '-20px' }}>‹</Arrow>;
+  return <Arrow onClick={onClick} direction="prev">‹</Arrow>;
 };
 
 NextArrow.propTypes = {
@@ -131,7 +158,7 @@ PrevArrow.propTypes = {
 };
 
 
-const OnlineTherapyBenefits = () => {
+const OnlineServices = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -140,8 +167,15 @@ const OnlineTherapyBenefits = () => {
     slidesToScroll: 1,
     arrows: true,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
-
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1000,
+        settings: {
+          dots: false,
+        },
+      }
+    ],
   };
 
   return (
@@ -170,8 +204,8 @@ const OnlineTherapyBenefits = () => {
 
           <BenefitCard>
             <BenefitImage src={parkingIcon} alt="Parking" />
-            <BenefitText>Olvídate de los estacionamientos</BenefitText>
-            <BenefitDescription>Con los servicios online, no tienes que pagar por estacionamientos ni preocuparte por la seguridad de tu coche.</BenefitDescription>
+            <BenefitText>Sin estacionamientos</BenefitText>
+            <BenefitDescription>Olvídate de pagar estacionamientos y de preocuparte por la seguridad de tu coche.</BenefitDescription>
           </BenefitCard>
 
         </Slider>
@@ -180,5 +214,5 @@ const OnlineTherapyBenefits = () => {
   );
 };
 
-export default OnlineTherapyBenefits;
+export default OnlineServices;
 

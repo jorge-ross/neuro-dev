@@ -12,23 +12,24 @@ import { FaStar, FaTimes } from 'react-icons/fa';
 
 const SectionContainer = styled.section`
   margin: 0;
-  padding: 2rem 0 6rem;
+  padding: 1rem 0 6rem;
   text-align: center;
   width: 70%;
-
-
-  @media (max-width: 1000px) {
-    padding-top: 1.5rem;
-  }
 `;
 
 const SectionTitle = styled.h1`
-  ${typography.head.lgx}
+  ${typography.head.lga}
   color: black;
-  margin: 2rem 0;
+  margin: 2rem 0 1.5rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
     ${typography.head.lg};
+    width: 120%;
+    justify-self: center;
+  }
+
+  @media (max-width: 500px) {
+    width: 120%;
   }
 `;
 
@@ -79,6 +80,10 @@ const OpCard = styled.div`
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(64, 64, 64, 0.4);
   margin: 1rem;
+
+  @media (max-width: 1000px) {
+    max-width: 250px;
+  }
 
   p {
     margin: 0 0 1rem 0;
