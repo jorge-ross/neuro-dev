@@ -82,9 +82,9 @@ const ArticleDetail = () => {
         <ImageContainer src={article.imageUrl} alt={article.alt} />
         <Title>{article.title}</Title>
         <ContentContainer>
-          <Content>
-            {article.content}
-          </Content>
+          <Content
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
         </ContentContainer>
       </ArticleContainer>
       <Footer />
