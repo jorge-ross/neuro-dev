@@ -370,7 +370,7 @@ function Header() {
             >
               <IoClose style={{ height: "25px", width: "25px" }} />
             </CloseIcon>
-            <StyledLink to="/" onClick={() => window.scrollTo(0, 0)}>
+            <StyledLink to="/" onClick={() => { window.scrollTo(0, 0); closeMenu(); }}>
               <Logo src={logoSideBar} alt='n-dev-sb' />
               <TitleHeader>
                 Neuro-dev
