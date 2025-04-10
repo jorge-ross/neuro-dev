@@ -106,34 +106,89 @@ const Terms = () => {
         <LogoImgCont src={logow} alt="logo" />
         <SectionTitle>Neuro-dev 2025</SectionTitle>
       </BrandContainer>
-        <Section>
-          <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
-          <Option onClick={() => setShowTermsModal(true)}>Términos y condiciones</Option>
-          <Option onClick={() => setShowCancellationModal(true)}>Políticas de cancelación</Option>
-        </Section>
+      <Section>
+        <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
+        <Option onClick={() => setShowTermsModal(true)}>Términos y condiciones</Option>
+        <Option onClick={() => setShowCancellationModal(true)}>Promociones</Option>
+      </Section>
       <GralModal show={showModal} onClose={handleCloseModal}>
-          <p>
-            Aquí va el texto completo de tu aviso de privacidad. Este texto debe
-            incluir todos los detalles sobre cómo manejas los datos personales,
-            cómo se almacenan, quién tiene acceso, etc. Asegúrate de que este
-            texto cumpla con las regulaciones de privacidad aplicables a tu
-            región.
-          </p>
-          <p>
-            También puedes incluir enlaces a secciones específicas de tu política
-            de privacidad para mayor claridad y cualquier información de contacto
-            en caso de que los usuarios tengan preguntas o inquietudes.
-          </p>
-        </GralModal>
+        <h2>Aviso de Privacidad</h2>
+        <p>
+          Neuro-dev es responsable del tratamiento, uso y protección de sus datos personales, conforme a lo establecido por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.
+        </p>
+        <h3>
+          Finalidades del tratamiento de datos personales
+        </h3>
+        <p>
+          Los datos personales que se recaban serán utilizados con las siguientes finalidades:
+        </p>
+        <ul>
+          <li>Proveer servicios de atención psicológica y/o neuropsicológica.</li>
+          <li>Realizar evaluaciones clínicas, diagnósticos y tratamientos personalizados.</li>
+          <li>Elaborar historiales clínicos y reportes profesionales.</li>
+          <li>Dar seguimiento a los servicios solicitados.</li>
+          <li>Agendar, confirmar o modificar citas.</li>
+          <li>Atender dudas, comentarios o solicitudes de información.</li>
+        </ul>
+        <h3>
+          Datos personales recabados
+        </h3>
+        <p>
+          Para las finalidades antes mencionadas, se pueden recabar uno o más de los siguientes datos personales:
+        </p>
+        <ul>
+          <li>Nombre completo</li>
+          <li>Edad y fecha de nacimiento</li>
+          <li>Teléfono y correo electrónico</li>
+          <li>Datos de contacto de emergencia</li>
+          <li>Información clínica</li>
+          <li>Antecedentes médicos o familiares relevantes</li>
+          <li>Historial académico u ocupacional (en caso de evaluaciones)</li>
+        </ul>
 
-        <GralModal show={showTermsModal} onClose={() => setShowTermsModal(false)}>
-          <h2>Términos y Condiciones</h2>
-          <p>... Your terms and conditions content ...</p>
-        </GralModal>
+        <p>
+          De ser necesario, se podrá solicitar, también, información considerada como datos personales sensibles, particularmente relacionada con salud física o mental.
+        </p>
+        <h3>
+          Transferencia de datos personales
+        </h3>
+        <p>
+          Neuro-dev no compartirá sus datos personales con terceros, salvo en los casos previstos por la ley o cuando sea necesario para cumplir con las finalidades antes mencionadas.
+        </p>
+        <h3>
+          Derechos ARCO
+        </h3>
+        <p>
+          Usted tiene derecho a acceder, rectificar y cancelar sus datos personales, así como a oponerse al tratamiento de los mismos. Para ejercer estos derechos, deberá presentar una solicitud por escrito a nuestro responsable de protección de datos personales.
+          La solicitud deberá contener:
+        </p>
+        <ul>
+          <li>Nombre completo y firma del titular</li>
+          <li>Descripción clara y precisa de los datos personales respecto de los cuales se busca ejercer alguno de los derechos ARCO</li>
+          <li>Domicilio o medio electrónico para recibir la respuesta</li>
+          <li>Documentos que acrediten la identidad del solicitante</li>
+          <li>Cualquier otro elemento que facilite la localización de los datos personales</li>
+        </ul>
+        <p>
+          Neuro-dev responderá a su solicitud en un plazo de 20 días hábiles, contados a partir de la fecha de recepción de la misma.
+        </p>
+        <h3>
+          Cambios al aviso de privacidad
+        </h3>
+        <p>
+          Neuro-dev se reserva el derecho a modificar el presente aviso de privacidad en cualquier momento.
+          Le recomendamos revisar periódicamente nuestro aviso de privacidad para estar informado sobre cualquier cambio.
+        </p>
+      </GralModal>
 
-        <GralModal show={showCancellationModal} onClose={() => setShowCancellationModal(false)}>
-          <h2>Políticas de Cancelación</h2>
-          <p>... Your cancellation policy content ...</p>
+      <GralModal show={showTermsModal} onClose={() => setShowTermsModal(false)}>
+        <h2>Términos y Condiciones</h2>
+        <p>... Your terms and conditions content ...</p>
+      </GralModal>
+
+      <GralModal show={showCancellationModal} onClose={() => setShowCancellationModal(false)}>
+        <h2>Promociones</h2>
+        <p>... Your cancellation policy content ...</p>
       </GralModal>
     </Gral>
   )
