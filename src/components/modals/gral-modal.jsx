@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { typography } from '../../styles/typography';
+import { FaTimes } from 'react-icons/fa';
+import { colors } from '../../styles/colors';
 
 const ModalOverlay = styled.div`
   position: fixed;
@@ -16,6 +18,7 @@ const ModalOverlay = styled.div`
 `;
 
 const ModalContent = styled.div`
+  position: relative;
   background: white;
   padding: 2rem;
   border-radius: 8px;
@@ -53,6 +56,21 @@ const ModalContent = styled.div`
   }
 `;
 
+const CloseButton = styled.button`
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: none;
+    border: none;
+    color: ${colors.stone[400]};
+    font-size: 1.5rem;
+    cursor: pointer;
+  
+    &:hover {
+      color: ${colors.stone[500]};
+    }
+  `;
+
 const GralModal = ({ show, onClose, children }) => {
   if (!show) {
     return null;
@@ -61,6 +79,9 @@ const GralModal = ({ show, onClose, children }) => {
   return (
     <ModalOverlay onClick={onClose}>
       <ModalContent onClick={(e) => e.stopPropagation()}>
+        <CloseButton onClick={onClose}>
+          <FaTimes />
+        </CloseButton>
         {children}
       </ModalContent>
     </ModalOverlay>

@@ -85,11 +85,10 @@ const LogoImgCont = styled.img`
 max-width: 2rem;
 `
 
-
 const Terms = () => {
   const [showModal, setShowModal] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
-  const [showCancellationModal, setShowCancellationModal] = useState(false);
+  const [showPromoModal, setShowPromoModal] = useState(false);
 
   const handleOpenModal = () => {
     setShowModal(true);
@@ -98,7 +97,6 @@ const Terms = () => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
-
 
   return (
     <Gral>
@@ -109,7 +107,7 @@ const Terms = () => {
       <Section>
         <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
         <Option onClick={() => setShowTermsModal(true)}>Términos y condiciones</Option>
-        <Option onClick={() => setShowCancellationModal(true)}>Promociones</Option>
+        <Option onClick={() => setShowPromoModal(true)}>Promociones</Option>
       </Section>
       <GralModal show={showModal} onClose={handleCloseModal}>
         <h2>Aviso de Privacidad</h2>
@@ -183,12 +181,30 @@ const Terms = () => {
 
       <GralModal show={showTermsModal} onClose={() => setShowTermsModal(false)}>
         <h2>Términos y Condiciones</h2>
-        <p>... Your terms and conditions content ...</p>
+        <p>Bienvenido(a) a Neuro-dev. Te pedimos leer cuidadosamente los siguientes términos y condiciones, ya que al acceder, navegar o utilizar este sitio, aceptas estar sujeto(a) a los presentes términos. Si no estás de acuerdo con ellos, por favor abstente de utilizar este sitio web.</p>
+        <h3>1. Uso del sitio</h3>
+        <p>Este sitio tiene como finalidad proporcionar información general sobre los servicios profesionales de psicología y neuropsicología clínica, así como ofrecer medios de contacto para la solicitud de citas, orientación o información adicional.</p>
+        <h3>2. Uso adecuado del sitio</h3>
+        <p>El usuario se compromete a utilizar el sitio web de manera lícita, ética y respetuosa, absteniéndose de realizar cualquier acto que pueda dañar, inutilizar o deteriorar el funcionamiento del sitio o afectar a otros usuarios. Queda prohibido el uso del sitio para fines ilegales, fraudulentos o contrarios a la buena fe y al orden público.</p>
+        <h3>3. Propiedad intelectual</h3>
+        <p>Todo el contenido del sitio, incluyendo textos, imágenes, logotipos y gráficos, son propiedad de Neuro-dev o de sus respectivos propietarios. Queda prohibida la reproducción total o parcial del contenido sin autorización previa.</p>
+        <h3>4. Servicios profesionales</h3>
+        <p>La información publicada no sustituye en ningún momento una consulta profesional directa. Los diagnósticos, evaluaciones y tratamientos solo se realizan en el contexto de una intervención formal con el profesional responsable, ya sea de manera presencial o virtual, previa cita y consentimiento informado.</p>
+        <h3>5. Enlaces a terceros</h3>
+        <p>El sitio puede contener enlaces a otros sitios web de terceros. Neuro-dev no se hace responsable del contenido, políticas de privacidad o prácticas de dichos sitios. Te recomendamos revisar los términos y condiciones de cada sitio que visites.</p>
+        <h3>6. Modificaciones</h3>
+        <p>Neuro-dev se reserva el derecho a modificar, actualizar o eliminar cualquier parte del sitio y de los presentes términos y condiciones en cualquier momento y sin previo aviso. Te recomendamos revisar periódicamente este documento para estar al tanto de cualquier cambio.</p>
       </GralModal>
 
-      <GralModal show={showCancellationModal} onClose={() => setShowCancellationModal(false)}>
-        <h2>Promociones</h2>
-        <p>... Your cancellation policy content ...</p>
+      <GralModal show={showPromoModal} onClose={() => setShowPromoModal(false)}>
+        <h2>Promociones 2025</h2>
+        <h3>1. Promoción de 4 consultas</h3>
+        <p>Pagando 3 consultas, la 4ta va al 50%. Aplica sólo en pago de contado.</p>
+        <h3>2. Promoción de 8 consultas</h3>
+        <p>Pagando 6 consultas, las 2 restantes van al 50%. Aplica sólo en pago de contado.</p>
+        <br />
+        <h3>Convenios y descuentos</h3>
+        <p>Neuro-dev ofrece convenios y descuentos especiales para instituciones educativas, organizaciones y referidos. Para más información, por favor contáctanos directamente.</p>
       </GralModal>
     </Gral>
   )
