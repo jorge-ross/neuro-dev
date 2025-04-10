@@ -1,5 +1,7 @@
 import './App.css'
 import { HashRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Home from './routes/home'
 import About from './routes/about'
@@ -22,6 +24,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<ArticleDetail />} />
       </Routes>
+      <ToastContainer position="bottom-right" autoClose={3000} />
     </Router>
   )
 }

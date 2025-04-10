@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import { typography, typography2 } from '../styles/typography';
-import emailjs from 'emailjs-com' 
+import emailjs from 'emailjs-com';
+import { toast } from 'react-toastify';
 
 const Form = styled.form`
   display: grid;
@@ -89,6 +90,7 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -99,6 +101,7 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSending(true);
 
     emailjs
       .send(
@@ -110,7 +113,9 @@ const ContactForm = () => {
       .then(
         (response) => {
           console.log('Correo enviado con éxito:', response.status, response.text);
-          alert('Mensaje enviado con éxito');
+          setTimeout(() => {
+            toast.success('Mensaje enviado con éxito');
+          }, 0)
           setFormData({
             name: '',
             email: '',
@@ -119,9 +124,12 @@ const ContactForm = () => {
         },
         (error) => {
           console.error('Error al enviar el correo:', error);
-          alert('Error al enviar el mensaje');
+          setTimeout(() => {
+            toast.error('Error al enviar el mensaje');
+          }, 0);
         }
-      );
+      )
+      .finally(() => setIsSending(false));
   };
 
 
@@ -153,7 +161,9 @@ const ContactForm = () => {
         onChange={handleChange}
         required
       />
-      <Button type="submit">Enviar mensaje</Button>
+      <Button type="submit" disabled={isSending}>
+        {isSending ? "Enviando..." : "Enviar mensaje"}
+      </Button>
     </Form>
   );
 };
