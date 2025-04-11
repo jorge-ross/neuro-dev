@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Header from '../components/header';
 import Terms from '../components/terms';
-import psych from '../assets/images/psique.png'
+import psych from '/assets/images/psique.png'
 import { typography, typography2 } from '../styles/typography';
 import { psychServices } from '../data/services';
 import Footer from '../components/footer';
-import psychImage from '../assets/images/psico-background.png';
+import psychImage from '/assets/images/psico-background.png';
 import { psyText } from '../data/definitions';
 
 const GeneralContainer = styled.section`

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { typography } from '../styles/typography';
 import GralModal from './modals/gral-modal';
-import logow from '../assets/images/logow.png';
+import logow from '/assets/images/logow.png';
 
 const Gral = styled.div`
   background: black;

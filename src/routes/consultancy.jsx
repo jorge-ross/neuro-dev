@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import Header from '../components/header';
 import Terms from '../components/terms';
-import corp from '../assets/images/corp-route.png'
-import corpOne from '../assets/images/corpOne.png'
-import corpTwo from '../assets/images/corpTwo.png'
-import corpThree from '../assets/images/corpThree.png'
+import corp from '/assets/images/corp-route.png'
+import corpOne from '/assets/images/corpOne.png'
+import corpTwo from '/assets/images/corpTwo.png'
+import corpThree from '/assets/images/corpThree.png'
 import { typography, typography2 } from '../styles/typography';
 import Footer from '../components/footer';
 import { benefitCorpList, conclusionCorpText, corpText, subtitleCorpText } from '../data/definitions';

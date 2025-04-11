@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import profile_pic from "../assets/images/profile_pic_npsic_.jpg"
-import neurodev_pic from "../assets/images/logond.png"
+import profile_pic from "/assets/images/profile_pic_npsic_.jpg"
+import neurodev_pic from "/assets/images/logond.png"
 import { typography, typography2 } from "../styles/typography";
 import Terms from "../components/terms";
 import descriptionText from '../data/about';

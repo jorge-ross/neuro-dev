@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { typography, typography2 } from '../styles/typography';
-import bgImage from '../assets/images/intro-background.png';
+import bgImage from '/assets/images/intro-background.png';
 
 const SectionContainer = styled.section`
   width: 100%;

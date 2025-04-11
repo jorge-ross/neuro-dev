@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import convenienceIcon from '../assets/images/comodidad.png';
-import accessibilityIcon from '../assets/images/accesibilidad.png';
-import privacyIcon from '../assets/images/privacy.png';
-import parkingIcon from '../assets/images/parking.png';
+import convenienceIcon from '/assets/images/comodidad.png';
+import accessibilityIcon from '/assets/images/accesibilidad.png';
+import privacyIcon from '/assets/images/privacy.png';
+import parkingIcon from '/assets/images/parking.png';
 import { typography, typography2 } from '../styles/typography';
 import { colors } from '../styles/colors';
 

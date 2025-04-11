@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { typography2 } from '../styles/typography';
 import { Link } from 'react-router-dom';
-import logon from '../assets/images/logond.png';
-import psicCard from '../assets/images/psic-card.png';
-import neuroCard from '../assets/images/neu-card.png';
-import consCard from '../assets/images/cons-card.png';
+import logon from '/assets/images/logond.png';
+import psicCard from '/assets/images/psic-card.png';
+import neuroCard from '/assets/images/neu-card.png';
+import consCard from '/assets/images/cons-card.png';
 import { typography } from '../styles/typography';
 
 const Container = styled.div`

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { typography, typography2 } from '../styles/typography';
 import { colors } from '../styles/colors';
-import mv from "../assets/images/mvtarget.png"
+import mv from "/assets/images/mvtarget.png"
 
 const Container = styled.div`
   border-top: 1px solid black;

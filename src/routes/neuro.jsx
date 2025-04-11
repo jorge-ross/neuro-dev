@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import Header from '../components/header';
 import Terms from '../components/terms';
-import neuro from '../assets/images/neuro.png'
+import neuro from '/assets/images/neuro.png'
 import { typography, typography2 } from '../styles/typography';
 import { neuroServices } from '../data/services';
 import Footer from '../components/footer';
-import neuroImage from '../assets/images/neuro-background.png';
+import neuroImage from '/assets/images/neuro-background.png';
 import { neuroText } from '../data/definitions';
 
 const GeneralContainer = styled.section`

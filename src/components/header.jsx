@@ -2,8 +2,8 @@ import styled from '@emotion/styled';
 import { useState, useRef, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { keyframes } from '@emotion/react';
-import logond from '../assets/images/logond.png';
-import logoSideBar from './../assets/images/logow.png'
+import logond from '/assets/images/logond.png';
+import logoSideBar from '/assets/images/logow.png'
 import { typography } from '../styles/typography';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { IoMdArrowDropdown } from "react-icons/io";
