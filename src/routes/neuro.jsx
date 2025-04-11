@@ -121,6 +121,11 @@ const Services = styled.div`
   @media (max-width: 550px) {
     column-gap: 1rem;
   }
+
+  @media (max-width: 360px) {
+    width: 110%;
+    column-gap: 0.5rem;
+  }
 `;
 
 
@@ -161,6 +166,10 @@ const InfoTitle = styled.h2`
   padding-left: 3rem;
   margin: 2rem 0 2.5rem 0;
 
+  @media (max-width: 750px) {
+    padding: 0;
+  }
+
   @media (max-width: 500px) {
     margin: 1.5rem 0 2rem 0;
   }
@@ -185,7 +194,7 @@ const NeuroServices = () => {
       <NeuroText>{neuroText}</NeuroText>
 
       <ServicesContainer>
-        <InfoTitle>Diagnóstico y tratamiento</InfoTitle>
+        <InfoTitle>Evaluación, diagnóstico y tratamiento</InfoTitle>
         <Services>
           {neuroServices.map(service => (
             <ServiceTitle key={service.id}>{service.title}</ServiceTitle>

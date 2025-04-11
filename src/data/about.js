@@ -5,7 +5,7 @@ const descriptionText = [
   "",
   "Paralelamente, ha brindando asesoría psicológica y apoyo a comunidades a través de instituciones gubernamentales, además de haber tenido la oportunidad de ser docente universitario. Gracias a su bagaje tecnológico y alianzas estratégicas, también ha dedicado esfuerzos como consultor externo, asesorando a pequeñas empresas y startups en la atracción y selección estratégica de talento.",
   "",
-  "Ante todo, humano, pero como profesional, asiduamente en constante actualización. Cursos, diplomados y congresos refuerzan su aprendizaje, siempre de la mano con el pensamiento crítico, más allá de técnicas, tips o infografías en colores pastel, poniendo continuamente a disposición estrategias innovadoras para mejorar la calidad de vida de manera significativa.",
+  "Ante todo, humano, pero como profesional, asiduamente en constante actualización. Cursos, diplomados y congresos refuerzan su aprendizaje, siempre de la mano con el pensamiento crítico; más allá de técnicas, tips o infografías en colores pastel, poniendo continuamente a disposición estrategias innovadoras para mejorar la calidad de vida de manera significativa.",
 ].join('\n');
 
 export default descriptionText;

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import profile_pic from "../assets/images/profile_pic_npsic.png"
+import profile_pic from "../assets/images/profile_pic_npsic_.jpg"
 import neurodev_pic from "../assets/images/logond.png"
 import { typography, typography2 } from "../styles/typography";
 import Terms from "../components/terms";
@@ -12,16 +12,12 @@ const GeneralContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 70px;
-  width: 75%;
+  width: 85%;
   align-self: center;
   justify-self: center;
 
   @media (max-width: 750px) {
-    width: 80%;
-  }
-
-  @media (max-width: 500px) {
-    width: 87%;
+    width: 90%;
   }
 `
 

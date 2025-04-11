@@ -161,7 +161,12 @@ const InfoTitle = styled.h2`
   padding-left: 3rem;
   margin: 2rem 0 2.5rem 0;
 
+  @media (max-width: 750px) {
+    padding-left: 0;
+  }
+
   @media (max-width: 500px) {
+
     margin: 1.5rem 0 2rem 0;
   }
 

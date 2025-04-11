@@ -27,7 +27,11 @@ const ModalContent = styled.div`
   overflow-y: auto;
 
   @media (max-width: 750px) {
-    max-width: 300px;
+    max-width: 280px;
+  }
+
+  @media (max-width: 350px) {
+    max-width: 250px;
   }
 
   p {
