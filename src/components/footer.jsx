@@ -3,6 +3,7 @@ import { typography, typography2 } from '../styles/typography';
 
 import ContactForm from './contact-form';
 import WhatsAppButton from './whats-app-button';
+import InstagramButton from './insta-button';
 
 const Gral = styled.div`
 background:white;
@@ -69,6 +70,20 @@ const WhatsContainer = styled.div`
   align-items: center;
 `
 
+const InstaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const SocialMediaContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: space-around;
+  grid-column: 2;
+`
+
 const Footer = () => {
 
   return (
@@ -77,10 +92,16 @@ const Footer = () => {
         <SectionTitle>Te escucho.</SectionTitle>
         <Section>
           <ContactForm />
-          <WhatsContainer>
-            <Inst>O, si lo prefieres, puedes enviar un mensaje vía Whatsapp.</Inst>
-            <WhatsAppButton phoneNumber={import.meta.env.VITE_PHONE_NUMBER} />
-          </WhatsContainer>
+          <SocialMediaContainer>
+            <WhatsContainer>
+              <Inst>Si lo prefieres, puedes enviar un mensaje vía Whatsapp.</Inst>
+              <WhatsAppButton phoneNumber={import.meta.env.VITE_PHONE_NUMBER} />
+            </WhatsContainer>
+            <InstaContainer>
+              <Inst>O, también a través de la red.</Inst>
+              <InstagramButton url="https://www.instagram.com/neurodev.jorge/" />
+            </InstaContainer>
+          </SocialMediaContainer>
         </Section>
       </FooterContainer>
     </Gral>
