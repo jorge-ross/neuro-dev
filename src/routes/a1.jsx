@@ -20,18 +20,22 @@ const ArticleContainer = styled.div`
 
   @media (max-width: 600px) {
     width: 85%;
-    padding-bottom: 3rem;
+    padding: 1.2rem 0 3rem;
   }
 `;
 
 const Title = styled.h1`
-  ${typography.head.md};
-  font-size: 2rem;
+  ${typography.head.lg};
   font-weight: bold;
-  margin: 1rem 0;
+  margin: 1rem 0 0.25rem 0;
 
   @media (max-width: 600px) {
-    text-align: center;
+    ${typography.head.md};
+    margin: 0.5rem 0;
+  }
+
+  @media (max-width: 400px) {
+    ${typography.head.smx};
   }
 `;
 
@@ -55,7 +59,7 @@ const Content = styled.p`
   white-space: pre-line;
 
   @media (max-width: 600px) {
-    width: 95%;
+    width: 98%;
   }
 `;
 
@@ -64,8 +68,19 @@ const ImageContainer = styled.img`
   justify-content: center;
   width: 100%;
   align-self: center;
-  padding: 1rem 0 1.5rem;
+  padding: 1rem 0;
 `
+
+const ArticleDate = styled.h1`
+  ${typography.text.md};
+  align-self: start;
+  font-weight: 400;
+  margin-top: 0;
+
+  @media (max-width: 800px) {
+    ${typography.text.sm};
+  }
+`;
 
 const ArticleDetail = () => {
   const { slug } = useParams();
@@ -81,6 +96,7 @@ const ArticleDetail = () => {
       <ArticleContainer>
         <ImageContainer src={article.imageUrl} alt={article.alt} />
         <Title>{article.title}</Title>
+        <ArticleDate>{article.date}</ArticleDate>
         <ContentContainer>
           <Content
             dangerouslySetInnerHTML={{ __html: article.content }}

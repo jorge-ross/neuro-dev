@@ -1,6 +1,7 @@
 class Article {
-  constructor(id, title, alt, imageUrl, postUrl, content, route) {
+  constructor(id, date, title, alt, imageUrl, postUrl, content, route) {
     this.id = id;
+    this.date = date;
     this.title = title;
     this.alt = alt;
     this.imageUrl = imageUrl;
@@ -14,6 +15,7 @@ const articles = [
 
   new Article(
     1,
+    "07/04/2025 por Jorge Rosano",
     "Preludio 2.0",
     "prelude",
     "/assets/article-imgs/img-1.png",
@@ -39,6 +41,7 @@ const articles = [
 
   new Article(
     2,
+    "11/04/2025 por Jorge Rosano",
     "¿Vale la pena pensar?",
     "mentalhealth",
     "/assets/article-imgs/img-2.png",
@@ -46,7 +49,7 @@ const articles = [
     [
       "<em>En la era de la des-información, o como la inmensa mayoría prefiere decirle 'información'…</em>",
       "",
-      "Vivimos rodeados de datos, de voces, de estímulos que reclaman nuestra atención cada segundo. Noticias que se contradicen, titulares diseñados para impactar más que informar, ideas empaquetadas en frases de 280 caracteres (o no sé cuántas sean), <strong>¡y agréguenle lo de la inteligencia artificial!</strong> En medio de todo eso, una pregunta resuena, tal vez con un eco cada vez más tenue: ¿Vale la pena pensar?",
+      "Vivimos rodeados de datos, de voces, de estímulos que reclaman nuestra atención cada segundo. Noticias que se contradicen, titulares diseñados para impactar más que informar, ideas empaquetadas en frases de 280 caracteres (o no sé cuántos sean), <strong>¡y agréguenle lo de la inteligencia artificial!</strong> En medio de todo eso, una pregunta resuena, tal vez con un eco cada vez más tenue: ¿Vale la pena pensar?",
       "",
       "Paradoja inquietante: tenemos acceso a más conocimiento que nunca antes en la historia, pero cada vez reflexionamos y sabemos menos. <strong>Consumimos contenidos al ritmo que las plataformas dictan, y no al ritmo que nuestra mente necesita para comprenderlos</strong> (inserte aquí todo el drama de la dopamina). La inmediatez nos seduce, pero el pensamiento profundo requiere tiempo, pausa, incluso incomodidad.",
       "",

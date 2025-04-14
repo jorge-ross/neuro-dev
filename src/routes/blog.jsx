@@ -14,17 +14,17 @@ const BlogContainer = styled.div`
   justify-self: center;
   padding: 1.5rem 0 4rem;
 
-  @media (max-width: 750px) {
-    width: 90%;
+  @media (max-width: 600px) {
+    width: 92%;
   }
 `;
 
 const Title = styled.h1`
   ${typography.head.xl}
   text-align: center;
-  margin: 2.5rem 0;
+  margin: 2rem 0;
 
-  @media (max-width: 750px) {
+  @media (max-width: 800px) {
     ${typography.head.lgx}
   }
 
@@ -39,10 +39,31 @@ const Title = styled.h1`
 
 const ArticleTitle = styled.h1`
   ${typography.head.xs};
-  text-align: center;
-
-  @media (max-width: 750px) {
+  align-self: start;
+  border-bottom: 1px solid black;
+  padding-bottom: 0.25rem;
+  display: inline-block; 
+  margin-bottom: 0;
+  
+  @media (max-width: 800px) {
     ${typography.head.xss};
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+`;
+
+const ArticleDate = styled.h1`
+  ${typography.text.md};
+  align-self: start;
+  font-weight: 400;
+  margin-top: 0.5rem;
+
+  @media (max-width: 800px) {
+    ${typography.text.sm};
+    margin-top: 0;
   }
 `;
 
@@ -54,6 +75,7 @@ const ArticleList = styled.div`
 
    @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 `;
 
@@ -71,34 +93,23 @@ const ArticleLink = styled(Link)`
   justify-self: center;
   justify-content: space-evenly;
   gap: 0.5rem;
-  width: 250px;
-  height: 310px;
+  width: 270px;
+  height: 350px;
 
   &:hover {
     background-color:rgb(241, 241, 241);
     transform: scale(1.05);
   }
 
-  @media (max-width: 750px) {
-    width: 90%;
-    height: 310px;
+  @media (max-width: 800px) {
+    width: 88%;
+    border: none;
     justify-content: start;
+    height: auto;
   }
 
-  @media (max-width: 650px) {
-    height: 280px;
-  }
-
-  @media (max-width: 580px) {
-    height: 250px;
-  }
-
-   @media (max-width: 500px) {
-    height: 220px;
-  }
-
-  @media (max-width: 400px) {
-    height: 200px;
+  @media (max-width: 500px) {
+    width: 95%;
   }
 `;
 
@@ -122,6 +133,7 @@ const Blog = () => {
             >
               <ArticleImage src={article.postUrl} alt={article.alt} />
               <ArticleTitle>{article.title}</ArticleTitle>
+              <ArticleDate>{article.date}</ArticleDate>
             </ArticleLink>
           ))}
         </ArticleList>
