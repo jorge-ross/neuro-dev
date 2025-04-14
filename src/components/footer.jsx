@@ -99,7 +99,7 @@ const Footer = () => {
             </WhatsContainer>
             <InstaContainer>
               <Inst>O, también a través de la red.</Inst>
-              <InstagramButton url="https://www.instagram.com/neurodev.jorge/" />
+              <InstagramButton url="https://www.instagram.com/neurodev.jorge/" style={{ fontSize: '2.5rem', color: '#E1306C' }} />
             </InstaContainer>
           </SocialMediaContainer>
         </Section>

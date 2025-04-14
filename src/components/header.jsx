@@ -10,11 +10,12 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IoClose } from 'react-icons/io5';
 import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
-import { FaPencil } from "react-icons/fa6";
+import { FaInstagram, FaPencil } from "react-icons/fa6";
 import { GrContact } from "react-icons/gr";
 import { MdPsychology, MdAssessment } from "react-icons/md";
 import Modal from "./modals/modal"
 import { colors } from '../styles/colors';
+import InstagramButton from './insta-button';
 
 const Gral = styled.div`
 background: white;
@@ -179,6 +180,13 @@ const NavOption = styled(Link)`
   }
 `;
 
+const InstaOption = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`
+
 const DropNavOption = styled.div`
   ${typography.text.lg}
   color: black;
@@ -219,6 +227,28 @@ const HamOption = styled(Link)`
     ${typography.text.xs};
   }
 `;
+
+const InstaHamOption = styled.a`
+  ${typography.text.lg};
+  color: black;
+  font-weight: 600;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid black;
+
+   @media (max-width: 500px) {
+    ${typography.text.md};
+  }
+
+  @media (max-width: 300px) {
+    ${typography.text.xs};
+  }
+`
 
 const TitleHeader = styled.h1`
   ${typography.head.md};
@@ -356,6 +386,10 @@ function Header() {
           <NavOption onClick={handleScrollToFooter}>
             <Option>Contacto</Option>
           </NavOption>
+
+          <InstaOption>
+            <InstagramButton url="https://www.instagram.com/neurodev_jorgeros/" style={{ fontSize: '1.8rem', color: '#E1306C' }} />
+          </InstaOption>
         </OptionsContainer>
 
         <HamMenu visible={isOpen}>
@@ -408,6 +442,19 @@ function Header() {
               Contacto
               <GrContact />
             </HamOption>
+
+
+            <InstaHamOption
+              href="https://www.instagram.com/neurodev_jorgeros/"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
+            >
+              Instagram
+              <FaInstagram style={{ color: '#E1306C', fontSize: '1.1rem' }} />
+            </InstaHamOption>
+
+
           </NavOptionsContainer>
         </HamMenu>
 
