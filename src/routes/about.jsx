@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import profile_pic from "/assets/images/profile_pic_npsic_.jpg"
+import profile_pic from "/assets/images/profile_pic.jpg"
 import neurodev_pic from "/assets/images/logond.png"
 import { typography, typography2 } from "../styles/typography";
 import Terms from "../components/terms";
@@ -36,25 +36,24 @@ const AboutSection = styled.section`
   }
 
   @media (max-width: 750px){
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1rem 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 0 2.5rem;
+    align-items: start;
   }
 `;
 
 const ProfileImage = styled.img`
   width: 91%;
-  border-radius: 5%;
+  border-radius: 15%;
   justify-self: center;
   align-self: center;
 
   @media (max-width: 750px) {
-    width: 70%;
-    border-radius: 50%;
-    justify-self: end;
-  }
-
-  @media (max-width: 450px) {
-    width: 75%;
+    width: 100%;
+    max-width: 140px;
+    justify-self: start;
+    align-self: start;
   }
 
 `;
@@ -64,15 +63,10 @@ const NeurodevImage = styled.img`
   border-radius: 40%;
   justify-self: center;
   align-self: center;
+  opacity: 0.9;
 
   @media (max-width: 750px) {
-    width: 70%;
-    border-radius: 50%;
-    justify-self: start;
-  }
-
-  @media (max-width: 450px) {
-    width: 75%;
+    display: none;
   }
 `;
 
@@ -116,22 +110,6 @@ const Card = styled.div`
   flex-direction: column;
   gap: 2rem;
   grid-row: 1 / 3;
-
-  @media (max-width: 750px){
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-row: 2;
-    grid-column: 1 / 3;
-    flex-direction: row;
-  }
-
-  & > img:first-of-type {
-    grid-column: 1;
-  }
-
-  & > img:last-of-type {
-      grid-column: 2;
-    }
 `
 
 const Title = styled.h1`
@@ -140,7 +118,6 @@ const Title = styled.h1`
   margin: 0;
 
   @media (max-width: 750px){
-    margin: 1.5rem 0 0 0;
     align-self: start;
   }
 
@@ -157,11 +134,11 @@ const Subtitle = styled.h2`
   @media (max-width: 750px){
     margin: 0.5rem 0 0 0;
     align-self: start;
+    line-height: 1.5rem;
   }
 
   @media (max-width: 500px){
     ${typography2.head.xs};
-    margin: 0;
     font-weight: 500;
   }
 `;
@@ -173,10 +150,20 @@ const Titles = styled.div`
   grid-column: 2 / 4;
 
   @media (max-width: 750px){
-    grid-row: 1;
-    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    grid-column: 2;
     align-items: center;
     justify-content: center;
+  }
+`
+
+const GridItemWrapper = styled.div`
+  display: contents;
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
   }
 `
 
@@ -186,16 +173,17 @@ const About = () => {
       <Header />
       <GeneralContainer>
         <AboutSection>
-          <Card>
-            <ProfileImage src={profile_pic} alt="npsic" />
-            <NeurodevImage src={neurodev_pic} alt="ndev" />
-          </Card>
+          <GridItemWrapper>
+            <Card>
+              <ProfileImage src={profile_pic} alt="npsic" />
+              <NeurodevImage src={neurodev_pic} alt="ndev" />
+            </Card>
 
-          <Titles>
-            <Title>Jorge Rosano</Title>
-            <Subtitle>Director y fundador de Neuro-dev</Subtitle>
-          </Titles>
-
+            <Titles>
+              <Title>Jorge Rosano</Title>
+              <Subtitle>Director y fundador de Neuro-dev</Subtitle>
+            </Titles>
+          </GridItemWrapper>
           <Description>
             {descriptionText}
             <ProfesionalDetails>
