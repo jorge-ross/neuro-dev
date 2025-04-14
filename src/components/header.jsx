@@ -388,7 +388,7 @@ function Header() {
           </NavOption>
 
           <InstaOption>
-            <InstagramButton url="https://www.instagram.com/neurodev_jorgeros/" style={{ fontSize: '1.8rem', color: '#E1306C' }} />
+            <InstagramButton url="https://www.instagram.com/_neurodev/" style={{ fontSize: '1.8rem', color: '#E1306C' }} />
           </InstaOption>
         </OptionsContainer>
 
@@ -445,7 +445,7 @@ function Header() {
 
 
             <InstaHamOption
-              href="https://www.instagram.com/neurodev_jorgeros/"
+              href="https://www.instagram.com/_neurodev/"
               target="_blank"
               rel="noopener noreferrer"
               onClick={closeMenu}
