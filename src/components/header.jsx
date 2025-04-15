@@ -445,10 +445,18 @@ function Header() {
 
 
             <InstaHamOption
-              href="https://www.instagram.com/_neurodev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={closeMenu}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                  window.location.href = 'instagram://user?username=_neurodev';
+                  setTimeout(() => {
+                    window.open('https://www.instagram.com/_neurodev/', '_blank');
+                  }, 300);
+                } else {
+                  window.open('https://www.instagram.com/_neurodev/', '_blank');
+                }
+              }}
             >
               Instagram
               <FaInstagram style={{ color: '#E1306C', fontSize: '1.1rem' }} />
