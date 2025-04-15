@@ -80,14 +80,14 @@ const OpCard = styled.div`
   background-color: black;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(64, 64, 64, 0.4);
-  margin: 1rem;
+  margin: 0.5rem;
 
   @media (max-width: 1000px) {
     max-width: 250px;
   }
 
   p {
-    margin: 0 0 1rem 0;
+    margin: 0 0 0.25rem 0;
     ${typography.text.md};
     color: ${colors.stone[100]};
     text-align: left;
@@ -100,9 +100,14 @@ const OpCard = styled.div`
 
   .author {
     ${typography.text.sm};
-    margin-top: 0.5rem;
+    margin: 0.5rem 0;
     font-weight: bold;
     color: ${colors.stone[400]};
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
     
   }
 
@@ -119,7 +124,7 @@ const OpCard = styled.div`
 const StarRating = styled.div`
   display: flex;
   justify-content: flex-start;
-  margin-top: 0.75rem;
+  margin: 0;
 
   svg {
     color: gold;
