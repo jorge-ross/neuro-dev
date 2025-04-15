@@ -46,7 +46,7 @@ const conclusionCorpText = [
 export { conclusionCorpText };
 
 const CedulaProfAbout = [
-  "00000000",
+  "10832398",
 ]
 
 export { CedulaProfAbout };
