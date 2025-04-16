@@ -20,6 +20,10 @@ const GeneralContainer = styled.section`
   @media (max-width: 750px) {
     width: 80%;
   }
+
+  @media (max-width: 500px) {
+    width: 87%;
+  }
 `
 
 
@@ -61,7 +65,7 @@ const Title = styled.h1`
 `;
 
 const CorpText = styled.p`
-  ${typography2.text.md}
+  ${typography2.text.lg}
   color: black;
   text-align: justify;
   align-self: center;
@@ -69,7 +73,7 @@ const CorpText = styled.p`
   margin: 0 0 2rem 0;
 
   @media (max-width: 450px) {
-    ${typography2.text.sm}
+    ${typography2.text.md}
   }
 `;
 
@@ -91,7 +95,6 @@ const ServicesImg = styled.img`
 const SubTitle = styled.h2`
   ${typography2.head.xls};
   width: 70%;
-  color: black;
   margin: 0;
 
   @media (max-width: 750px) {
@@ -99,7 +102,7 @@ const SubTitle = styled.h2`
   }
 
   @media (max-width: 450px) {
-    ${typography2.text.md}
+    ${typography2.text.lg};
   }
 `;
 
@@ -113,7 +116,7 @@ const InfoTitle = styled.h2`
   padding-bottom: 5rem;
 
   @media (max-width: 450px) {
-    ${typography2.text.md}
+    ${typography2.text.lg}
   }
 `;
 
@@ -128,13 +131,13 @@ const BenefitsList = styled.ol`
   }
 
   li {
-    ${typography2.text.md}
+    ${typography2.text.lg};
     color: black;
     margin-bottom: 1rem;
     list-style-type: square;
 
     @media (max-width: 450px) {
-      ${typography2.text.sm}
+      ${typography2.text.md};
     }
   }
 `;

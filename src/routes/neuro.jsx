@@ -67,7 +67,7 @@ const Title = styled.h1`
 `;
 
 const NeuroText = styled.p`
-  ${typography2.text.md}
+  ${typography2.text.lg}
   width: 67%;
   color: white;
   text-align: justify;
@@ -76,11 +76,11 @@ const NeuroText = styled.p`
   margin: 0;
 
   @media (max-width: 750px) {
-    width: 82%;
+    width: 87%;
   }
 
   @media (max-width: 450px) {
-    ${typography2.text.sm}
+    ${typography2.text.md}
   }
 `;
 
