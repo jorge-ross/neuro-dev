@@ -27,7 +27,7 @@ const articles = [
       "",
       "Vale, pues volvemos a las andadas, con la firme intención de continuar brindando servicios clínicos basados en evidencia, con ética, calidad y alto profesionalismo.",
       "",
-      "Defendiendo, al más puro estilo de un iconoclasta, que la salud mental no puede abordarse con superficialidad, pseudociencias ni desde modas pasajeras. Contestarario e inconformista, abanderando el pensamiento crítico y con el objetivo claro: que se valore lo clínico como un espacio de transformación que requiere tiempo, disciplina, rigor y un 'extra' de vez en cuando.",
+      "Defendiendo, al más puro estilo de un iconoclasta, que la salud mental no puede abordarse con superficialidad, pseudociencias ni desde modas pasajeras. Contestatario e inconformista, abanderando el pensamiento crítico y con el objetivo claro: que se valore lo clínico como un espacio de transformación que requiere tiempo, disciplina, rigor y un 'extra' de vez en cuando.",
       "",
       "Y ya que andamos tirando 'factos', que también se entienda, que detrás de cada técnica, de cada intervención, hay años de investigación, formación y experiencia.",
       "",
