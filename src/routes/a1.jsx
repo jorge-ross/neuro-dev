@@ -53,8 +53,7 @@ const ContentContainer = styled.div`
 const Content = styled.p`
   ${typography.text.md};
   margin: 0;
-  line-height: 1.5;
-  text-align: justify;
+  line-height: 1.5rem;
   width: 90%;
   white-space: pre-line;
 

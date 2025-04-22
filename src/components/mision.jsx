@@ -45,7 +45,6 @@ const Description = styled.p`
   margin: 0;
   width: 85%;
   justify-self: center;
-  text-align: justify;
   grid-column: 1;
   grid-row: 2;
 

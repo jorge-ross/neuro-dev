@@ -67,7 +67,6 @@ const Title = styled.h1`
 const CorpText = styled.p`
   ${typography2.text.lg}
   color: black;
-  text-align: justify;
   align-self: center;
   line-height: 1.7rem;
   margin: 0 0 2rem 0;

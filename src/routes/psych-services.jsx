@@ -71,7 +71,6 @@ const PsychText = styled.p`
   ${typography2.text.lg}
   width: 67%;
   color: white;
-  text-align: justify;
   align-self: center;
   line-height: 1.7rem;
   margin: 0;

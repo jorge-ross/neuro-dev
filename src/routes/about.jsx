@@ -74,7 +74,6 @@ const Description = styled.div`
   ${typography.text.md};
   grid-column: 2 / 4;
   grid-row: 2 / 5;
-  text-align: justify;
   align-self: start;
   white-space: pre-line;
   line-height: 1.5rem;
@@ -86,7 +85,6 @@ const Description = styled.div`
     grid-row: 3;
     align-self: center;
     justify-self: center;
-    text-align: justify;
     padding: 0.25rem 0;
     width: 100%;
   }
