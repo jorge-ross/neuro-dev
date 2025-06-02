@@ -1,5 +1,5 @@
 const descriptionText = [
-  "Psicólogo y analista de conducta especializado en Neuropsicología clínica por la Universidad Internacional de Valencia. Su pasión por el ejercicio clínico lo llevó a fundar Neuro-dev, y desde el 2018 se ha dedicado a ofrecer servicios de psicología basada en evidencia y, más recientemente, de neuropsicología clínica, ayudando a personas a recuperar y potenciar su bienestar cognitivo y emocional.",
+  "Psicólogo y analista de conducta especializado en Neuropsicología clínica por la Universidad Internacional de Valencia. Su pasión por el ejercicio clínico lo llevó a fundar Neuro-dev, y desde el 2017 se ha dedicado a ofrecer servicios de psicología basada en evidencia y, más recientemente, de neuropsicología clínica, ayudando a personas a recuperar y potenciar su bienestar cognitivo y emocional.",
   "",
   "Durante su formación, destacan ampliamente las prácticas curriculares y su rol como co-terapeuta en la Unidad de Neuropsicología Neurovita en Valencia, España, donde fortaleció sus habilidades en evaluación, diagnóstico e intervención. Esto le permitió desempeñar con distinción roles de liderazgo en centros de atención psicológica, colegios y otras instituciones, capacitando al personal y siendo parte de equipos multidisciplinarios con metas clínicas o académicas en común.",
   "",
