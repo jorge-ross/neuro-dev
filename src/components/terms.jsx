@@ -198,13 +198,8 @@ const Terms = () => {
 
       <GralModal show={showPromoModal} onClose={() => setShowPromoModal(false)}>
         <h2>Promociones 2025</h2>
-        <h3>1. Promoción de 4 consultas</h3>
-        <p>Pagando 3 consultas, la 4ta va al 50%. Aplica sólo en pago de contado.</p>
-        <h3>2. Promoción de 8 consultas</h3>
-        <p>Pagando 6 consultas, las 2 restantes van al 50%. Aplica sólo en pago de contado.</p>
-        <br />
         <h3>Convenios y descuentos</h3>
-        <p>Neuro-dev ofrece convenios y descuentos especiales para instituciones educativas, organizaciones y referidos. Para más información, por favor contáctanos directamente.</p>
+        <p>Neuro-dev ofrece convenios y descuentos especiales para instituciones educativas, organizaciones y referidos. Para mayor información, utilice los canales de contacto directo.</p>
       </GralModal>
     </Gral>
   )
