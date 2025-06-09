@@ -19,8 +19,8 @@ const GeneralContainer = styled.div`
 
 function Home() {
   useEffect(() => {
-    if (window.location.hash === "#terms") {
-      const el = document.getElementById("terms");
+    if (window.location.hash === "#contacto") {
+      const el = document.getElementById("contact");
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
       }
