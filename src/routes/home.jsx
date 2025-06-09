@@ -22,12 +22,7 @@ function Home() {
     if (window.location.hash === "#contacto") {
       const el = document.getElementById("contact");
       if (el) {
-        const offset = 100;
-        const elementPosition = el.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: elementPosition - offset,
-          behavior: "smooth",
-        });
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     }
   }, []);
