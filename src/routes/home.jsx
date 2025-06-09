@@ -22,7 +22,7 @@ function Home() {
     if (window.location.hash === "#contact") {
       const el = document.getElementById("contact");
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "end" });
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }
   }, []);
