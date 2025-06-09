@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { useEffect } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import IntroSection from "../components/intro-section";
@@ -18,18 +17,6 @@ const GeneralContainer = styled.div`
 `;
 
 function Home() {
-  useEffect(() => {
-    if (window.location.hash === "#contacto") {
-      const formEl = document.getElementById("contact-form");
-      if (formEl) {
-        formEl.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-        });
-      }
-    }
-  }, []);
-
   return (
     <GeneralContainer>
       <Header />
