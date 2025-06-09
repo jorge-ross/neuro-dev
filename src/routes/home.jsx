@@ -19,20 +19,11 @@ const GeneralContainer = styled.div`
 
 function Home() {
   useEffect(() => {
-    const shouldScroll = sessionStorage.getItem("scrollToContact");
-
-    if (shouldScroll === "true") {
-      const scrollToFooter = () => {
-        const footerElement = document.getElementById("contact");
-        if (footerElement) {
-          footerElement.scrollIntoView({ behavior: "smooth" });
-          sessionStorage.removeItem("scrollToContact");
-        } else {
-          setTimeout(scrollToFooter, 100);
-        }
-      };
-
-      scrollToFooter();
+    if (window.location.hash === "#contact") {
+      const el = document.getElementById("contact");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
     }
   }, []);
 
