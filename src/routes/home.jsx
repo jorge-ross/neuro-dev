@@ -19,16 +19,23 @@ const GeneralContainer = styled.div`
 
 function Home() {
   useEffect(() => {
-    if (window.location.hash === "#contact") {
-      const interval = setInterval(() => {
+    const shouldScroll = sessionStorage.getItem("scrollToContact");
+
+    if (shouldScroll === "true") {
+      const scrollToFooter = () => {
         const footerElement = document.getElementById("contact");
         if (footerElement) {
           footerElement.scrollIntoView({ behavior: "smooth" });
-          clearInterval(interval);
+          sessionStorage.removeItem("scrollToContact");
+        } else {
+          setTimeout(scrollToFooter, 100);
         }
-      }, 100);
+      };
+
+      scrollToFooter();
     }
   }, []);
+
   return (
     <GeneralContainer>
       <Header />
