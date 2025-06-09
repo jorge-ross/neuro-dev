@@ -19,10 +19,10 @@ const GeneralContainer = styled.div`
 
 function Home() {
   useEffect(() => {
-    if (window.location.hash === "#contact") {
-      const el = document.getElementById("contact");
+    if (window.location.hash === "#terms") {
+      const el = document.getElementById("terms");
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.scrollIntoView({ behavior: "smooth" });
       }
     }
   }, []);
