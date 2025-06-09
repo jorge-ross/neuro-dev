@@ -1,46 +1,45 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 import { useState, useRef, useEffect } from "react";
-import { Link } from 'react-router-dom';
-import { keyframes } from '@emotion/react';
-import logond from '/assets/images/logond.png';
-import logoSideBar from '/assets/images/logow.png'
-import { typography } from '../styles/typography';
-import { GiHamburgerMenu } from 'react-icons/gi';
+import { Link } from "react-router-dom";
+import { keyframes } from "@emotion/react";
+import logond from "/assets/images/logond.png";
+import logoSideBar from "/assets/images/logow.png";
+import { typography } from "../styles/typography";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { IoClose } from 'react-icons/io5';
+import { IoClose } from "react-icons/io5";
 import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
 import { FaInstagram, FaPencil } from "react-icons/fa6";
 import { GrContact } from "react-icons/gr";
 import { MdPsychology, MdAssessment } from "react-icons/md";
-import Modal from "./modals/modal"
-import { colors } from '../styles/colors';
-import InstagramButton from './insta-button';
+import Modal from "./modals/modal";
+import { colors } from "../styles/colors";
+import InstagramButton from "./insta-button";
 
 const Gral = styled.div`
-background: white;
-width: 100%;
-display: flex;
-justify-content: center;
-border-bottom: 1px solid black;
-height: 70px;
-position: fixed;
-top: 0;
-z-index: 10;
-`
+  background: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+`;
 
 const NavBarContainer = styled.div`
-display: flex;
-padding: 1rem 2rem;
-align-items: center;
-justify-content: space-between;
-width: 95%;
-
+  display: flex;
+  padding: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  width: 95%;
 
   @media (max-width: 700px) {
     padding: 1rem 1.5rem;
   }
-`
+`;
 
 const OptionsContainer = styled.li`
   display: flex;
@@ -51,7 +50,7 @@ const OptionsContainer = styled.li`
   @media (max-width: 700px) {
     display: none;
   }
-`
+`;
 
 const BrandTitle = styled.h3`
   ${typography.head.smx}
@@ -73,30 +72,30 @@ const BrandHomeLink = styled(Link)`
 `;
 
 const Option = styled.p`
-${typography.head.xss}
-color: black;
-margin: 0;
-font-weight: 600;
-padding: 16px 0;
-display: flex;
-align-items: center;
-`
+  ${typography.head.xss}
+  color: black;
+  margin: 0;
+  font-weight: 600;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+`;
 
 const HamMenu = styled.div`
-  display: ${props => (props.visible ? "flex" : "none")};
+  display: ${(props) => (props.visible ? "flex" : "none")};
   flex-direction: column;
   width: 250px;
   height: 100%;
   position: fixed;
   top: 0;
-  right: ${props => (props.visible ? "0" : "-250px")};
+  right: ${(props) => (props.visible ? "0" : "-250px")};
   transition: right 0.5s ease;
   z-index: 100;
   background-color: white;
 
   @media (max-width: 700px) {
     width: 70%;
-    right: ${props => (props.visible ? "0" : "-80%")};
+    right: ${(props) => (props.visible ? "0" : "-80%")};
   }
 `;
 
@@ -116,10 +115,10 @@ const HamburgerIcon = styled.div`
   position: absolute;
   right: 1.5rem;
   padding-top: 4px;
-  border: 1px solid #1D2C60;
+  border: 1px solid #1d2c60;
 
   @media (max-width: 700px) {
-    display: ${props => (props.isOpen ? "none" : "block")};
+    display: ${(props) => (props.isOpen ? "none" : "block")};
   }
 `;
 
@@ -130,36 +129,35 @@ const CloseIcon = styled.div`
   transition: transform 0.5s ease;
 
   @media (max-width: 900px) {
-    display: ${props =>
-    props.isOpen ? "block" : "none"};
+    display: ${(props) => (props.isOpen ? "block" : "none")};
   }
-  margin: .75rem .75rem 0 0;
+  margin: 0.75rem 0.75rem 0 0;
   align-self: flex-end;
 `;
 
 const Logo = styled.img`
-display: flex;
-align-self: center;
-width: 35%;
-padding: 0.5rem 0;
-`
+  display: flex;
+  align-self: center;
+  width: 35%;
+  padding: 0.5rem 0;
+`;
 
 const ImgHeader = styled.div`
-display: flex;
-flex-direction: column;
-background-color: black;
-border-bottom-left-radius: 35%;
-cursor: pointer;
-`
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border-bottom-left-radius: 35%;
+  cursor: pointer;
+`;
 
 const NavOptionsContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: flex-end;
-padding: 1.5rem 1.5rem 0 0;
-background-color: white;
-gap: 1.5rem;
-`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1.5rem 1.5rem 0 0;
+  background-color: white;
+  gap: 1.5rem;
+`;
 
 const NavOption = styled(Link)`
   ${typography.text.lg}
@@ -185,7 +183,7 @@ const InstaOption = styled.div`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-`
+`;
 
 const DropNavOption = styled.div`
   ${typography.text.lg}
@@ -241,14 +239,14 @@ const InstaHamOption = styled.a`
   padding-bottom: 0.2rem;
   border-bottom: 1px solid black;
 
-   @media (max-width: 500px) {
+  @media (max-width: 500px) {
     ${typography.text.md};
   }
 
   @media (max-width: 300px) {
     ${typography.text.xs};
   }
-`
+`;
 
 const TitleHeader = styled.h1`
   ${typography.head.md};
@@ -264,7 +262,7 @@ const TitleHeader = styled.h1`
   @media (max-width: 300px) {
     ${typography.head.xss};
   }
-`
+`;
 
 const StyledLink = styled(Link)`
   display: flex;
@@ -278,11 +276,11 @@ const BrandContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
-`
+`;
 
 const LogoImgCont = styled.img`
   max-width: 2rem;
-`
+`;
 
 const DropdownMenu = styled.div`
   position: absolute;
@@ -308,13 +306,12 @@ const DropdownItem = styled(Link)`
 `;
 
 function Header() {
-
   const [isOpen, setIsOpen] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
-    setIsClicked((prev) => (!prev));
+    setIsClicked((prev) => !prev);
   };
 
   useEffect(() => {
@@ -330,20 +327,27 @@ function Header() {
   }, []);
 
   const toggleMenu = () => {
-    setIsOpen(prevOpen => !prevOpen);
+    setIsOpen((prevOpen) => !prevOpen);
   };
 
   const closeMenu = () => {
-    setIsOpen(false)
-  }
+    setIsOpen(false);
+  };
 
   const handleScrollToFooter = () => {
-    const footerElement = document.getElementById('contact');
+    const footerElement = document.getElementById("contact");
     if (footerElement) {
-      footerElement.scrollIntoView({ behavior: 'smooth' });
+      footerElement.scrollIntoView({ behavior: "smooth" });
     }
     setIsOpen(false);
-  }
+  };
+
+  useEffect(() => {
+    if (window.location.hash === "#contact") {
+      handleScrollToFooter();
+    }
+  }, []);
+
   return (
     <Gral>
       <NavBarContainer isOpen={isOpen}>
@@ -354,27 +358,45 @@ function Header() {
           </BrandHomeLink>
         </BrandContainer>
 
-        <HamburgerIcon
-          onClick={toggleMenu}
-          isOpen={isOpen}
-        >
-          <GiHamburgerMenu style={{ height: "25px", width: "30px", padding: 4 }} />
+        <HamburgerIcon onClick={toggleMenu} isOpen={isOpen}>
+          <GiHamburgerMenu
+            style={{ height: "25px", width: "30px", padding: 4 }}
+          />
         </HamburgerIcon>
 
         <OptionsContainer>
-          <NavOption to="/jorge-ros-acerca-de-neurodev" onClick={() => window.scrollTo(0, 0)}>
+          <NavOption
+            to="/jorge-ros-acerca-de-neurodev"
+            onClick={() => window.scrollTo(0, 0)}
+          >
             <Option>Acerca de</Option>
           </NavOption>
 
           <DropNavOption ref={dropdownRef}>
-            <Option onClick={toggleDropdown}>Servicios
+            <Option onClick={toggleDropdown}>
+              Servicios
               <IoMdArrowDropdown style={{ paddingLeft: 3 }} />
             </Option>
             {isClicked && (
               <DropdownMenu>
-                <DropdownItem to="/psicologia" onClick={() => window.scrollTo(0, 0)}>Psicología</DropdownItem>
-                <DropdownItem to="/neuropsicologia" onClick={() => window.scrollTo(0, 0)}>Neuropsicología</DropdownItem>
-                <DropdownItem to="/consultoria" onClick={() => window.scrollTo(0, 0)}>Consultoría</DropdownItem>
+                <DropdownItem
+                  to="/psicologia"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Psicología
+                </DropdownItem>
+                <DropdownItem
+                  to="/neuropsicologia"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Neuropsicología
+                </DropdownItem>
+                <DropdownItem
+                  to="/consultoria"
+                  onClick={() => window.scrollTo(0, 0)}
+                >
+                  Consultoría
+                </DropdownItem>
               </DropdownMenu>
             )}
           </DropNavOption>
@@ -388,32 +410,37 @@ function Header() {
           </NavOption>
 
           <InstaOption>
-            <InstagramButton url="https://www.instagram.com/_neurodev/" style={{ fontSize: '1.8rem', color: '#E1306C' }} />
+            <InstagramButton
+              url="https://www.instagram.com/_neurodev/"
+              style={{ fontSize: "1.8rem", color: "#E1306C" }}
+            />
           </InstaOption>
         </OptionsContainer>
 
         <HamMenu visible={isOpen}>
-
           {/* Hamburger Menu Options */}
 
           <ImgHeader>
-            <CloseIcon
-              onClick={toggleMenu}
-              isOpen={isOpen}
-              rotate={rotate}
-            >
+            <CloseIcon onClick={toggleMenu} isOpen={isOpen} rotate={rotate}>
               <IoClose style={{ height: "25px", width: "25px" }} />
             </CloseIcon>
-            <StyledLink to="/" onClick={() => { window.scrollTo(0, 0); closeMenu(); }}>
-              <Logo src={logoSideBar} alt='n-dev-sb' />
-              <TitleHeader>
-                Neuro-dev
-              </TitleHeader>
+            <StyledLink
+              to="/"
+              onClick={() => {
+                window.scrollTo(0, 0);
+                closeMenu();
+              }}
+            >
+              <Logo src={logoSideBar} alt="n-dev-sb" />
+              <TitleHeader>Neuro-dev</TitleHeader>
             </StyledLink>
           </ImgHeader>
 
           <NavOptionsContainer>
-            <HamOption to="/jorge-ros-acerca-de-neurodev" onClick={() => window.scrollTo(0, 0)}>
+            <HamOption
+              to="/jorge-ros-acerca-de-neurodev"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Acerca de
               <ImUser />
             </HamOption>
@@ -423,7 +450,10 @@ function Header() {
               <MdPsychology />
             </HamOption>
 
-            <HamOption to="/neuropsicologia" onClick={() => window.scrollTo(0, 0)}>
+            <HamOption
+              to="/neuropsicologia"
+              onClick={() => window.scrollTo(0, 0)}
+            >
               Neuropsicología
               <GiBrain />
             </HamOption>
@@ -443,7 +473,6 @@ function Header() {
               <GrContact />
             </HamOption>
 
-
             <InstaHamOption
               href="https://www.instagram.com/_neurodev/"
               target="_blank"
@@ -451,18 +480,15 @@ function Header() {
               onClick={closeMenu}
             >
               Instagram
-              <FaInstagram style={{ color: '#E1306C', fontSize: '1.1rem' }} />
+              <FaInstagram style={{ color: "#E1306C", fontSize: "1.1rem" }} />
             </InstaHamOption>
-
-
           </NavOptionsContainer>
         </HamMenu>
-
       </NavBarContainer>
 
       <Modal visible={isOpen} onClose={closeMenu} />
     </Gral>
-  )
+  );
 }
 
 export default Header;
