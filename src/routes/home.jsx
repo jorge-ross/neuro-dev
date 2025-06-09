@@ -20,7 +20,7 @@ const GeneralContainer = styled.div`
 function Home() {
   useEffect(() => {
     if (window.location.hash === "#contacto") {
-      const formEl = document.querySelector("#contact form");
+      const formEl = document.querySelector("#contact footer form");
       if (formEl) {
         formEl.scrollIntoView({
           behavior: "smooth",
