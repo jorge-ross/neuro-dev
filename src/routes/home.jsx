@@ -20,9 +20,12 @@ const GeneralContainer = styled.div`
 function Home() {
   useEffect(() => {
     if (window.location.hash === "#contacto") {
-      const el = document.getElementById("contact");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const formEl = document.querySelector("#contact form");
+      if (formEl) {
+        formEl.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
       }
     }
   }, []);
