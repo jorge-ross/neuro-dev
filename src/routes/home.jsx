@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
+import { useEffect } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import IntroSection from "../components/intro-section";
 import Mision from "../components/mision";
 import Terms from "../components/terms";
 import ServicesComponent from "../components/services-component";
-import TestimonialSection from '../components/testimonial';
+import TestimonialSection from "../components/testimonial";
 import OnlineServices from "../components/online-services";
 
 const GeneralContainer = styled.div`
@@ -17,6 +18,14 @@ const GeneralContainer = styled.div`
 `;
 
 function Home() {
+  useEffect(() => {
+    if (window.location.hash === "#contact") {
+      const footerElement = document.getElementById("contact");
+      if (footerElement) {
+        footerElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, []);
   return (
     <GeneralContainer>
       <Header />
@@ -28,7 +37,7 @@ function Home() {
       <Footer />
       <Terms />
     </GeneralContainer>
-  )
+  );
 }
 
 export default Home;

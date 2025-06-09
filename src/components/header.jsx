@@ -342,12 +342,6 @@ function Header() {
     setIsOpen(false);
   };
 
-  useEffect(() => {
-    if (window.location.hash === "#contact") {
-      handleScrollToFooter();
-    }
-  }, []);
-
   return (
     <Gral>
       <NavBarContainer isOpen={isOpen}>
