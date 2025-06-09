@@ -20,10 +20,13 @@ const GeneralContainer = styled.div`
 function Home() {
   useEffect(() => {
     if (window.location.hash === "#contact") {
-      const footerElement = document.getElementById("contact");
-      if (footerElement) {
-        footerElement.scrollIntoView({ behavior: "smooth" });
-      }
+      const interval = setInterval(() => {
+        const footerElement = document.getElementById("contact");
+        if (footerElement) {
+          footerElement.scrollIntoView({ behavior: "smooth" });
+          clearInterval(interval);
+        }
+      }, 100);
     }
   }, []);
   return (
