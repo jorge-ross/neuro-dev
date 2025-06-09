@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import styled from 'styled-components';
-import { typography, typography2 } from '../styles/typography';
-import emailjs from 'emailjs-com';
-import { toast } from 'react-toastify';
+import { useState } from "react";
+import styled from "styled-components";
+import { typography, typography2 } from "../styles/typography";
+import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
 
 const Form = styled.form`
   display: grid;
@@ -17,11 +17,11 @@ const InputContainer = styled.div`
   grid-row: 1;
   grid-column: 1 / 3;
 
-  @media (max-width: 700px){
+  @media (max-width: 700px) {
     display: flex;
     flex-direction: column;
   }
-`
+`;
 
 const Input = styled.input`
   ${typography2.text.sm};
@@ -38,7 +38,7 @@ const Input = styled.input`
     align-self: center;
   }
 
-  @media (max-width: 350px){
+  @media (max-width: 350px) {
     ${typography2.text.xss}
   }
 `;
@@ -55,7 +55,7 @@ const TextArea = styled.textarea`
   grid-row: 2;
   grid-column: 1 / 3;
 
-  @media (max-width: 350px){
+  @media (max-width: 350px) {
     ${typography2.text.xss}
   }
 `;
@@ -86,9 +86,9 @@ const Button = styled.button`
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSending, setIsSending] = useState(false);
 
@@ -112,29 +112,32 @@ const ContactForm = () => {
       )
       .then(
         (response) => {
-          console.log('Correo enviado con éxito:', response.status, response.text);
+          console.log(
+            "Correo enviado con éxito:",
+            response.status,
+            response.text
+          );
           setTimeout(() => {
-            toast.success('Mensaje enviado con éxito');
-          }, 0)
+            toast.success("Mensaje enviado con éxito");
+          }, 0);
           setFormData({
-            name: '',
-            email: '',
-            message: ''
+            name: "",
+            email: "",
+            message: "",
           });
         },
         (error) => {
-          console.error('Error al enviar el correo:', error);
+          console.error("Error al enviar el correo:", error);
           setTimeout(() => {
-            toast.error('Error al enviar el mensaje');
+            toast.error("Error al enviar el mensaje");
           }, 0);
         }
       )
       .finally(() => setIsSending(false));
   };
 
-
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form id="contact-form" onSubmit={handleSubmit}>
       <InputContainer>
         <Input
           type="text"

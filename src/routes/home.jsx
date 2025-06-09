@@ -20,11 +20,11 @@ const GeneralContainer = styled.div`
 function Home() {
   useEffect(() => {
     if (window.location.hash === "#contacto") {
-      const formEl = document.querySelector("#contact footer form");
+      const formEl = document.getElementById("contact-form");
       if (formEl) {
         formEl.scrollIntoView({
           behavior: "smooth",
-          block: "center",
+          block: "end",
         });
       }
     }
