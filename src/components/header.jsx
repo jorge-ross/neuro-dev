@@ -395,6 +395,10 @@ function Header() {
             )}
           </DropNavOption>
 
+          <NavOption to="/recursos" onClick={() => window.scrollTo(0, 0)}>
+            <Option>Recursos</Option>
+          </NavOption>
+
           <NavOption to="/blog" onClick={() => window.scrollTo(0, 0)}>
             <Option>Blog</Option>
           </NavOption>

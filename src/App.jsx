@@ -15,6 +15,7 @@ import NeuroServices from "./routes/neuro";
 import ConsultancyServices from "./routes/consultancy";
 import Blog from "./routes/blog";
 import ArticleDetail from "./routes/a1";
+import Recursos from "./routes/resources";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace={true} />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<ArticleDetail />} />
+        <Route path="/recursos" element={<Recursos />} />
       </Routes>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </Router>
