@@ -1,13 +1,18 @@
-import styled from 'styled-components';
-import Header from '../components/header';
-import Terms from '../components/terms';
-import corp from '/assets/images/corp-route.png'
-import corpOne from '/assets/images/corpOne.png'
-import corpTwo from '/assets/images/corpTwo.png'
-import corpThree from '/assets/images/corpThree.png'
-import { typography, typography2 } from '../styles/typography';
-import Footer from '../components/footer';
-import { benefitCorpList, conclusionCorpText, corpText, subtitleCorpText } from '../data/definitions';
+import styled from "styled-components";
+import Header from "../components/header";
+import Terms from "../components/terms";
+import corp from "/assets/images/corp-route.png";
+import corpOne from "/assets/images/corpOne.png";
+import corpTwo from "/assets/images/corpTwo.png";
+import corpThree from "/assets/images/corpThree.png";
+import { typography, typography2 } from "../styles/typography";
+import Footer from "../components/footer";
+import {
+  benefitCorpList,
+  conclusionCorpText,
+  corpText,
+  subtitleCorpText,
+} from "../data/definitions";
 
 const GeneralContainer = styled.section`
   display: flex;
@@ -24,8 +29,7 @@ const GeneralContainer = styled.section`
   @media (max-width: 500px) {
     width: 87%;
   }
-`
-
+`;
 
 const TopContainer = styled.div`
   padding: 4.5rem 0 3rem 0;
@@ -43,10 +47,10 @@ const TopContainer = styled.div`
   @media (max-width: 600px) {
     gap: 1rem;
   }
-`
+`;
 
 const Title = styled.h1`
- ${typography.head.xl}
+  ${typography.head.xl}
   color: black;
   margin: 0;
   align-self: center;
@@ -73,9 +77,9 @@ const CorpText = styled.p`
 
   @media (max-width: 450px) {
     ${typography2.text.md}
+    margin-bottom: 1.2rem;
   }
 `;
-
 
 const ServicesImg = styled.img`
   align-self: center;
@@ -85,26 +89,22 @@ const ServicesImg = styled.img`
   @media (max-width: 600px) {
     max-width: 100px;
   }
-  
+
   @media (max-width: 450px) {
     max-width: 50px;
   }
-`
+`;
 
 const SubTitle = styled.h2`
+  color: black;
   ${typography2.head.xls};
-  width: 70%;
+  width: 100%;
   margin: 0;
-
-  @media (max-width: 750px) {
-    width: 100%;
-  }
 
   @media (max-width: 450px) {
     ${typography2.text.lg};
   }
 `;
-
 
 const InfoTitle = styled.h2`
   ${typography2.head.xls};
@@ -124,7 +124,6 @@ const BenefitsList = styled.ol`
   padding-left: 1.5rem;
   margin: 1.5rem 0 0.5rem 0;
 
-  
   @media (max-width: 750px) {
     width: 85%;
   }
@@ -147,7 +146,7 @@ const CorpImgContainer = styled.div`
   margin: 0;
   align-items: center;
   justify-content: space-around;
-`
+`;
 
 const CorpImg = styled.img`
   align-self: center;
@@ -159,7 +158,7 @@ const CorpImg = styled.img`
   @media (max-width: 900px) {
     max-width: 180px;
   }
-  
+
   @media (max-width: 750px) {
     max-width: 150px;
   }
@@ -175,31 +174,28 @@ const CorpImg = styled.img`
   @media (max-width: 400px) {
     max-width: 80px;
   }
-`
-
+`;
 
 const ConsultancyServices = () => {
-
   return (
     <>
       <Header />
       <GeneralContainer>
-
         <TopContainer>
           <ServicesImg src={corp} />
           <Title>Consultoría</Title>
         </TopContainer>
-
 
         <CorpText>{corpText}</CorpText>
         <SubTitle>{subtitleCorpText}</SubTitle>
 
         <BenefitsList>
           {benefitCorpList.map((benefit, index) => {
-            const [title, ...description] = benefit.split(':');
+            const [title, ...description] = benefit.split(":");
             return (
               <li key={index}>
-                <strong>{title}:</strong>{description.join(':')}
+                <strong>{title}:</strong>
+                {description.join(":")}
               </li>
             );
           })}
@@ -212,7 +208,10 @@ const ConsultancyServices = () => {
         </CorpImgContainer>
         <CorpText>{conclusionCorpText}</CorpText>
 
-        <InfoTitle>¡Puedes utilizar los mismos canales de contacto para solicitar información!</InfoTitle>
+        <InfoTitle>
+          ¡Puedes utilizar los mismos canales de contacto para solicitar
+          información!
+        </InfoTitle>
       </GeneralContainer>
       <Footer />
       <Terms />

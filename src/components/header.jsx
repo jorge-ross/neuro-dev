@@ -47,6 +47,10 @@ const OptionsContainer = styled.li`
   align-items: center;
   gap: 1.5rem;
 
+  @media (max-width: 800px) {
+    gap: 1.1rem;
+  }
+
   @media (max-width: 700px) {
     display: none;
   }

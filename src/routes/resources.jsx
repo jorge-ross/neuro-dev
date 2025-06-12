@@ -40,8 +40,13 @@ const ResourcesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  width: 90%;
+  width: 94%;
   align-self: center;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    width: 85%;
+  }
 `;
 
 const ResourceCard = styled(Link)`
@@ -54,28 +59,31 @@ const ResourceCard = styled(Link)`
   text-decoration: none;
   color: inherit;
   transition: transform 0.2s;
+  justify-content: center;
+  height: 150px;
+
   &:hover {
     transform: scale(1.02);
   }
-  @media (max-width: 600px) {
+  @media (max-width: 800px) {
     flex-direction: column;
+    height: 120px;
   }
-  @media (max-width: 400px) {
-    padding: 0.5rem;
-  }
-  @media (max-width: 300px) {
-    padding: 0.25rem;
-  }
-  @media (max-width: 200px) {
-    padding: 0.125rem;
-  }
-  @media (max-width: 100px) {
-    padding: 0.0625rem;
-  }
+
   h2 {
     ${typography.head.lg}
-    margin: 1rem 0 0.5rem;
+    margin: 0.5rem 0;
     color: white;
+
+    @media (max-width: 1000px) {
+      ${typography.head.sm}
+      margin: 0;
+    }
+
+    @media (max-width: 350px) {
+      ${typography.head.xs}
+      margin: 0;
+    }
   }
   p {
     ${typography.text.md}
