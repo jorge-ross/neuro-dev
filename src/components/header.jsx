@@ -11,7 +11,7 @@ import { IoClose } from "react-icons/io5";
 import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
 import { FaInstagram, FaPencil } from "react-icons/fa6";
-import { GrContact } from "react-icons/gr";
+import { GrContact, GrResources } from "react-icons/gr";
 import { MdPsychology, MdAssessment } from "react-icons/md";
 import Modal from "./modals/modal";
 import { colors } from "../styles/colors";
@@ -459,6 +459,11 @@ function Header() {
             <HamOption to="/consultoria" onClick={() => window.scrollTo(0, 0)}>
               Consultoría
               <MdAssessment />
+            </HamOption>
+
+            <HamOption to="/recursos" onClick={() => window.scrollTo(0, 0)}>
+              Recursos
+              <GrResources />
             </HamOption>
 
             <HamOption to="/blog" onClick={() => window.scrollTo(0, 0)}>

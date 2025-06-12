@@ -3,16 +3,15 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import { typography } from "../styles/typography";
 import { Link } from "react-router-dom";
-import { articles } from "../data/articles";
 
-const BlogContainer = styled.div`
+const GralContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 70px;
   width: 75%;
   align-self: center;
   justify-self: center;
-  padding: 1.5rem 0 4rem;
+  padding: 0.5rem 0 4rem;
 
   @media (max-width: 600px) {
     width: 92%;
@@ -37,107 +36,78 @@ const Title = styled.h1`
   }
 `;
 
-const ArticleTitle = styled.h1`
-  ${typography.head.xs};
-  align-self: start;
-  border-bottom: 1px solid black;
-  padding-bottom: 0.25rem;
-  display: inline-block;
-  margin-bottom: 0;
-
-  @media (max-width: 800px) {
-    ${typography.head.xss};
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-`;
-
-const ArticleDate = styled.h1`
-  ${typography.text.md};
-  align-self: start;
-  font-weight: 400;
-  margin-top: 0.5rem;
-
-  @media (max-width: 800px) {
-    ${typography.text.sm};
-    margin-top: 0;
-  }
-`;
-
-const ArticleList = styled.div`
+const ResourcesContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  padding-top: 0.5rem;
-
-  @media (max-width: 1000px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
+  width: 90%;
+  align-self: center;
 `;
 
-const ArticleLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  border-bottom: 1px solid black;
-  padding: 1rem;
-  border-radius: 0.75rem;
-  transition: background-color 0.3s, transform 0.3s;
+const ResourceCard = styled(Link)`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-self: center;
-  justify-self: center;
-  justify-content: space-evenly;
-  gap: 0.5rem;
-  width: 270px;
-  height: 350px;
-
+  background-color: rgb(0, 0, 0);
+  border: 1px solid gold;
+  border-radius: 10px;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
   &:hover {
-    background-color: rgb(241, 241, 241);
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
-
-  @media (max-width: 800px) {
-    width: 88%;
-    border: none;
-    justify-content: start;
-    height: auto;
+  @media (max-width: 600px) {
+    flex-direction: column;
   }
-
-  @media (max-width: 500px) {
-    width: 95%;
+  @media (max-width: 400px) {
+    padding: 0.5rem;
   }
-`;
-
-const ArticleImage = styled.img`
-  width: 90%;
-  border-radius: 0.75rem;
-  object-fit: cover;
+  @media (max-width: 300px) {
+    padding: 0.25rem;
+  }
+  @media (max-width: 200px) {
+    padding: 0.125rem;
+  }
+  @media (max-width: 100px) {
+    padding: 0.0625rem;
+  }
+  h2 {
+    ${typography.head.lg}
+    margin: 1rem 0 0.5rem;
+    color: white;
+  }
+  p {
+    ${typography.text.md}
+    color: white;
+  }
 `;
 
 const Recursos = () => {
   return (
     <>
       <Header />
-      <BlogContainer>
+      <GralContainer>
         <Title>Recursos</Title>
-        <ArticleList>
-          {articles.map((article) => (
-            <ArticleLink
-              to={article.route ? article.route.replace("/blog/", "") : "/"}
-              key={article.id}
-            >
-              <ArticleImage src={article.postUrl} alt={article.alt} />
-              <ArticleTitle>{article.title}</ArticleTitle>
-              <ArticleDate>{article.date}</ArticleDate>
-            </ArticleLink>
-          ))}
-        </ArticleList>
-      </BlogContainer>
+        <ResourcesContainer>
+          <ResourceCard to="/recursos/guia-psicologia">
+            <h2>Guías</h2>
+            <p>Descubre recursos útiles para tu bienestar integral.</p>
+          </ResourceCard>
+          <ResourceCard to="/recursos/guia-neuropsicologia">
+            <h2>Tests Online</h2>
+            <p>Herramientas psicológicas digitales.</p>
+          </ResourceCard>
+          <ResourceCard to="/recursos/guia-consultoria">
+            <h2>Cursos</h2>
+            <p>Recursos para mejorar tu práctica profesional.</p>
+          </ResourceCard>
+          <ResourceCard to="/recursos/guia-consultoria">
+            <h2>Talleres y Webinars</h2>
+            <p>Eventos formativos y de actualización.</p>
+          </ResourceCard>
+        </ResourcesContainer>
+      </GralContainer>
       <Footer />
     </>
   );
