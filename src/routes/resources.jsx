@@ -13,7 +13,7 @@ const GralContainer = styled.div`
   justify-self: center;
   padding: 0.5rem 0 4rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     width: 92%;
   }
 `;
@@ -80,14 +80,19 @@ const ResourceCard = styled(Link)`
       margin: 0;
     }
 
-    @media (max-width: 350px) {
+    @media (max-width: 400px) {
       ${typography.head.xs}
       margin: 0;
     }
   }
   p {
-    ${typography.text.md}
+    ${typography.text.lg}
     color: white;
+    margin: 0.4rem 0;
+
+    @media (max-width: 400px) {
+      ${typography.text.md};
+    }
   }
 `;
 
@@ -102,7 +107,7 @@ const Recursos = () => {
             <h2>Guías</h2>
             <p>Descubre recursos útiles para tu bienestar integral.</p>
           </ResourceCard>
-          <ResourceCard to="/recursos/guia-neuropsicologia">
+          <ResourceCard to="/neurodev-tests-online">
             <h2>Tests Online</h2>
             <p>Herramientas psicológicas digitales.</p>
           </ResourceCard>

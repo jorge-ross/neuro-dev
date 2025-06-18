@@ -16,6 +16,7 @@ import ConsultancyServices from "./routes/consultancy";
 import Blog from "./routes/blog";
 import ArticleDetail from "./routes/a1";
 import Recursos from "./routes/resources";
+import OnlineTests from "./routes/online-tests";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:slug" element={<ArticleDetail />} />
         <Route path="/recursos" element={<Recursos />} />
+        <Route path="/neurodev-tests-online" element={<OnlineTests />} />
       </Routes>
       <ToastContainer position="bottom-right" autoClose={3000} />
     </Router>
