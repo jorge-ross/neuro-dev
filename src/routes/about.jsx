@@ -1,11 +1,11 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import profile_pic from "/assets/images/profile_pic.jpg"
-import neurodev_pic from "/assets/images/logond.png"
+import profile_pic from "/assets/images/profile_pic.jpg";
+import neurodev_pic from "/assets/images/logond.png";
 import { typography, typography2 } from "../styles/typography";
 import Terms from "../components/terms";
-import descriptionText from '../data/about';
+import descriptionText from "../data/about";
 import { CedulaProfAbout } from "../data/definitions";
 
 const GeneralContainer = styled.div`
@@ -19,7 +19,7 @@ const GeneralContainer = styled.div`
   @media (max-width: 750px) {
     width: 90%;
   }
-`
+`;
 
 const AboutSection = styled.section`
   padding: 3.5rem 0 4rem;
@@ -31,11 +31,11 @@ const AboutSection = styled.section`
   align-items: center;
   align-self: center;
 
-  @media (max-width: 1000px){
+  @media (max-width: 1000px) {
     width: 95%;
   }
 
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     display: flex;
     flex-direction: column;
     padding: 2rem 0 2.5rem;
@@ -55,7 +55,6 @@ const ProfileImage = styled.img`
     justify-self: start;
     align-self: start;
   }
-
 `;
 
 const NeurodevImage = styled.img`
@@ -100,7 +99,7 @@ const ProfesionalDetails = styled.p`
   align-self: flex-start;
   padding-top: 1.5rem;
   margin: 0;
-`
+`;
 
 const Card = styled.div`
   display: flex;
@@ -108,18 +107,18 @@ const Card = styled.div`
   flex-direction: column;
   gap: 2rem;
   grid-row: 1 / 3;
-`
+`;
 
 const Title = styled.h1`
   ${typography.head.md};
   color: black;
   margin: 0;
 
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     align-self: start;
   }
 
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     ${typography2.head.sm};
   }
 `;
@@ -129,13 +128,13 @@ const Subtitle = styled.h2`
   color: gray;
   margin: 0;
 
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     margin: 0.5rem 0 0 0;
     align-self: start;
     line-height: 1.5rem;
   }
 
-  @media (max-width: 500px){
+  @media (max-width: 500px) {
     ${typography2.head.xs};
     font-weight: 500;
   }
@@ -147,13 +146,13 @@ const Titles = styled.div`
   grid-row: 1;
   grid-column: 2 / 4;
 
-  @media (max-width: 750px){
+  @media (max-width: 750px) {
     grid-row: 1 / 3;
     grid-column: 2;
     align-items: center;
     justify-content: center;
   }
-`
+`;
 
 const GridItemWrapper = styled.div`
   display: contents;
@@ -163,7 +162,7 @@ const GridItemWrapper = styled.div`
     flex-direction: row;
     gap: 1rem;
   }
-`
+`;
 
 const About = () => {
   return (
@@ -186,18 +185,16 @@ const About = () => {
             {descriptionText}
             <ProfesionalDetails>
               Ced. Prof: {CedulaProfAbout}
-              < br />
-              Ced. Esp: En proceso de homologación
-              {" ("}
+              <br />
               <a
                 href="/doc/neu-t.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-              >título especialidad</a>
-              {")"}.
+              >
+                ={">"} Título especialidad
+              </a>
             </ProfesionalDetails>
           </Description>
-
         </AboutSection>
       </GeneralContainer>
       <Footer />
