@@ -88,7 +88,7 @@ const IntroSection = () => {
 
   return (
     <SectionContainer>
-      <SectionTitle>Psicología y Neuropsicología clínica.</SectionTitle>
+      <SectionTitle>Psicología y Neuropsicología Clínica.</SectionTitle>
       <Description>
         Comienza hoy tu viaje hacia una vida más saludable y significativa con Neuro-dev. Servicios profesionales adaptados a tus necesidades.
       </Description>
