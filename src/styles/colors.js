@@ -11,6 +11,8 @@ export const colors = {
     800: "#0634cd",
     900: "#10359f",
     950: "#1D2C60",
+    "brand": "#00437a",
+    "brand-b": "#105a84",
   },
 
   stone: {

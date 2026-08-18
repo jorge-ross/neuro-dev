@@ -2,12 +2,12 @@ import styled from "@emotion/styled";
 import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { keyframes } from "@emotion/react";
-import logond from "/assets/images/logond.png";
+import logoheader from "../assets/images/logo-header.png";
 import logoSideBar from "/assets/images/logow.png";
 import { typography } from "../styles/typography";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdArrowDropdown } from "react-icons/io";
-import { IoClose } from "react-icons/io5";
+import { IoClose, IoCalendarNumberSharp } from "react-icons/io5";
 import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
 import { FaInstagram, FaPencil } from "react-icons/fa6";
@@ -16,6 +16,7 @@ import { MdPsychology, MdAssessment } from "react-icons/md";
 import Modal from "./modals/modal";
 import { colors } from "../styles/colors";
 import InstagramButton from "./insta-button";
+import { typography2 } from "../styles/typography";
 
 const Gral = styled.div`
   background: white;
@@ -283,7 +284,7 @@ const BrandContainer = styled.div`
 `;
 
 const LogoImgCont = styled.img`
-  max-width: 2rem;
+  max-width: 10rem;
 `;
 
 const DropdownMenu = styled.div`
@@ -308,6 +309,24 @@ const DropdownItem = styled(Link)`
     background: ${colors.stone[600]};
   }
 `;
+
+const BookButton = styled(Link)`
+  ${typography.head.xss};
+  max-width: 300px;
+  padding: 1rem 1.4rem;
+  background-color: ${colors.blue["brand-b"]};
+  color: white;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+   @media (max-width: 700px) {
+    ${typography2.text.md};
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+  }
+`
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -351,8 +370,7 @@ function Header() {
       <NavBarContainer isOpen={isOpen}>
         <BrandContainer>
           <BrandHomeLink to="/" onClick={() => window.scrollTo(0, 0)}>
-            <LogoImgCont src={logond} alt="logo" />
-            <BrandTitle>Neuro-dev</BrandTitle>
+            <LogoImgCont src={logoheader} alt="logo" />
           </BrandHomeLink>
         </BrandContainer>
 
@@ -363,11 +381,16 @@ function Header() {
         </HamburgerIcon>
 
         <OptionsContainer>
+
           <NavOption
             to="/jorge-ros-acerca-de-neurodev"
             onClick={() => window.scrollTo(0, 0)}
           >
             <Option>Acerca de</Option>
+          </NavOption>
+
+          <NavOption onClick={handleScrollToFooter}>
+            <Option>Contacto</Option>
           </NavOption>
 
           <DropNavOption ref={dropdownRef}>
@@ -399,24 +422,10 @@ function Header() {
             )}
           </DropNavOption>
 
-          <NavOption to="/recursos" onClick={() => window.scrollTo(0, 0)}>
-            <Option>Recursos</Option>
-          </NavOption>
+          <BookButton to="/agenda-tu-cita" onClick={() => window.scrollTo(0, 0)}>
+            Agenda Tu Cita
+          </BookButton>
 
-          <NavOption to="/blog" onClick={() => window.scrollTo(0, 0)}>
-            <Option>Blog</Option>
-          </NavOption>
-
-          <NavOption onClick={handleScrollToFooter}>
-            <Option>Contacto</Option>
-          </NavOption>
-
-          <InstaOption>
-            <InstagramButton
-              url="https://www.instagram.com/_neurodev/"
-              style={{ fontSize: "1.8rem", color: "#E1306C" }}
-            />
-          </InstaOption>
         </OptionsContainer>
 
         <HamMenu visible={isOpen}>
@@ -439,6 +448,11 @@ function Header() {
           </ImgHeader>
 
           <NavOptionsContainer>
+            <HamOption to="/agenda-tu-cita" onClick={() => window.scrollTo(0, 0)}>
+              Agenda Tu Cita
+              <IoCalendarNumberSharp />
+            </HamOption>
+
             <HamOption
               to="/jorge-ros-acerca-de-neurodev"
               onClick={() => window.scrollTo(0, 0)}
@@ -468,11 +482,6 @@ function Header() {
             <HamOption to="/recursos" onClick={() => window.scrollTo(0, 0)}>
               Recursos
               <GrResources />
-            </HamOption>
-
-            <HamOption to="/blog" onClick={() => window.scrollTo(0, 0)}>
-              Blog
-              <FaPencil />
             </HamOption>
 
             <HamOption onClick={handleScrollToFooter}>

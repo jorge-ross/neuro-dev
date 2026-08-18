@@ -101,7 +101,7 @@ const Terms = () => {
     <Gral id="terms">
       <BrandContainer>
         <LogoImgCont src={logow} alt="logo" />
-        <SectionTitle>Neuro-dev 2025</SectionTitle>
+        <SectionTitle>Neuro-dev</SectionTitle>
       </BrandContainer>
       <Section>
         <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
