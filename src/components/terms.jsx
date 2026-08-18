@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useState } from "react";
 import { typography } from "../styles/typography";
 import GralModal from "./modals/gral-modal";
-import logow from "/assets/images/logow.png";
+import logoFooter from "../assets/images/logo-footer.png";
 
 const Gral = styled.div`
   background: black;
@@ -59,7 +59,7 @@ const Option = styled.p`
   color: white;
   display: block;
   text-decoration: none;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
 
   &:hover {
@@ -67,21 +67,17 @@ const Option = styled.p`
   }
 `;
 
-const BrandContainer = styled.div`
+
+const LogoImgCont = styled.img`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.8rem;
+  width: 6.5rem;
+  height: auto;
+  object-fit: contain;
   margin-left: 2rem;
 
   @media (max-width: 850px) {
-    gap: 0.5rem;
     margin: 0;
   }
-`;
-
-const LogoImgCont = styled.img`
-  max-width: 2rem;
 `;
 
 const Terms = () => {
@@ -99,10 +95,8 @@ const Terms = () => {
 
   return (
     <Gral id="terms">
-      <BrandContainer>
-        <LogoImgCont src={logow} alt="logo" />
-        <SectionTitle>Neuro-dev</SectionTitle>
-      </BrandContainer>
+      <LogoImgCont src={logoFooter} alt="logo" />
+
       <Section>
         <Option onClick={handleOpenModal}>Aviso de privacidad</Option>
         <Option onClick={() => setShowTermsModal(true)}>
