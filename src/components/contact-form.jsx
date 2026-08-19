@@ -8,6 +8,9 @@ const Form = styled.form`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+  padding: 0 2rem;
+  width: 70%;
+  align-self: center;
 `;
 
 const InputContainer = styled.div`
@@ -89,6 +92,7 @@ const ContactForm = () => {
     name: "",
     email: "",
     message: "",
+    phone: "",
   });
   const [isSending, setIsSending] = useState(false);
 
@@ -124,6 +128,7 @@ const ContactForm = () => {
             name: "",
             email: "",
             message: "",
+            phone: "",
           });
         },
         (error) => {
@@ -148,6 +153,14 @@ const ContactForm = () => {
           required
         />
         <Input
+          type="tel"
+          name="phone"
+          placeholder="Número de teléfono"
+          value={formData.phone}
+          onChange={handleChange}
+          required
+        />
+        <Input
           type="email"
           name="email"
           placeholder="Tu mail"
@@ -155,6 +168,7 @@ const ContactForm = () => {
           onChange={handleChange}
           required
         />
+
       </InputContainer>
       <TextArea
         name="message"

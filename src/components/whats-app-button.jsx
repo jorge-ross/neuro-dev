@@ -4,23 +4,18 @@ import { FaWhatsapp } from "react-icons/fa";
 
 
 const Icon = styled.span`
-  font-size: 2.5rem;
-  color:rgb(30, 30, 30);
+  font-size: 2rem;
+  color: #128C7E;
   margin-top: 0.1rem;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 350px){
-    font-size: 2rem;
-  }
-
   &:hover {
     cursor: pointer;
-    color: green;
-    background-color: #f0f0f0;
+    color: #25D366;
     border-radius: 50%;
   }
 `;

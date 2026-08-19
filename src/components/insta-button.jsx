@@ -10,10 +10,12 @@ const InstagramButton = ({ url, style }) => {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', ...style }}
+      style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'center', width: '1.8rem', height: '1.8rem', ...style
+      }}
     >
       <FaInstagram />
-    </a>
+    </a >
   ) : (
     <Link
       to={url}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import Header from "../components/header";
 import Terms from "../components/terms";
+import Footer from "../components/footer";
+
 
 /* ---------------------------------------------------------
    Helpers
@@ -579,6 +581,7 @@ export default function PsicoMeet() {
           </div>
         )}
       </div>
+      <Footer />
       <Terms />
     </>
   );

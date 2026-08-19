@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { typography, typography2 } from '../styles/typography';
-
+import { colors } from '../styles/colors';
 import ContactForm from './contact-form';
 import WhatsAppButton from './whats-app-button';
 import InstagramButton from './insta-button';
@@ -14,12 +14,14 @@ justify-content: center;
 `
 
 const FooterContainer = styled.footer`
-  padding: 3rem 0 4rem;
+  padding: 3rem 0;
   margin: 0 3rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 1.5rem;
-  width: 70%;
+  width: 60%;
 
   @media (max-width: 700px) {
     gap: 1rem;
@@ -32,10 +34,11 @@ const FooterContainer = styled.footer`
 `;
 
 const Section = styled.div`
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
 
   @media (max-width: 1000px) {
     gap: 1.5rem;
@@ -47,15 +50,21 @@ const Section = styled.div`
 const SectionTitle = styled.h1`
   ${typography.head.md}
   margin: 0;
-  color: black;
+  color: ${colors.blue['brand']};
   padding-bottom: 0.5rem;
+  text-align: center;
+`;
+
+const MailOption = styled.h2`
+  ${typography.head.sm}
+  margin: 0;
+  color: ${colors.blue['brand']};
   text-align: center;
 `;
 
 const Inst = styled.p`
   ${typography2.text.sm}
   margin: 0;
-  padding-bottom: 1rem;
   text-align: center;
 
   @media (max-width: 1000px) {
@@ -66,22 +75,24 @@ const Inst = styled.p`
 
 const WhatsContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 0.5rem;
 `
 
 const InstaContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  gap: 0.5rem;
 `
 
 const SocialMediaContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 1rem;
-  justify-content: space-around;
   grid-column: 2;
+  justify-content: space-around;
 `
 
 const Footer = () => {
@@ -89,19 +100,20 @@ const Footer = () => {
   return (
     <Gral id="contact">
       <FooterContainer>
-        <SectionTitle>Te escucho.</SectionTitle>
+        <SectionTitle>¿Y si empezamos hoy?</SectionTitle>
         <Section>
-          <ContactForm />
           <SocialMediaContainer>
             <WhatsContainer>
-              <Inst>Si lo prefieres, puedes enviar un mensaje vía Whatsapp.</Inst>
               <WhatsAppButton phoneNumber={import.meta.env.VITE_PHONE_NUMBER} />
+              <Inst>Puedes enviar un Whatsapp.</Inst>
             </WhatsContainer>
             <InstaContainer>
-              <Inst>O, también a través de la red.</Inst>
               <InstagramButton url="https://www.instagram.com/_neurodev/" style={{ fontSize: '2.5rem', color: '#E1306C' }} />
+              <Inst>El Instagram de Neuro-dev</Inst>
             </InstaContainer>
           </SocialMediaContainer>
+          <MailOption>Si lo prefieres, puedes enviar un mail.</MailOption>
+          <ContactForm />
         </Section>
       </FooterContainer>
     </Gral>
