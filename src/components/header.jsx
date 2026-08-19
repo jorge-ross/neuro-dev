@@ -422,7 +422,7 @@ function Header() {
             )}
           </DropNavOption>
 
-          <BookButton to="/agenda-tu-cita" onClick={() => window.scrollTo(0, 0)}>
+          <BookButton onClick={handleScrollToFooter}>
             Agenda Tu Cita
           </BookButton>
 
