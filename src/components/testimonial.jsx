@@ -19,7 +19,7 @@ const SectionContainer = styled.section`
 
 const SectionTitle = styled.h1`
   ${typography.head.lga}
-  color: black;
+  color: ${colors.blue[900]};
   margin: 2rem 0 1.5rem;
 
   @media (max-width: 1000px) {
@@ -49,10 +49,14 @@ const SliderContainer = styled.div`
   .slick-list {
     margin: 0 -1.5rem;
   }
+
+  .slick-dots li button:before {
+    color: ${colors.blue[700]};
+  }
 `;
 
 const Arrow = styled.div`
-  color: black;
+  color: ${colors.blue[700]};
   cursor: pointer;
   position: absolute;
   top: 44%;
@@ -77,7 +81,7 @@ const OpCard = styled.div`
   padding: 2rem;
   max-width: 300px;
   height: 150px;
-  background-color: black;
+  background-color: ${colors.blue[950]};
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(64, 64, 64, 0.4);
   margin: 0.5rem;
@@ -252,7 +256,7 @@ const TestimonialSection = () => {
 
   return (
     <SectionContainer>
-      <SectionTitle>Algunas experiencias compartidas.</SectionTitle>
+      <SectionTitle>Experiencias de pacientes</SectionTitle>
       <SliderContainer>
         <Slider {...settings}>
           {testimonials.map((testimonial) => (

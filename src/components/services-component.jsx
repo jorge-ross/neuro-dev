@@ -6,6 +6,7 @@ import psicCard from '/assets/images/psic-card.png';
 import neuroCard from '/assets/images/neu-card.png';
 import consCard from '/assets/images/cons-card.png';
 import { typography } from '../styles/typography';
+import { colors } from '../styles/colors';
 
 const Container = styled.div`
   display: flex;
@@ -16,7 +17,7 @@ const Container = styled.div`
 
 const Title = styled.h2`
   ${typography2.head.lgx};
-  color: black;
+  color: ${colors.blue[900]};
   text-align: center;
   margin: 3rem 0 1rem;
 

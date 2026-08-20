@@ -27,7 +27,7 @@ const SectionContainer = styled.section`
 
 const SectionTitle = styled.h1`
   ${typography.head.lga};
-  color: black;
+  color: ${colors.blue[900]};
   margin: 1rem 0 0;
 
   @media (max-width: 1000px) {
@@ -80,7 +80,7 @@ const BenefitImage = styled.img`
 const BenefitText = styled.p`
   ${typography2.head.md}
   margin: 2rem 1rem;
-  color: black;
+  color: ${colors.blue[900]};
 
   @media(max-width: 1000px){
     margin: 2rem 0 1rem 0;
@@ -109,7 +109,7 @@ const BenefitDescription = styled.p`
 `;
 
 const Arrow = styled.div`
-  color: black;
+  color: ${colors.blue[700]};
   cursor: pointer;
   position: absolute;
   top: 34%;

@@ -67,7 +67,7 @@ const TextArea = styled.textarea`
 const Button = styled.button`
   ${typography.text.sm};
   padding: 0.7rem 2rem;
-  background-color: ${colors.blue['brand']};
+  background-color: ${colors.blue[900]};
   color: white;
   border: none;
   border-radius: 1rem;
@@ -84,7 +84,7 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: #292929;
+    background-color: ${colors.blue[600]};
   }
 `;
 

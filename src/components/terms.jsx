@@ -3,9 +3,10 @@ import { useState } from "react";
 import { typography } from "../styles/typography";
 import GralModal from "./modals/gral-modal";
 import logoFooter from "../assets/images/logo-footer.png";
+import { colors } from "../styles/colors";
 
 const Gral = styled.div`
-  background: black;
+  background: ${colors.blue[950]};
   width: 100%;
   border-top: 1px solid black;
   display: flex;

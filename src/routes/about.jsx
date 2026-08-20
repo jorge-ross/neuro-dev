@@ -7,6 +7,7 @@ import { typography, typography2 } from "../styles/typography";
 import Terms from "../components/terms";
 import descriptionText from "../data/about";
 import { CedulaProfAbout } from "../data/definitions";
+import { colors } from "../styles/colors";
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -110,8 +111,8 @@ const Card = styled.div`
 `;
 
 const Title = styled.h1`
-  ${typography.head.md};
-  color: black;
+  ${typography.head.lg};
+  color: ${colors.blue[900]};
   margin: 0;
 
   @media (max-width: 750px) {
@@ -125,7 +126,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
   ${typography2.head.sm};
-  color: gray;
+  color: ${colors.grey[500]};
   margin: 0;
 
   @media (max-width: 750px) {
@@ -173,7 +174,6 @@ const About = () => {
           <GridItemWrapper>
             <Card>
               <ProfileImage src={profile_pic} alt="npsic" />
-              <NeurodevImage src={neurodev_pic} alt="ndev" />
             </Card>
 
             <Titles>

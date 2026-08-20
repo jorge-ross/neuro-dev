@@ -20,7 +20,8 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  ${typography.head.lga}
+  ${typography.head.lga};
+  color: ${colors.blue[900]};
   font-weight: bold;
   margin-bottom: 2rem;
   justify-self: center;

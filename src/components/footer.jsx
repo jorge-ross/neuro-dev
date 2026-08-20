@@ -47,14 +47,14 @@ const Section = styled.div`
 const SectionTitle = styled.h1`
   ${typography.head.md}
   margin: 0;
-  color: ${colors.blue['brand']};
+  color: ${colors.blue[900]};
   text-align: center;
 `;
 
 const MailOption = styled.h2`
   ${typography.head.sm}
   margin: 0;
-  color: ${colors.blue['brand']};
+  color: ${colors.blue[900]};
   text-align: center;
 `;
 

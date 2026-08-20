@@ -78,7 +78,7 @@ const BrandHomeLink = styled(Link)`
 
 const Option = styled.p`
   ${typography.head.xss}
-  color: black;
+  color: ${colors.blue[900]};
   margin: 0;
   font-weight: 600;
   padding: 16px 0;
@@ -314,7 +314,7 @@ const BookButton = styled(Link)`
   ${typography.head.xss};
   max-width: 300px;
   padding: 1rem 1.4rem;
-  background-color: ${colors.blue["brand-b"]};
+  background-color: ${colors.blue[900]};
   color: white;
   border-radius: 2rem;
   border: none;
@@ -325,6 +325,10 @@ const BookButton = styled(Link)`
     ${typography2.text.md};
     margin-bottom: 0.4rem;
     font-weight: 500;
+  }
+  
+  &:hover {
+    background-color: ${colors.blue[600]};
   }
 `
 
