@@ -57,17 +57,6 @@ const OptionsContainer = styled.li`
   }
 `;
 
-const BrandTitle = styled.h3`
-  ${typography.head.smx}
-  margin: 0;
-  color: black;
-  font-weight: 600;
-
-  @media (max-width: 330px) {
-    ${typography.head.xs};
-  }
-`;
-
 const BrandHomeLink = styled(Link)`
   align-items: center;
   text-decoration: none;
@@ -79,7 +68,7 @@ const BrandHomeLink = styled(Link)`
 const Option = styled.p`
   ${typography.head.xss}
   color: ${colors.blue[900]};
-  margin: 0;
+  margin-bottom: 5px;
   font-weight: 600;
   padding: 16px 0;
   display: flex;
@@ -183,13 +172,6 @@ const NavOption = styled(Link)`
   }
 `;
 
-const InstaOption = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-`;
-
 const DropNavOption = styled.div`
   ${typography.text.lg}
   color: black;
@@ -199,6 +181,7 @@ const DropNavOption = styled.div`
   align-items: center;
   text-decoration: none;
   cursor: pointer;
+  position: relative;
 
   @media (max-width: 500px) {
     ${typography.text.md};
@@ -290,10 +273,15 @@ const LogoImgCont = styled.img`
 const DropdownMenu = styled.div`
   position: absolute;
   top: 100%;
-  background: black;
+  right: 0;
+  background: ${colors.blue[900]};
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 0.25rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  z-index: 1000;
+  min-width: 200px;
+  max-width: 250px;
   display: flex;
   flex-direction: column;
 `;
@@ -303,6 +291,7 @@ const DropdownItem = styled(Link)`
   padding: 0.75rem 1.25rem;
   text-decoration: none;
   color: white;
+  border-bottom: 1px solid white;
   transition: background 0.3s;
 
   &:hover {
