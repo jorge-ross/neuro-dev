@@ -23,13 +23,9 @@ const FooterContainer = styled.footer`
   gap: 1.5rem;
   width: 60%;
 
-  @media (max-width: 700px) {
-    gap: 1rem;
-    padding: 2.5rem 0 3.5rem;; 
-  }
-
-  @media (max-width: 400px) {
-    margin: 0 2rem;
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin: 0 1rem;
   }
 `;
 
@@ -41,6 +37,7 @@ const Section = styled.div`
   gap: 2rem;
 
   @media (max-width: 1000px) {
+    width: 100%;
     gap: 1.5rem;
     display: flex;
     flex-direction: column;
@@ -51,7 +48,6 @@ const SectionTitle = styled.h1`
   ${typography.head.md}
   margin: 0;
   color: ${colors.blue['brand']};
-  padding-bottom: 0.5rem;
   text-align: center;
 `;
 
@@ -66,10 +62,6 @@ const Inst = styled.p`
   ${typography2.text.sm}
   margin: 0;
   text-align: center;
-
-  @media (max-width: 1000px) {
-   padding-bottom: 0.9rem;
-  }
 
 `
 
@@ -93,6 +85,11 @@ const SocialMediaContainer = styled.div`
   gap: 1rem;
   grid-column: 2;
   justify-content: space-around;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const Footer = () => {

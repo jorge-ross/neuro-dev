@@ -389,10 +389,6 @@ function Header() {
             <Option>Acerca de</Option>
           </NavOption>
 
-          <NavOption onClick={handleScrollToFooter}>
-            <Option>Contacto</Option>
-          </NavOption>
-
           <DropNavOption ref={dropdownRef}>
             <Option onClick={toggleDropdown}>
               Servicios
@@ -448,7 +444,7 @@ function Header() {
           </ImgHeader>
 
           <NavOptionsContainer>
-            <HamOption to="/agenda-tu-cita" onClick={() => window.scrollTo(0, 0)}>
+            <HamOption onClick={handleScrollToFooter}>
               Agenda Tu Cita
               <IoCalendarNumberSharp />
             </HamOption>
@@ -477,16 +473,6 @@ function Header() {
             <HamOption to="/consultoria" onClick={() => window.scrollTo(0, 0)}>
               Consultoría
               <MdAssessment />
-            </HamOption>
-
-            <HamOption to="/recursos" onClick={() => window.scrollTo(0, 0)}>
-              Recursos
-              <GrResources />
-            </HamOption>
-
-            <HamOption onClick={handleScrollToFooter}>
-              Contacto
-              <GrContact />
             </HamOption>
 
             <InstaHamOption

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { typography, typography2 } from "../styles/typography";
 import emailjs from "emailjs-com";
 import { toast } from "react-toastify";
+import { colors } from "../styles/colors";
 
 const Form = styled.form`
   display: grid;
@@ -66,7 +67,7 @@ const TextArea = styled.textarea`
 const Button = styled.button`
   ${typography.text.sm};
   padding: 0.7rem 2rem;
-  background-color: black;
+  background-color: ${colors.blue['brand']};
   color: white;
   border: none;
   border-radius: 1rem;
