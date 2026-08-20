@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { typography2 } from '../styles/typography';
 import { Link } from 'react-router-dom';
-import logon from '/assets/images/logond.png';
-import psicCard from '/assets/images/psic-card.png';
-import neuroCard from '/assets/images/neu-card.png';
-import consCard from '/assets/images/cons-card.png';
+import logon from '/assets/images/logow.png';
+import psicCard from '../assets/images/psic-card.png';
+import neuroCard from '../assets/images/neu-card.png';
+import consCard from '../assets/images/cons-card.png';
 import { typography } from '../styles/typography';
 import { colors } from '../styles/colors';
 
@@ -51,7 +51,7 @@ const ServiceText = styled.p`
   justify-content: center;
   gap: 0.85rem;
   ${typography2.head.sm};
-  color: black;
+  color: white;
 
   @media (max-width: 1000px) {
     min-width: 530px;
