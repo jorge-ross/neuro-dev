@@ -8,9 +8,11 @@ import InstagramButton from './insta-button';
 const Gral = styled.div`
 background:white;
 border-top: 1px solid black;
+border-bottom: 1px solid black;
 width: 100%;
 display: flex;
 justify-content: center;
+
 `
 
 const FooterContainer = styled.footer`

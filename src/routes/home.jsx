@@ -7,6 +7,7 @@ import Terms from "../components/terms";
 import ServicesComponent from "../components/services-component";
 import TestimonialSection from "../components/testimonial";
 import OnlineServices from "../components/online-services";
+import FaqSection from "../components/faq-section";
 
 const GeneralContainer = styled.div`
   display: flex;
@@ -26,6 +27,7 @@ function Home() {
       <OnlineServices />
       <TestimonialSection />
       <Footer />
+      <FaqSection />
       <Terms />
     </GeneralContainer>
   );
