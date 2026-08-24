@@ -137,7 +137,7 @@ const Logo = styled.img`
 const ImgHeader = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: ${colors.blue[950]};
   border-bottom-left-radius: 35%;
   cursor: pointer;
 `;
@@ -192,7 +192,7 @@ const DropNavOption = styled.div`
 
 const HamOption = styled(Link)`
   ${typography.text.lg}
-  color: black;
+  color: ${colors.blue[950]};
   font-weight: 600;
   display: flex;
   flex-direction: row;
@@ -214,7 +214,7 @@ const HamOption = styled(Link)`
 
 const InstaHamOption = styled.a`
   ${typography.text.lg};
-  color: black;
+  color: ${colors.blue[950]};
   font-weight: 600;
   display: flex;
   flex-direction: row;
