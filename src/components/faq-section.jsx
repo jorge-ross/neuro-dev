@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { colors } from "../styles/colors";
+import { typography } from "../styles/typography";
 
 const faqItems = [
   {
@@ -11,7 +12,7 @@ const faqItems = [
   {
     question: "¿Puedo cancelar o cambiar mi horario?",
     answer:
-      "Claro. Puedes reagendar o cancelar tu cita hasta 24 horas antes, sin costo, desde el correo de confirmación.",
+      "Sí. Puedes reagendar o cancelar tu cita hasta 24 horas antes, sin costo, para que otra persona pueda aprovechar ese espacio.",
   },
   {
     question: "¿Necesito un diagnóstico o referencia previa?",
@@ -21,7 +22,7 @@ const faqItems = [
   {
     question: "¿Las sesiones son en línea o presenciales?",
     answer:
-      "Las sesiones se realizan en línea, por videollamada, desde donde te sientas más cómodo o cómoda.",
+      "En ambas modalidades, según se prefiera. Eso sí, con previo acuerdo.",
   },
 ];
 
@@ -80,13 +81,6 @@ export default function FaqSection() {
   );
 }
 
-/* ---------------------------------------------------------
-   Estilos
-   Uso `colors.blue[...]` y `colors.grey[...]` siguiendo la
-   misma convención que ya tienes en DropdownMenu. Si tus
-   claves reales son distintas, solo ajústalas aquí.
---------------------------------------------------------- */
-
 const Section = styled.section`
   padding: 70px 0;
 `;
@@ -102,6 +96,7 @@ const Wrap = styled.div`
 `;
 
 const SectionHead = styled.div`
+${typography.head.xss};
   max-width: 620px;
   margin-bottom: 42px;
 
@@ -153,13 +148,13 @@ const FaqItem = styled.details`
   padding: 18px 0;
 
   summary {
+    ${typography.text.sm};
     display: flex;
     align-items: center;
     gap: 16px;
     cursor: pointer;
     font-weight: 600;
     color: ${colors.blue[900]};
-    font-size: 1rem;
     list-style: none;
   }
 
@@ -168,8 +163,8 @@ const FaqItem = styled.details`
   }
 
   p {
+    ${typography.text.sm};
     margin: 12px 0 0;
-    font-size: 0.94rem;
     color: ${colors.grey[600]};
   }
 `;

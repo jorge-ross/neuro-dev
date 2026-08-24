@@ -15,12 +15,12 @@ const GeneralContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 70px;
-  background-color: ${colors.stone[200]};
+  background-color: ${colors.stone[50]};
 `;
 
 const Title = styled.h1`
   ${typography.head.xl}
-  color: black;
+  color: ${colors.blue[900]};
   margin: 0;
   align-self: center;
   width: 80%;
@@ -82,7 +82,7 @@ const ServicesSection = styled.div`
 
 const InfoTitle = styled.h2`
   ${typography2.head.sm};
-  color: black;
+  color: ${colors.blue[900]};
   text-align: left;
   margin: 2rem 0 2.5rem 0;
 

@@ -14,8 +14,8 @@ export const colors = {
   },
 
   stone: {
-    50: "#FAFAF9",
-    100: "#F5F5F4",
+    50: "#FAFAFA",
+    100: "#F2F2F2",
     200: "#E7E5E4",
     300: "#D6D3D1",
     400: "#A8A29E",

@@ -10,12 +10,10 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IoClose, IoCalendarNumberSharp } from "react-icons/io5";
 import { ImUser } from "react-icons/im";
 import { GiBrain } from "react-icons/gi";
-import { FaInstagram, FaPencil } from "react-icons/fa6";
-import { GrContact, GrResources } from "react-icons/gr";
+import { FaInstagram } from "react-icons/fa6";
 import { MdPsychology, MdAssessment } from "react-icons/md";
 import Modal from "./modals/modal";
 import { colors } from "../styles/colors";
-import InstagramButton from "./insta-button";
 import { typography2 } from "../styles/typography";
 
 const Gral = styled.div`

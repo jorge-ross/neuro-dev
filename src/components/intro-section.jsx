@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { typography, typography2 } from '../styles/typography';
 import bgImage from '/assets/images/intro-background.png';
+import { colors } from '../styles/colors';
 
 const SectionContainer = styled.section`
   width: 100%;
@@ -62,8 +63,8 @@ const BookButton = styled.button`
   max-width: 350px;
   padding: 1rem 2rem;
   margin-bottom: 1.4rem;
-  background-color: white;
-  color: black;
+  background-color: ${colors.blue[900]};
+  color: white;
   border-radius: 0.5rem;
   border: none;
   cursor: pointer;
