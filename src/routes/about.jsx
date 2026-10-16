@@ -196,7 +196,7 @@ const About = () => {
           </Description>
         </AboutSection>
       </GeneralContainer>
-      <Footer />
+      <BookingSection />
       <Terms />
     </>
   );
