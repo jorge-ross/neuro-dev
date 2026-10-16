@@ -1,8 +1,7 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
-import Footer from "../components/footer";
+import BookingSection from "../components/booking-section";
 import profile_pic from "/assets/images/profile_pic.jpg";
-import neurodev_pic from "/assets/images/logond.png";
 import { typography, typography2 } from "../styles/typography";
 import Terms from "../components/terms";
 import descriptionText from "../data/about";

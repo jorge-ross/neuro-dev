@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import Header from "../components/header";
-import Footer from "../components/footer";
+import BookingSection from "../components/booking-section";
 import IntroSection from "../components/intro-section";
 import Mision from "../components/mision";
 import Terms from "../components/terms";
@@ -26,7 +26,7 @@ function Home() {
       <Mision />
       <OnlineServices />
       <TestimonialSection />
-      <Footer />
+      <BookingSection />
       <FaqSection />
       <Terms />
     </GeneralContainer>

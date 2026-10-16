@@ -2,11 +2,9 @@ import { useState, useRef, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 import Header from '../components/header';
 import Terms from '../components/terms';
-import neuro from '/assets/images/neuro.png'
 import { typography, typography2 } from '../styles/typography';
 import { neuroServices } from '../data/services';
-import Footer from '../components/footer';
-import neuroImage from '/assets/images/neuro-background.png';
+import BookingSection from "../components/booking-section";
 import { neuroText } from '../data/definitions';
 import { GiBrain } from "react-icons/gi";
 import { colors } from '../styles/colors';
@@ -266,7 +264,7 @@ const NeuroServices = () => {
         </ServicesGrid>
       </ServicesSection>
 
-      <Footer />
+      <BookingSection />
       <Terms />
     </GeneralContainer>
   );

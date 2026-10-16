@@ -6,7 +6,7 @@ import corpOne from "/assets/images/corpOne.png";
 import corpTwo from "/assets/images/corpTwo.png";
 import corpThree from "/assets/images/corpThree.png";
 import { typography, typography2 } from "../styles/typography";
-import Footer from "../components/footer";
+import BookingSection from "../components/booking-section";
 import {
   benefitCorpList,
   conclusionCorpText,
@@ -213,7 +213,7 @@ const ConsultancyServices = () => {
           información!
         </InfoTitle>
       </GeneralContainer>
-      <Footer />
+      <BookingSection />
       <Terms />
     </>
   );

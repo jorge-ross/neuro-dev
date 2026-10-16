@@ -5,7 +5,7 @@ import Terms from '../components/terms';
 import psych from '/assets/images/psique.png'
 import { typography, typography2 } from '../styles/typography';
 import { psychServices } from '../data/services';
-import Footer from '../components/footer';
+import BookingSection from '../components/booking-section';
 import psychImage from '/assets/images/psico-background.png';
 import { psyText } from '../data/definitions';
 import { MdOutlinePsychology } from "react-icons/md";
@@ -266,7 +266,7 @@ const PsychServices = () => {
         </ServicesGrid>
       </ServicesSection>
 
-      <Footer />
+      <BookingSection />
       <Terms />
     </GeneralContainer>
   );

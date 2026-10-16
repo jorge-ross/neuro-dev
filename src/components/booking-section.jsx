@@ -94,7 +94,7 @@ const SocialMediaContainer = styled.div`
   }
 `
 
-const Footer = () => {
+const BookingSection = () => {
 
   return (
     <Gral id="contact">
@@ -119,4 +119,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default BookingSection;
